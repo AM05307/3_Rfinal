@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<!-- 렌더링 모드 설정 (구 버전의 웹 브라우저에서 관용모드로 렌더링 되게 함)  -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- 페이지 이름  -->
+<title>고수익 | 게시판</title>
 
 <!--페이지 설명 시작  -->
 <!--meta태그 : data에 대한 정보를 나타내는 태그 -->
@@ -37,6 +42,92 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 
+
+<body>
+	<!--페이지 맨 위 한 줄 -->
+	<div class="header-connect">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-sm-8  col-xs-12">
+					<div class="header-half header-call">
+						<!--  왼쪽 상단 헤더 -->
+						<p>
+							<span>고수익</span> <span>부동산 매물 검색 사이트</span>
+						</p>
+					</div>
+				</div>
+				<div
+					class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-12">
+					<div class="header-half header-social">
+						<!--  오른쪽 상단 헤더-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--End top header -->
+
+	<nav class="navbar navbar-default ">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navigation">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!--왼쪽 상단 로고  -->
+				<a class="navbar-brand" href="/GOSUIC/mainform.sp"><img
+					src="assets/img/mainpage/gologosample.png" alt=""></a>
+				<div class="collapse navbar-collapse yamm" id="navigation">
+					<div class="button navbar-right">
+						<!-- 로그인, 회원가입 버튼  -->
+
+						<%-- <c:if test="${userEmail eq null}"> --%>
+						<button class="navbar-btn nav-button wow bounceInRight login"
+							onclick=" location.href='/GOSUIC/loginform.sp' "
+							data-wow-delay="0.45s">로그인</button>
+						<button class="navbar-btn nav-button wow fadeInRight"
+							onclick=" location.href='/GOSUIC/joinform.sp' "
+							data-wow-delay="0.48s">회원가입</button>
+						<%--     </c:if> --%>
+
+						<%--     <c:if test="${userEmail  ne null}"> --%>
+						<label for="email"><%=session.getAttribute("userEmail")%>
+						</label>
+						<%-- </c:if> --%>
+					</div>
+					<!--class="button navbar-right" end  -->
+
+					<!-- 메뉴바 -->
+					<ul class="main-nav nav navbar-nav navbar-right">
+						<li><a href="/GOSUIC/mainform.sp">Home <b class="caret"></b></a></li>
+						<li class="wow fadeInDown" data-wow-delay="0.2s"><a class=""
+							href="/GOSUIC/list.sp">매물</a></li>
+						<li class="wow fadeInDown" data-wow-delay="0.3s"><a class=""
+							href="/GOSUIC/property.sp">매물상세</a></li>
+						<li class="wow fadeInDown" data-wow-delay="0.4s"><a class=""
+							href="">부동산 정보</a></li>
+						<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
+							href="">게시판</a></li>
+
+					</ul>
+					<!-- class="main-nav nav navbar-nav navbar-right" end   -->
+				</div>
+				<!--class="collapse navbar-collapse yamm"  end  -->
+			</div>
+			<!--class="navbar-header" end  -->
+
+
+		</div>
+		<!-- class="container" end -->
+	</nav>
+	<!--class="navbar navbar-default " end  -->
+
+
+</body>
 <%@ include file="/common/header.jsp"%>
 
 매번 바뀌는 부분..
