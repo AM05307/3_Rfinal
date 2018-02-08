@@ -150,7 +150,7 @@
 						<h4>회사소개</h4>
 						<div class="footer-title-line"></div>
 
-						<img src="assets/img/mainpage/gologosample.png" alt=""
+						<img src="assets/img/mainpage/gosuic_logo3_small.png" alt=""
 							class="wow pulse" data-wow-delay="1s">
 						<p>
 							부동산 매물 검색 사이트<br> 전국의 부동산 매물 정보를 제공합니다
