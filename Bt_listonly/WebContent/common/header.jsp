@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+===header.jsp 내용 시작===
 <c:set var="root" value="${pageContext.request.contextPath}" />
 <!-- 이페이지가 어디에 있던지 BBCBOARD를 찾아서 리턴한다 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -39,3 +40,4 @@
 				<td width="190" valign="top"><%@ include
 						file="/admin/board/boardmenu.jsp"%></td>
 				<td align="left" valign="top">
+				===header.jsp 내용 끝 ====

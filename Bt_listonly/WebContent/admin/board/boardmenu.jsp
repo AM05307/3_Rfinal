@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+===boardmenu.jsp 내용 시작===
 <c:set var="root" value="${pageContext.request.contextPath}"/> 
 <c:if test="${boardmenu != null}">
 <table>
@@ -30,3 +31,4 @@
 <c:if test="${boardmenu == null}">
 	<c:redirect url="/boardadmin/boardmenu.playdata"/>
 </c:if>
+===boardmenu.jsp 내용 끝 ===
