@@ -1,0 +1,16 @@
+<!--페이지 설명 시작  -->
+<!--meta태그 : data에 대한 정보를 나타내는 태그 -->
+<!-- 이 페이지에 관한 설명 -->
+<meta name="description" content="GOSUIC is site about real-estate">
+<!-- 페이지 작성자-->
+<meta name="author" content="TEAM 3">
+<!-- 페이지 관련 키워드 -->
+<meta name="keyword" content="investment, real-estate, house, building">
+<!-- 모바일에서 사용하는 태그. 꽉차게 보여주자 -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--페이지 설명 끝 -->
+
+<!-- 구글 폰트 api -->
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800'
+	rel='stylesheet' type='text/css'>
