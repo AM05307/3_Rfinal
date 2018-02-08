@@ -101,7 +101,11 @@
           </c:if>
                       
            <c:if test="${userEmail  ne null}">
-           <label for="email"><%=session.getAttribute("userEmail")%>	</label>
+           						<!-- 로그인한 아이디 표시  -->
+						<label for="email"><%=session.getAttribute("userEmail")%>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+         <!--로그아웃 버튼 -->
+						<button class="navbar-btn nav-button"
+							onclick=" location.href='/GOSUIC/UserLogout.sp'">로그아웃</button>
            </c:if>
            </div>
            

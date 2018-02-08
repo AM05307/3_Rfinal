@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-    
-    <% if(session.getAttribute("userEmail") == null) { %>
-	<script type="text/javascript">
-		alert("로그인을 해주세요!");
-	</script>
-	<jsp:forward page="index.html"></jsp:forward>
-<%} %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%
+	if (session.getAttribute("userEmail") == null) {
+%>
+<script type="text/javascript">
+	alert("로그인을 해주세요!");
+</script>
+<jsp:forward page="index.html"></jsp:forward>
+<%
+	}
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -75,52 +79,60 @@
 <!--End top header -->
 
 <nav class="navbar navbar-default ">
-	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#navigation">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<!--왼쪽 상단 로고  -->
-			<a class="navbar-brand" href="/GOSUIC/mainform.sp"><img
-				src="assets/img/mainpage/gologosample.png" alt=""></a>
+<div class="container">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed"
+			data-toggle="collapse" data-target="#navigation">
+			<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+			<span class="icon-bar"></span> <span class="icon-bar"></span>
+		</button>
+		<!--왼쪽 상단 로고  -->
+		<a class="navbar-brand" href="/GOSUIC/mainform.sp"><img
+			src="assets/img/mainpage/gologosample.png" alt=""></a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse yamm" id="navigation">
+		<div class="button navbar-right">
+
+			<!-- 로그인, 회원가입 버튼  -->
+
+			<c:if test="${userEmail eq null}">
+				<button class="navbar-btn nav-button wow bounceInRight login"
+					onclick=" location.href='/GOSUIC/loginform.sp' "
+					data-wow-delay="0.45s">로그인</button>
+				<button class="navbar-btn nav-button wow fadeInRight"
+					onclick=" location.href='/GOSUIC/joinform.sp' "
+					data-wow-delay="0.48s">회원가입</button>
+			</c:if>
+
+			<c:if test="${userEmail  ne null}">
+				<!-- 로그인한 아이디 표시  -->
+				<label for="email"><%=session.getAttribute("userEmail")%>&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<!--로그아웃 버튼 -->
+				<button class="navbar-btn nav-button"
+					onclick=" location.href='/GOSUIC/UserLogout.sp'">로그아웃</button>
+
+			</c:if>
 		</div>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse yamm" id="navigation">
-			<div class="button navbar-right">
-			
-                          <!-- 로그인, 회원가입 버튼  -->
-                      
-          <c:if test="${userEmail eq null}">
-          <button class="navbar-btn nav-button wow bounceInRight login" onclick=" location.href='/GOSUIC/loginform.sp' " data-wow-delay="0.45s">로그인</button>
-          <button class="navbar-btn nav-button wow fadeInRight" onclick=" location.href='/GOSUIC/joinform.sp' " data-wow-delay="0.48s">회원가입</button>
-          </c:if>
-                      
-           <c:if test="${userEmail  ne null}">
-           <label for="email"><%=session.getAttribute("userEmail")%>	</label>
-           </c:if>
-           </div>
-           
-           
-			<ul class="main-nav nav navbar-nav navbar-right">
-				<li><a href="/GOSUIC/mainform.sp">Home <b class="caret"></b></a></li>
 
-				<li class="wow fadeInDown" data-wow-delay="0.2s"><a class=""
-					href="/GOSUIC/list.sp">매물</a></li>
-				<li class="wow fadeInDown" data-wow-delay="0.3s"><a class=""
-					href="property-1.html">매물상세</a></li>
-				<li class="wow fadeInDown" data-wow-delay="0.4s"><a class=""
-					href="">부동산 정보</a></li>
-				<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
-					href="">게시판</a></li>
+		<ul class="main-nav nav navbar-nav navbar-right">
+			<li><a href="/GOSUIC/mainform.sp">Home <b class="caret"></b></a></li>
+
+			<li class="wow fadeInDown" data-wow-delay="0.2s"><a class=""
+				href="/GOSUIC/list.sp">매물</a></li>
+			<li class="wow fadeInDown" data-wow-delay="0.3s"><a class=""
+				href="property-1.html">매물상세</a></li>
+			<li class="wow fadeInDown" data-wow-delay="0.4s"><a class=""
+				href="">부동산 정보</a></li>
+			<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
+				href="">게시판</a></li>
 
 
-			</ul>
-		</div>
+		</ul>
+	</div>
 </nav>
 <!-- End of nav bar 상단 메뉴바 END-->
 
@@ -153,7 +165,7 @@
 					<div class="single-property-wrapper">
 						<!--매물 이름, 가격  -->
 						<div class="single-property-header">
-						<br>
+							<br>
 							<h1 class="property-title pull-left">매물이름1</h1>
 							<span class="property-price pull-right">17억5천만원</span>
 
@@ -314,67 +326,67 @@
 				<!--///////////////////// 오른쪽 사이드바 시작  -->
 				<div class="col-md-3 p0">
 					<aside class="sidebar sidebar-property blog-asside-right">
-						<!--  오른쪽 사이드바 맨 위 회색 칸 -->
-						<div class="dealer-widget"></div>
+					<!--  오른쪽 사이드바 맨 위 회색 칸 -->
+					<div class="dealer-widget"></div>
 
-						<div
-							class="panel panel-default sidebar-menu similar-property-wdg wow fadeInRight animated">
-							<div class="panel-heading">
-								<h3 class="panel-title">최근 본 매물</h3>
-							</div>
-							<div class="panel-body recent-property-widget">
-								<ul>
-									<li>
-										<div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
-											<a href="single.html"><img
-												src="assets/img/demo/small-property-2.jpg"></a>
-										</div>
-										<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-											<h6>
-												<a href="single.html">최근 본 매물1</a>
-											</h6>
-											<span class="property-price">11억</span>
-										</div>
-									</li>
-									<li>
-										<div class="col-md-3 col-sm-3  col-xs-3 blg-thumb p0">
-											<a href="single.html"><img
-												src="assets/img/demo/small-property-1.jpg"></a>
-										</div>
-										<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-											<h6>
-												<a href="single.html">최근 본 매물2</a>
-											</h6>
-											<span class="property-price">12억</span>
-										</div>
-									</li>
-									<li>
-										<div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
-											<a href="single.html"><img
-												src="assets/img/demo/small-property-3.jpg"></a>
-										</div>
-										<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-											<h6>
-												<a href="single.html">최근 본 매물3</a>
-											</h6>
-											<span class="property-price">13억</span>
-										</div>
-									</li>
-
-								</ul>
-							</div>
+					<div
+						class="panel panel-default sidebar-menu similar-property-wdg wow fadeInRight animated">
+						<div class="panel-heading">
+							<h3 class="panel-title">최근 본 매물</h3>
 						</div>
+						<div class="panel-body recent-property-widget">
+							<ul>
+								<li>
+									<div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
+										<a href="single.html"><img
+											src="assets/img/demo/small-property-2.jpg"></a>
+									</div>
+									<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+										<h6>
+											<a href="single.html">최근 본 매물1</a>
+										</h6>
+										<span class="property-price">11억</span>
+									</div>
+								</li>
+								<li>
+									<div class="col-md-3 col-sm-3  col-xs-3 blg-thumb p0">
+										<a href="single.html"><img
+											src="assets/img/demo/small-property-1.jpg"></a>
+									</div>
+									<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+										<h6>
+											<a href="single.html">최근 본 매물2</a>
+										</h6>
+										<span class="property-price">12억</span>
+									</div>
+								</li>
+								<li>
+									<div class="col-md-3 col-sm-3 col-xs-3 blg-thumb p0">
+										<a href="single.html"><img
+											src="assets/img/demo/small-property-3.jpg"></a>
+									</div>
+									<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+										<h6>
+											<a href="single.html">최근 본 매물3</a>
+										</h6>
+										<span class="property-price">13억</span>
+									</div>
+								</li>
 
-						<!--  광고-->
-						<div
-							class="panel panel-default sidebar-menu wow fadeInRight animated">
-							<div class="panel-heading">
-								<h3 class="panel-title">광고</h3>
-							</div>
-							<div class="panel-body recent-property-widget">
-								<img src="assets/img/ads.jpg">
-							</div>
+							</ul>
 						</div>
+					</div>
+
+					<!--  광고-->
+					<div
+						class="panel panel-default sidebar-menu wow fadeInRight animated">
+						<div class="panel-heading">
+							<h3 class="panel-title">광고</h3>
+						</div>
+						<div class="panel-body recent-property-widget">
+							<img src="assets/img/ads.jpg">
+						</div>
+					</div>
 
 					</aside>
 				</div>
