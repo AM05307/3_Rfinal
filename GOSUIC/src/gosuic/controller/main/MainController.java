@@ -1,11 +1,10 @@
-package gosuic.controller.menu;
+package gosuic.controller.main;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
-public class MenuController {
+public class MainController {
 
 	// 회원가입 입력페이지로
 	@RequestMapping("/joinform.sp")
@@ -28,6 +27,27 @@ public class MenuController {
 		return "/WEB-INF/view/main.jsp";
 	}
 
+	// 매물 리스트 페이지로
+	@RequestMapping("/list2.sp")
+	public String listPage() {
+		System.out.println("매물 리스트 화면으로");
+		return "/WEB-INF/view/list.jsp";
+	}
+	
+	// 상세매물 페이지로
+		@RequestMapping("/detail.sp")
+		public String detailProperty() {
+			System.out.println("인덱스 화면으로");
+			return "/WEB-INF/view/property.jsp";
+		}
+
+	// 인덱스 페이지로
+	@RequestMapping("/index.sp")
+	public String indexPage() {
+		System.out.println("인덱스 화면으로");
+		return "/WEB-INF/view/index.jsp";
+	}
+
 	// 로그인후 메인페이지
 	@RequestMapping("/afterlogin.sp")
 	public String afterlogin() {
@@ -35,9 +55,4 @@ public class MenuController {
 		return "/WEB-INF/view/afterlogin.jsp";
 	}
 
-		@RequestMapping("/property.sp")
-	public String Property() {
-		System.out.println("[MenuController] Property() 상세 매물");
-		return "/WEB-INF/view/property.jsp";
-	}
 }// class end
