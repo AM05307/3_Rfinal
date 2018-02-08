@@ -264,7 +264,7 @@
 						<hr>
 					</div>
 
-					<div class="search-form wow pulse">
+					<div>
 
 						<!-- 검색버튼  -->
 						<button class="btn search1-btn" type="submit"
