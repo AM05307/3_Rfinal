@@ -1,7 +1,11 @@
 package gosuic.controller.main;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
@@ -55,4 +59,23 @@ public class MainController {
 		return "/WEB-INF/view/afterlogin.jsp";
 	}
 
+	// 주소 검색버튼 제어
+	@RequestMapping("/findaddress.sp")
+	public ModelAndView Findaddress(HttpSession session, Model model) {
+		System.out.println("주소 검색창 제어");
+		ModelAndView mav = new ModelAndView();
+		if (session.getAttribute("userEmail") != null) {
+			mav.setViewName("redirect:/addwindow.sp");
+		} else {
+			mav.setViewName("redirect:/index.sp");
+		}
+		return mav;
+	}
+	
+	//주소 검색창 이동
+	@RequestMapping("/addwindow.sp")
+	public String addwindow() {
+		System.out.println("주소 검색창 출력");
+		return "/WEB-INF/view/findaddress.jsp";
+	}
 }// class end

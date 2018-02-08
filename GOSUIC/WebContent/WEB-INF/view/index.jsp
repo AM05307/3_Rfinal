@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -19,8 +18,7 @@
 	content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link
-	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800'
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800'
 	rel='stylesheet' type='text/css'>
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -87,30 +85,25 @@
 						class="icon-bar"></span>
 				</button>
 				<!--왼쪽 상단 로고  -->
-				<a class="navbar-brand" href="/GOSUIC/mainform.sp"><img
+				<a class="navbar-brand" href="index.html"><img
 					src="assets/img/mainpage/gologosample.png" alt=""></a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse yamm" id="navigation">
 				<div class="button navbar-right">
-				
-					                          <!-- 로그인, 회원가입 버튼  -->
-                      
-          <c:if test="${userEmail eq null}">
-          <button class="navbar-btn nav-button wow bounceInRight login" onclick=" location.href='/GOSUIC/loginform.sp' " data-wow-delay="0.45s">로그인</button>
-          <button class="navbar-btn nav-button wow fadeInRight" onclick=" location.href='/GOSUIC/joinform.sp' " data-wow-delay="0.48s">회원가입</button>
-          </c:if>
-                      
-           <c:if test="${userEmail  ne null}">
-           <label for="email"><%=session.getAttribute("userEmail")%>	</label>
-           </c:if>
-           </div>
-           
+					<!-- 로그인, 회원가입 버튼  -->
+					
+					<button class="navbar-btn nav-button wow bounceInRight login"
+						onclick=" location.href='/GOSUIC/loginform.sp' "
+						data-wow-delay="0.45s">로그인</button>
+					<button class="navbar-btn nav-button wow fadeInRight"
+						onclick=" location.href='/GOSUIC/joinform.sp'" data-wow-delay="0.48s">회원가입</button>
+				</div>
 
 				<!-- 메뉴바 -->
 				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="/GOSUIC/mainform.sp">Home <b class="caret"></b></a></li>
+					<li><a href="index.html">Home <b class="caret"></b></a></li>
 					<!-- /TestMVC03/list.sp -->
 					<!--   <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">매물</a></li>-->
 
@@ -122,87 +115,7 @@
 						href="">부동산 정보</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
 						href="">게시판</a></li>
-					<!--   NAVBAR 의  드롭다운 다운 메뉴 코드 -->
-					<!-- <li class="dropdown yamm-fw" data-wow-delay="0.6s">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <div class="yamm-content">
-                                        <div class="row">
-                                            <div class="col-sm-3">
-                                                <h5>Home pages</h5>
-                                                <ul>
-                                                    <li>
-                                                        <a href="index.html">Home Style 1</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-2.html">Home Style 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-3.html">Home Style 3</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-4.html">Home Style 4</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index-5.html">Home Style 5</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <h5>Pages and blog</h5>
-                                                <ul>
-                                                    <li><a href="blog.html">Blog listing</a>  </li>
-                                                    <li><a href="single.html">Blog Post (full)</a>  </li>
-                                                    <li><a href="single-right.html">Blog Post (Right)</a>  </li>
-                                                    <li><a href="single-left.html">Blog Post (left)</a>  </li>
-                                                    <li><a href="contact.html">Contact style (1)</a> </li>
-                                                    <li><a href="contact-3.html">Contact style (2)</a> </li>
-                                                    <li><a href="contact_3.html">Contact style (3)</a> </li>
-                                                    <li><a href="faq.html">FAQ page</a> </li>
-                                                    <li><a href="404.html">404 page</a>  </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <h5>Property</h5>
-                                                <ul>
-                                                    <li><a href="property-1.html">Property pages style (1)</a> </li>
-                                                    <li><a href="property-2.html">Property pages style (2)</a> </li>
-                                                    <li><a href="property-3.html">Property pages style (3)</a> </li>
-                                                </ul>
-
-                                                <h5>Properties list</h5>
-                                                <ul>
-                                                    <li><a href="/GOSUIC/list.sp">Properties list style (1)</a> </li>
-                                                    <li><a href="properties-2.html">Properties list style (2)</a> </li>
-                                                    <li><a href="properties-3.html">Properties list style (3)</a> </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3">
-                                                <h5>Property process</h5>
-                                                <ul>
-                                                    <li><a href="submit-property.jsp">Submit - step 1</a> </li>
-                                                    <li><a href="submit-property.jsp">Submit - step 2</a> </li>
-                                                    <li><a href="submit-property.jsp">Submit - step 3</a> </li>
-                                                </ul>
-                                                <h5>User account</h5>
-                                                <ul>
-                                                    <li><a href="register.html">Register / login</a>   </li>
-                                                    <li><a href="user-/GOSUIC/list.sp">Your properties</a>  </li>
-                                                    <li><a href="submit-property.jsp">Submit property</a>  </li>
-                                                    <li><a href="change-password.html">Change password</a> </li>
-                                                    <li><a href="user-profile.html">Your profile</a>  </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ///.yamm-content -->
-					<!-- </li> -->
-					<!-- </ul> -->
-					<!-- </li> -->
-
-					<!-- 고객문의 메뉴(우선 진행안함) -->
-					<!-- <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="contact.html">Contact</a></li> -->
+				
 				</ul>
 				<!--메뉴바 메뉴입력END-->
 				<!--"main-nav nav navbar-nav navbar-right" END  -->
@@ -245,7 +158,7 @@
 			
 						<!-- 검색버튼  -->
 						<button class="btn search1-btn" type="submit"
-							onclick=" window.open('/GOSUIC/findaddress.jsp')">
+							onclick=" location.href='/GOSUIC/findaddress.sp' ">
 							지역 선택하기<i class="fa fa-search"></i>
 						</button>
 
@@ -521,7 +434,7 @@
 							<div class="footer-title-line"></div>
 							<ul class="footer-menu">
 								<li><a href="/GOSUIC/list.sp">매물</a></li>
-								<li><a href="#">MY부동산</a></li>
+								<li><a href="/GOSUIC/property.sp">MY부동산</a></li>
 								<li><a href="submit-property.jsp">부동산정보</a></li>
 								<li><a href="contact.html">게시판</a></li>
 							</ul>
