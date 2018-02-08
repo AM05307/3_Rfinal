@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+
+<head>
 <!-- 렌더링 모드 설정 (구 버전의 웹 브라우저에서 관용모드로 렌더링 되게 함)  -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -42,7 +44,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 
-
+</head>
 <body>
 	<!--페이지 맨 위 한 줄 -->
 	<div class="header-connect">
@@ -80,7 +82,7 @@
 				</button>
 				<!--왼쪽 상단 로고  -->
 				<a class="navbar-brand" href="/GOSUIC/mainform.sp"><img
-					src="assets/img/mainpage/gologosample.png" alt=""></a>
+					src="img/gosuic_logo1.png" alt=""></a>
 				<div class="collapse navbar-collapse yamm" id="navigation">
 					<div class="button navbar-right">
 						<!-- 로그인, 회원가입 버튼  -->
