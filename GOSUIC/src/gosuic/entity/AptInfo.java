@@ -2,34 +2,21 @@ package gosuic.entity;
 
 public class AptInfo {
 
-	private int aptno;
-	private int c_type;
 	private String sigungu;
 	private String bunji;
-	private String bon;
-	private String bu;
+	private String bonbeon;
+	private String bubeon;
 	private String danji;
 	private String junwol;
 	private String myunjuk;
-	private String geyyaknyun;
-	private String geyyakil;
-	private String bojeung;
-	private String wolse;
-	private String cheung;
-	private String gunchook;
+	private String contract_year_month;
+	private String contract_day;
+	private String price;
+	private String deposit;
+	private String rent;
+	private String floor;
+	private String gunchook_year;
 	private String doromyung;
-	public int getAptno() {
-		return aptno;
-	}
-	public void setAptno(int aptno) {
-		this.aptno = aptno;
-	}
-	public int getC_type() {
-		return c_type;
-	}
-	public void setC_type(int c_type) {
-		this.c_type = c_type;
-	}
 	public String getSigungu() {
 		return sigungu;
 	}
@@ -42,17 +29,17 @@ public class AptInfo {
 	public void setBunji(String bunji) {
 		this.bunji = bunji;
 	}
-	public String getBon() {
-		return bon;
+	public String getBonbeon() {
+		return bonbeon;
 	}
-	public void setBon(String bon) {
-		this.bon = bon;
+	public void setBonbeon(String bonbeon) {
+		this.bonbeon = bonbeon;
 	}
-	public String getBu() {
-		return bu;
+	public String getBubeon() {
+		return bubeon;
 	}
-	public void setBu(String bu) {
-		this.bu = bu;
+	public void setBubeon(String bubeon) {
+		this.bubeon = bubeon;
 	}
 	public String getDanji() {
 		return danji;
@@ -72,47 +59,61 @@ public class AptInfo {
 	public void setMyunjuk(String myunjuk) {
 		this.myunjuk = myunjuk;
 	}
-	public String getGeyyaknyun() {
-		return geyyaknyun;
+	public String getContract_year_month() {
+		return contract_year_month;
 	}
-	public void setGeyyaknyun(String geyyaknyun) {
-		this.geyyaknyun = geyyaknyun;
+	public void setContract_year_month(String contract_year_month) {
+		this.contract_year_month = contract_year_month;
 	}
-	public String getGeyyakil() {
-		return geyyakil;
+	public String getContract_day() {
+		return contract_day;
 	}
-	public void setGeyyakil(String geyyakil) {
-		this.geyyakil = geyyakil;
+	public void setContract_day(String contract_day) {
+		this.contract_day = contract_day;
 	}
-	public String getBojeung() {
-		return bojeung;
+	public String getPrice() {
+		return price;
 	}
-	public void setBojeung(String bojeung) {
-		this.bojeung = bojeung;
+	public void setPrice(String price) {
+		this.price = price;
 	}
-	public String getWolse() {
-		return wolse;
+	public String getDeposit() {
+		return deposit;
 	}
-	public void setWolse(String wolse) {
-		this.wolse = wolse;
+	public void setDeposit(String deposit) {
+		this.deposit = deposit;
 	}
-	public String getCheung() {
-		return cheung;
+	public String getRent() {
+		return rent;
 	}
-	public void setCheung(String cheung) {
-		this.cheung = cheung;
+	public void setRent(String rent) {
+		this.rent = rent;
 	}
-	public String getGunchook() {
-		return gunchook;
+	public String getFloor() {
+		return floor;
 	}
-	public void setGunchook(String gunchook) {
-		this.gunchook = gunchook;
+	public void setFloor(String floor) {
+		this.floor = floor;
+	}
+	public String getGunchook_year() {
+		return gunchook_year;
+	}
+	public void setGunchook_year(String gunchook_year) {
+		this.gunchook_year = gunchook_year;
 	}
 	public String getDoromyung() {
 		return doromyung;
 	}
 	public void setDoromyung(String doromyung) {
 		this.doromyung = doromyung;
+	}
+	@Override
+	public String toString() {
+		return "AptInfo [sigungu=" + sigungu + ", bunji=" + bunji + ", bonbeon=" + bonbeon + ", bubeon=" + bubeon
+				+ ", danji=" + danji + ", junwol=" + junwol + ", myunjuk=" + myunjuk + ", contract_year_month="
+				+ contract_year_month + ", contract_day=" + contract_day + ", price=" + price + ", deposit=" + deposit
+				+ ", rent=" + rent + ", floor=" + floor + ", gunchook_year=" + gunchook_year + ", doromyung="
+				+ doromyung + "]";
 	}
 	
 	

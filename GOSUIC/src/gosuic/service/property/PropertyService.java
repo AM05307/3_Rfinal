@@ -10,13 +10,16 @@ import gosuic.entity.AptInfo;
 
 @Service
 public class PropertyService {
-	
+
 	@Autowired
 	private PropertyDao propertyDao;
 
-	//매물 목록 출력
-	public List<AptInfo> listApt(){
-		return propertyDao.listApt();
+	// 매물 목록 출력
+	public List<AptInfo> listApt() {
+		System.out.println("서비스객체 listApt() 메소드");
+		List<AptInfo> res = null;
+		res = propertyDao.listApt();
+		return res;
 	}
 
 }

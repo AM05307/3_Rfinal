@@ -22,19 +22,30 @@ public class PropertyDao {
 	
 	//매물목록 출력
 	public List<AptInfo> listApt(){
-		List<AptInfo> list = getJdbcTemplate().query("SELECT * FROM aptinfo", new RowMapper<AptInfo>() {
+		System.out.println("propertydao listapt()메소드");
+		List<AptInfo> list = getJdbcTemplate().query("SELECT * FROM apartment where sigungu like '%서초동%'", new RowMapper<AptInfo>() {
+			
 			@Override
-			public AptInfo mapRow(ResultSet rs, int num) throws SQLException {
+			public AptInfo mapRow(ResultSet rs, int num) throws SQLException {;
+				
 					AptInfo ob = new AptInfo();
-					ob.setAptno(rs.getInt("aptno"));
+					
 					ob.setSigungu(rs.getString("sigungu"));
 					ob.setBunji(rs.getString("bunji"));
+					ob.setBonbeon(rs.getString("bonbeon"));
+					ob.setBubeon(rs.getString("bubeon"));
 					ob.setDanji(rs.getString("danji"));
-					ob.setC_type(rs.getInt("c_type"));
+					ob.setJunwol(rs.getString("junwol"));
 					ob.setMyunjuk(rs.getString("myunjuk"));
-					ob.setBojeung(rs.getString("bojeung"));
-					ob.setWolse(rs.getString("wolse"));
-					ob.setGunchook(rs.getString("gunchook"));
+					ob.setContract_year_month(rs.getString("contract_year_month"));
+					ob.setContract_day(rs.getString("contract_day"));
+					ob.setPrice(rs.getString("price"));
+					ob.setDeposit(rs.getString("deposit"));
+					ob.setRent(rs.getString("rent"));
+					ob.setFloor(rs.getString("floor"));
+					ob.setGunchook_year(rs.getString("gunchook_year"));
+					ob.setDoromyung(rs.getString("doromyung"));
+					//ob.setHit(rs.getString("hit"));
 					
 					return ob;
 			}
