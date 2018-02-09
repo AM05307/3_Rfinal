@@ -19,13 +19,14 @@ public class PropertyController {
 
 	// 전체 출력하기
 	@RequestMapping("/list.sp")
-	public ModelAndView all_list(Model model, HttpSession session) {
+	public ModelAndView all_list(Model model, HttpSession session,HttpServletRequest request) {
 		model.addAttribute("all_list", propertyservice.listApt());
 		System.out.println("매물목록 출력");
 		ModelAndView mav = new ModelAndView();
 		if (session.getAttribute("userEmail") == null) {
 			mav.setViewName("redirect:/index.sp");
 		} else {
+			System.out.println(request.getAttribute("search"));
 			mav.setViewName("redirect:/list2.sp");
 		}
 		return mav;

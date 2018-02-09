@@ -262,7 +262,7 @@
 						
 					</div>
 					<br>
-					<form action = "property.sp" method ="post">
+					<form action = "list.sp" method ="post">
 					<div class="search-form wow pulse">
 					<input type="text" name="search" id="sample4_roadAddress" placeholder="시/군/구/동 주소">
 					</div>
@@ -336,7 +336,7 @@
                 }
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                //document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
                 document.getElementById('sample4_roadAddress').value = data.sido + data.sigungu + data.bname;
                 document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
 
