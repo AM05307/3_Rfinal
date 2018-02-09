@@ -131,6 +131,16 @@
 	</nav>
 	<!--class="navbar navbar-default " end  -->
 
+<div class="page-head">
+		<div class="container">
+			<div class="row">
+				<div class="page-head-content">
+					<h1 class="page-title">게시판</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 </body>
 <%@ include file="/common/header.jsp"%>
