@@ -8,6 +8,7 @@ public class UserVo {
 	String userName;
 	String userBirthday;
 	String userGender;
+	
 	public String getUserEmail() {
 		return userEmail;
 	}

@@ -2,12 +2,6 @@
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<% if(session.getAttribute("userEmail") == null) { %>
-	<script type="text/javascript">
-		alert("로그인을 해주세요!");
-	</script>
-	<jsp:forward page="index.html"></jsp:forward>
-<%} %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -319,25 +313,27 @@
                     <div class="col-md-10">
     <table border="1">
   <tr>
-    <th>&nbsp;NO&nbsp;</th>
     <th>&nbsp;주소&nbsp;</th>
     <th>&nbsp;번지&nbsp;</th>
     <th>&nbsp;단지명&nbsp;</th>
-    <th>&nbsp;건물형태&nbsp;</th>
     <th>&nbsp;전용면적(㎡)&nbsp;</th>
+    <th>&nbsp;계약년월&nbsp;</th>
+    <th>&nbsp;매매가격(만원)&nbsp;</th>
     <th>&nbsp;보증금&nbsp;</th>
-    <th>&nbsp;거래금액(만원)&nbsp;</th>
+   	<th>&nbsp;월세&nbsp;</th>
     <th>&nbsp;건축년도&nbsp;</th>
+    <th>&nbsp;도로명&nbsp;</th>
     <th>&nbsp;수익률&nbsp;</th>
-    <th>&nbsp;더보기&nbsp;</th>
 </tr>
+
 <c:if test="${!empty all_list}">
+
 			<c:forEach items="${all_list}" var="ob">
 				<tr>
-					<td>${ob.aptno}</td><td>${ob.sigungu}</td><td>${ob.bunji}</td>
-					<td>${ob.danji}</td><td>${ob.c_type}</td><td>${ob.myunjuk}</td>
-					<td>${ob.bojeung}</td><td>${ob.wolse}</td><td>${ob.gunchook}</td>
-					<td><a href="/delete.sp">삭제</a></td>
+					<td>${ob.sigungu}</td><td>${ob.bunji}  ${ob.bonbeon}  ${ob.bubeon}</td><td>${ob.danji}</td>
+					<td>${ob.myunjuk}</td><td>${ob.contract_year_month}</td><td>${ob.price}</td>
+					<td>${ob.deposit}</td><td>${ob.rent}</td><td>${ob.gunchook_year}</td><td>${ob.doromyung}</td>
+					<td><a href="/property.sp">상세보기</a></td>
 				</tr>
 			</c:forEach>
 		</c:if>

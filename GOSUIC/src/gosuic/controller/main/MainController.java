@@ -33,7 +33,7 @@ public class MainController {
 
 	// 매물 리스트 페이지로
 	@RequestMapping("/list2.sp")
-	public String listPage() {
+	public String listPage(Model model) {
 		System.out.println("매물 리스트 화면으로");
 		return "/WEB-INF/view/list.jsp";
 	}

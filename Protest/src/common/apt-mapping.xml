@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis.apt">
+
+	<!-- <insert id="insertapt" parameterType="entity.AptVo"> insert into apt(si,gun,gu, 
+		bunji, danji, myunjuk,cheung, gunchook, doromyung) values( #{si},#{gun},#{gu},#{bunji},#{danji},#{myunjuk},#{cheung},#{gunchook},#{doromyung}) 
+		</insert> -->
+
+	<insert id="insertapt" parameterType="entity.AptVo">
+		insert into apt(no,si,gun,gu, bunji, danji, myunjuk,cheung, gunchook,
+		doromyung)
+		values(
+		#{no},#{si},#{gun},#{gu},#{bunji},#{danji},#{myunjuk},#{cheung},#{gunchook},#{doromyung})
+	</insert>
+	
+	<insert id="insertapt2" parameterType="entity.AptVo">
+		insert into apt(no,sigungu, bunji, danji, myunjuk,cheung, gunchook,	doromyung)
+		values(
+		#{no},#{sigungu},#{bunji},#{danji},#{myunjuk},#{cheung},#{gunchook},#{doromyung})
+	</insert>
+
+	<insert id="insertapt3" parameterType="entity.AptVo">
+		insert into apt(no,sigungu, bunji, danji, myunjuk,cheung, gunchook)
+		values(
+		#{no},#{sigungu},#{bunji},#{danji},#{myunjuk},#{cheung},#{gunchook})
+	</insert>
+	<!-- <insert id="insertjun" parameterType="entity.JunVo"> insert into jun(junwol, 
+		gyeyak, bojeung, wolse) values(#{junwol},#{gyeyak},#{bojeung},#{wolse}) </insert> -->
+	
+	<insert id="insertjun" parameterType="entity.JunVo">
+		insert into jun(no,junwol, gyeyak, bojeung, wolse)
+		values(#{no},#{junwol},#{gyeyak},#{bojeung},#{wolse})
+	</insert>
+	
+	<select id="selectApt" resultType="entity.SimVo">
+		select sigungu, bunji, danji, myunjuk,cheung, gunchook,	doromyung from apt
+	</select>
+
+	<select id="countApt" resultType="java.lang.Integer">
+		select sigungu, bunji, danji, myunjuk,cheung, gunchook,	doromyung from apt
+	</select>
+
+</mapper>
