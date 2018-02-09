@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>°í¼öÀÍ | Home</title>
+<title>ê³ ìˆ˜ìµ | Home</title>
 <meta name="description" content="GARO is a real-estate template">
 <meta name="author" content="Kimarotec">
 <meta name="keyword"
@@ -60,16 +60,16 @@
 			<div class="row">
 				<div class="col-md-5 col-sm-8  col-xs-12">
 					<div class="header-half header-call">
-						<!--  ¿ŞÂÊ »ó´Ü Çì´õ -->
+						<!--  ì™¼ìª½ ìƒë‹¨ í—¤ë” -->
 						<p>
-							<span>°í¼öÀÍ</span> <span>ºÎµ¿»ê ¸Å¹° °Ë»ö »çÀÌÆ®</span>
+							<span>ê³ ìˆ˜ìµ</span> <span>ë¶€ë™ì‚° ë§¤ë¬¼ ê²€ìƒ‰ ì‚¬ì´íŠ¸</span>
 						</p>
 					</div>
 				</div>
 				<div
 					class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-12">
 					<div class="header-half header-social">
-						<!--  ¿À¸¥ÂÊ »ó´Ü Çì´õ-->
+						<!--  ì˜¤ë¥¸ìª½ ìƒë‹¨ í—¤ë”-->
 					</div>
 				</div>
 			</div>
@@ -87,7 +87,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<!--¿ŞÂÊ »ó´Ü ·Î°í  -->
+				<!--ì™¼ìª½ ìƒë‹¨ ë¡œê³   -->
 				<a class="navbar-brand" href="index.html"><img
 					src="assets/img/mainpage/gosuic_logo3_small.png" alt=""></a>
 			</div>
@@ -96,45 +96,45 @@
 			<div class="collapse navbar-collapse yamm" id="navigation">
 				<div class="button navbar-right">
 
-					<!-- ·Î±×ÀÎ, È¸¿ø°¡ÀÔ ¹öÆ°  -->
+					<!-- ë¡œê·¸ì¸, íšŒì›ê°€ì… ë²„íŠ¼  -->
 
 					<c:if test="${userEmail eq null}">
 						<button class="navbar-btn nav-button wow bounceInRight login"
 							onclick=" location.href='/GOSUIC/loginform.sp' "
-							data-wow-delay="0.45s">·Î±×ÀÎ</button>
+							data-wow-delay="0.45s">ë¡œê·¸ì¸</button>
 						<button class="navbar-btn nav-button wow fadeInRight"
 							onclick=" location.href='/GOSUIC/joinform.sp' "
-							data-wow-delay="0.48s">È¸¿ø°¡ÀÔ</button>
+							data-wow-delay="0.48s">íšŒì›ê°€ì…</button>
 					</c:if>
 
 					<c:if test="${userEmail  ne null}">
-						<!-- ·Î±×ÀÎÇÑ ¾ÆÀÌµğ Ç¥½Ã  -->
+						<!-- ë¡œê·¸ì¸í•œ ì•„ì´ë”” í‘œì‹œ  -->
 						<label for="email"><%=session.getAttribute("userEmail")%>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-						<!--·Î±×¾Æ¿ô ¹öÆ° -->
+						<!--ë¡œê·¸ì•„ì›ƒ ë²„íŠ¼ -->
 						<button class="navbar-btn nav-button"
-							onclick=" location.href='/GOSUIC/UserLogout.sp'">·Î±×¾Æ¿ô</button>
+							onclick=" location.href='/GOSUIC/UserLogout.sp'">ë¡œê·¸ì•„ì›ƒ</button>
 					</c:if>
 				</div>
 
 
 
-				<!-- ¸Ş´º¹Ù -->
+				<!-- ë©”ë‰´ë°” -->
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li><a href="/GOSUIC/mainform.sp">Home <b class="caret"></b></a>
 
 					</li>
 					<!-- /TestMVC03/list.sp -->
-					<!--   <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">¸Å¹°</a></li>-->
+					<!--   <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">ë§¤ë¬¼</a></li>-->
 
 					<li class="wow fadeInDown" data-wow-delay="0.2s"><a class=""
-						href="/GOSUIC/list.sp">¸Å¹°</a></li>
+						href="/GOSUIC/list.sp">ë§¤ë¬¼</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.3s"><a class=""
-						href="/GOSUIC/property.sp">¸Å¹°»ó¼¼</a></li>
+						href="/GOSUIC/property.sp">ë§¤ë¬¼ìƒì„¸</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.4s"><a class=""
-						href="">ºÎµ¿»ê Á¤º¸</a></li>
+						href="">ë¶€ë™ì‚° ì •ë³´</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
-						href="">°Ô½ÃÆÇ</a></li>
-					<!--   NAVBAR ÀÇ  µå·Ó´Ù¿î ´Ù¿î ¸Ş´º ÄÚµå -->
+						href="">ê²Œì‹œíŒ</a></li>
+					<!--   NAVBAR ì˜  ë“œë¡­ë‹¤ìš´ ë‹¤ìš´ ë©”ë‰´ ì½”ë“œ -->
 					<!-- <li class="dropdown yamm-fw" data-wow-delay="0.6s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -213,10 +213,10 @@
 					<!-- </ul> -->
 					<!-- </li> -->
 
-					<!-- °í°´¹®ÀÇ ¸Ş´º(¿ì¼± ÁøÇà¾ÈÇÔ) -->
+					<!-- ê³ ê°ë¬¸ì˜ ë©”ë‰´(ìš°ì„  ì§„í–‰ì•ˆí•¨) -->
 					<!-- <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="contact.html">Contact</a></li> -->
 				</ul>
-				<!--¸Ş´º¹Ù ¸Ş´ºÀÔ·ÂEND-->
+				<!--ë©”ë‰´ë°” ë©”ë‰´ì…ë ¥END-->
 				<!--"main-nav nav navbar-nav navbar-right" END  -->
 
 			</div>
@@ -224,23 +224,23 @@
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-	<!-- End of nav bar »ó´Ü ¸Ş´º¹Ù END-->
+	<!-- End of nav bar ìƒë‹¨ ë©”ë‰´ë°” END-->
 
 
 
-	<!--½½¶óÀÌµå È­¸é ½ÃÀÛ   -->
+	<!--ìŠ¬ë¼ì´ë“œ í™”ë©´ ì‹œì‘   -->
 	<div class="slider-area">
 		<div class="slider">
 			<div id="bg-slider" class="owl-carousel owl-theme">
 
 				<div class="item">
-					<img src="assets/img/mainpage/slide1/skyline001.jpg" alt="½½¶óÀÌµåÈ­¸é1">
+					<img src="assets/img/mainpage/slide1/skyline001.jpg" alt="ìŠ¬ë¼ì´ë“œí™”ë©´1">
 				</div>
 				<div class="item">
-					<img src="assets/img/mainpage/slide1/skyline002.jpg" alt="½½¶óÀÌµåÈ­¸é2">
+					<img src="assets/img/mainpage/slide1/skyline002.jpg" alt="ìŠ¬ë¼ì´ë“œí™”ë©´2">
 				</div>
 				<div class="item">
-					<img src="assets/img/mainpage/slide1/skyline003.jpg" alt="½½¶óÀÌµåÈ­¸é3">
+					<img src="assets/img/mainpage/slide1/skyline003.jpg" alt="ìŠ¬ë¼ì´ë“œí™”ë©´3">
 				</div>
 
 			</div>
@@ -249,31 +249,31 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
 					<div class="search">
-						<br> ÁÖ¼Ò¸¦ °Ë»öÇÏ¼¼¿ä. <br>
+						<br> ì£¼ì†Œë¥¼ ê²€ìƒ‰í•˜ì„¸ìš”. <br>
 						<hr>
 					</div>
 
 					<div>
-						<!-- °Ë»ö¹öÆ°  -->
+						<!-- ê²€ìƒ‰ë²„íŠ¼  -->
 						
 						<button class="btn search1-btn" type="submit" onclick="DaumPostcode()">
-							ÁÖ¼Ò °Ë»ö<i class="fa fa-search"></i>
+							ì£¼ì†Œ ê²€ìƒ‰<i class="fa fa-search"></i>
 						</button>
 						
 					</div>
 					<br>
 					<form action = "list.sp" method ="post">
 					<div class="search-form wow pulse">
-					<input type="text" name="search" id="sample4_roadAddress" placeholder="½Ã/±º/±¸/µ¿ ÁÖ¼Ò">
+					<input type="text" name="searchaddr" id="sample4_roadAddress" placeholder="ì‹œ/êµ°/êµ¬/ë™ ì£¼ì†Œ">
 					</div>
 					<br>
 					<button class="btn search1-btn" type="submit" >
-							¸Å¹° °Ë»ö<i class="fa fa-search"></i>
+							ë§¤ë¬¼ ê²€ìƒ‰<i class="fa fa-search"></i>
 					</button>
 					</form>
-					<!-- °Ë»öÃ¢±¸ºĞ  end -->
+					<!-- ê²€ìƒ‰ì°½êµ¬ë¶„  end -->
 
-					<!-- °Ë»öÃ¢ end -->
+					<!-- ê²€ìƒ‰ì°½ end -->
 				</div>
 				<!-- class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12" end -->
 			</div>
@@ -281,7 +281,7 @@
 		</div>
 		<!--  class="slider-content" end-->
 	</div>
-	<!--  ½½¶óÀÌµå È­¸é end = class="slider-area" end -->
+	<!--  ìŠ¬ë¼ì´ë“œ í™”ë©´ end = class="slider-area" end -->
 
 
 
@@ -306,49 +306,49 @@
 	<script src="assets/js/main.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
-    //º» ¿¹Á¦¿¡¼­´Â µµ·Î¸í ÁÖ¼Ò Ç¥±â ¹æ½Ä¿¡ ´ëÇÑ ¹ı·É¿¡ µû¶ó, ³»·Á¿À´Â µ¥ÀÌÅÍ¸¦ Á¶ÇÕÇÏ¿© ¿Ã¹Ù¸¥ ÁÖ¼Ò¸¦ ±¸¼ºÇÏ´Â ¹æ¹ıÀ» ¼³¸íÇÕ´Ï´Ù.
+    //ë³¸ ì˜ˆì œì—ì„œëŠ” ë„ë¡œëª… ì£¼ì†Œ í‘œê¸° ë°©ì‹ì— ëŒ€í•œ ë²•ë ¹ì— ë”°ë¼, ë‚´ë ¤ì˜¤ëŠ” ë°ì´í„°ë¥¼ ì¡°í•©í•˜ì—¬ ì˜¬ë°”ë¥¸ ì£¼ì†Œë¥¼ êµ¬ì„±í•˜ëŠ” ë°©ë²•ì„ ì„¤ëª…í•©ë‹ˆë‹¤.
     function DaumPostcode() {
         new daum.Postcode({
             oncomplete: function(data) {
-                // ÆË¾÷¿¡¼­ °Ë»ö°á°ú Ç×¸ñÀ» Å¬¸¯ÇßÀ»¶§ ½ÇÇàÇÒ ÄÚµå¸¦ ÀÛ¼ºÇÏ´Â ºÎºĞ.
+                // íŒì—…ì—ì„œ ê²€ìƒ‰ê²°ê³¼ í•­ëª©ì„ í´ë¦­í–ˆì„ë•Œ ì‹¤í–‰í•  ì½”ë“œë¥¼ ì‘ì„±í•˜ëŠ” ë¶€ë¶„.
 
-                // µµ·Î¸í ÁÖ¼ÒÀÇ ³ëÃâ ±ÔÄ¢¿¡ µû¶ó ÁÖ¼Ò¸¦ Á¶ÇÕÇÑ´Ù.
-                // ³»·Á¿À´Â º¯¼ö°¡ °ªÀÌ ¾ø´Â °æ¿ì¿£ °ø¹é('')°ªÀ» °¡Áö¹Ç·Î, ÀÌ¸¦ Âü°íÇÏ¿© ºĞ±â ÇÑ´Ù.
-                var fullRoadAddr = data.roadAddress; // µµ·Î¸í ÁÖ¼Ò º¯¼ö
-                var extraRoadAddr = ''; // µµ·Î¸í Á¶ÇÕÇü ÁÖ¼Ò º¯¼ö
+                // ë„ë¡œëª… ì£¼ì†Œì˜ ë…¸ì¶œ ê·œì¹™ì— ë”°ë¼ ì£¼ì†Œë¥¼ ì¡°í•©í•œë‹¤.
+                // ë‚´ë ¤ì˜¤ëŠ” ë³€ìˆ˜ê°€ ê°’ì´ ì—†ëŠ” ê²½ìš°ì—” ê³µë°±('')ê°’ì„ ê°€ì§€ë¯€ë¡œ, ì´ë¥¼ ì°¸ê³ í•˜ì—¬ ë¶„ê¸° í•œë‹¤.
+                var fullRoadAddr = data.roadAddress; // ë„ë¡œëª… ì£¼ì†Œ ë³€ìˆ˜
+                var extraRoadAddr = ''; // ë„ë¡œëª… ì¡°í•©í˜• ì£¼ì†Œ ë³€ìˆ˜
 
-                // ¹ıÁ¤µ¿¸íÀÌ ÀÖÀ» °æ¿ì Ãß°¡ÇÑ´Ù. (¹ıÁ¤¸®´Â Á¦¿Ü)
-                // ¹ıÁ¤µ¿ÀÇ °æ¿ì ¸¶Áö¸· ¹®ÀÚ°¡ "µ¿/·Î/°¡"·Î ³¡³­´Ù.
-                if(data.bname !== '' && /[µ¿|·Î|°¡]$/g.test(data.bname)){
+                // ë²•ì •ë™ëª…ì´ ìˆì„ ê²½ìš° ì¶”ê°€í•œë‹¤. (ë²•ì •ë¦¬ëŠ” ì œì™¸)
+                // ë²•ì •ë™ì˜ ê²½ìš° ë§ˆì§€ë§‰ ë¬¸ìê°€ "ë™/ë¡œ/ê°€"ë¡œ ëë‚œë‹¤.
+                if(data.bname !== '' && /[ë™|ë¡œ|ê°€]$/g.test(data.bname)){
                     extraRoadAddr += data.bname;
                 }
-                // °Ç¹°¸íÀÌ ÀÖ°í, °øµ¿ÁÖÅÃÀÏ °æ¿ì Ãß°¡ÇÑ´Ù.
+                // ê±´ë¬¼ëª…ì´ ìˆê³ , ê³µë™ì£¼íƒì¼ ê²½ìš° ì¶”ê°€í•œë‹¤.
                 if(data.buildingName !== '' && data.apartment === 'Y'){
                    extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
                 }
-                // µµ·Î¸í, Áö¹ø Á¶ÇÕÇü ÁÖ¼Ò°¡ ÀÖÀ» °æ¿ì, °ıÈ£±îÁö Ãß°¡ÇÑ ÃÖÁ¾ ¹®ÀÚ¿­À» ¸¸µç´Ù.
+                // ë„ë¡œëª…, ì§€ë²ˆ ì¡°í•©í˜• ì£¼ì†Œê°€ ìˆì„ ê²½ìš°, ê´„í˜¸ê¹Œì§€ ì¶”ê°€í•œ ìµœì¢… ë¬¸ìì—´ì„ ë§Œë“ ë‹¤.
                 if(extraRoadAddr !== ''){
                     extraRoadAddr = ' (' + extraRoadAddr + ')';
                 }
-                // µµ·Î¸í, Áö¹ø ÁÖ¼ÒÀÇ À¯¹«¿¡ µû¶ó ÇØ´ç Á¶ÇÕÇü ÁÖ¼Ò¸¦ Ãß°¡ÇÑ´Ù.
+                // ë„ë¡œëª…, ì§€ë²ˆ ì£¼ì†Œì˜ ìœ ë¬´ì— ë”°ë¼ í•´ë‹¹ ì¡°í•©í˜• ì£¼ì†Œë¥¼ ì¶”ê°€í•œë‹¤.
                 if(fullRoadAddr !== ''){
                     fullRoadAddr += extraRoadAddr;
                 }
 
-                // ¿ìÆí¹øÈ£¿Í ÁÖ¼Ò Á¤º¸¸¦ ÇØ´ç ÇÊµå¿¡ ³Ö´Â´Ù.
-                //document.getElementById('sample4_postcode').value = data.zonecode; //5ÀÚ¸® »õ¿ìÆí¹øÈ£ »ç¿ë
+                // ìš°í¸ë²ˆí˜¸ì™€ ì£¼ì†Œ ì •ë³´ë¥¼ í•´ë‹¹ í•„ë“œì— ë„£ëŠ”ë‹¤.
+                //document.getElementById('sample4_postcode').value = data.zonecode; //5ìë¦¬ ìƒˆìš°í¸ë²ˆí˜¸ ì‚¬ìš©
                 document.getElementById('sample4_roadAddress').value = data.sido + data.sigungu + data.bname;
                 document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
 
-                // »ç¿ëÀÚ°¡ '¼±ÅÃ ¾ÈÇÔ'À» Å¬¸¯ÇÑ °æ¿ì, ¿¹»ó ÁÖ¼Ò¶ó´Â Ç¥½Ã¸¦ ÇØÁØ´Ù.
+                // ì‚¬ìš©ìê°€ 'ì„ íƒ ì•ˆí•¨'ì„ í´ë¦­í•œ ê²½ìš°, ì˜ˆìƒ ì£¼ì†Œë¼ëŠ” í‘œì‹œë¥¼ í•´ì¤€ë‹¤.
                 if(data.autoRoadAddress) {
-                    //¿¹»óµÇ´Â µµ·Î¸í ÁÖ¼Ò¿¡ Á¶ÇÕÇü ÁÖ¼Ò¸¦ Ãß°¡ÇÑ´Ù.
+                    //ì˜ˆìƒë˜ëŠ” ë„ë¡œëª… ì£¼ì†Œì— ì¡°í•©í˜• ì£¼ì†Œë¥¼ ì¶”ê°€í•œë‹¤.
                     var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-                    document.getElementById('guide').innerHTML = '(¿¹»ó µµ·Î¸í ÁÖ¼Ò : ' + expRoadAddr + ')';
+                    document.getElementById('guide').innerHTML = '(ì˜ˆìƒ ë„ë¡œëª… ì£¼ì†Œ : ' + expRoadAddr + ')';
 
                 } else if(data.autoJibunAddress) {
                     var expJibunAddr = data.autoJibunAddress;
-                    document.getElementById('guide').innerHTML = '(¿¹»ó Áö¹ø ÁÖ¼Ò : ' + expJibunAddr + ')';
+                    document.getElementById('guide').innerHTML = '(ì˜ˆìƒ ì§€ë²ˆ ì£¼ì†Œ : ' + expJibunAddr + ')';
 
                 } else {
                     document.getElementById('guide').innerHTML = '';

@@ -24,9 +24,10 @@ public class PropertyController {
 		System.out.println("매물목록 출력");
 		ModelAndView mav = new ModelAndView();
 		if (session.getAttribute("userEmail") == null) {
+			System.out.println("미로그인 로그인요망");
 			mav.setViewName("redirect:/index.sp");
 		} else {
-			System.out.println(request.getAttribute("search"));
+			System.out.println("findaddress.jsp에서 넘어온 주소:"+request.getParameter("searchaddr"));
 			mav.setViewName("redirect:/list2.sp");
 		}
 		return mav;
@@ -39,7 +40,7 @@ public class PropertyController {
 		if (session.getAttribute("userEmail") == null) {
 			mav.setViewName("redirect:/index.sp");
 		} else {
-			System.out.println("주소:"+request.getAttribute("search"));
+			
 			mav.setViewName("redirect:/detail.sp");
 		}
 		return mav;
