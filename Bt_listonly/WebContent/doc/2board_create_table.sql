@@ -1,3 +1,5 @@
+select * from BOARD; 
+
 /* 게시판 */
 CREATE TABLE BOARD (
 	SEQ NUMBER NOT NULL, /* 글번호 */
