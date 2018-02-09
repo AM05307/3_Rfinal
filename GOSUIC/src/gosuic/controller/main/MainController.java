@@ -1,5 +1,6 @@
 package gosuic.controller.main;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,8 @@ public class MainController {
 
 	// 매물 리스트 페이지로
 	@RequestMapping("/list2.sp")
-	public String listPage(Model model) {
+	public String listPage(HttpServletRequest request) {
+		
 		System.out.println("매물 리스트 화면으로");
 		return "/WEB-INF/view/list.jsp";
 	}

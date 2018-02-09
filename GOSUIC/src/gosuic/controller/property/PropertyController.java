@@ -20,8 +20,6 @@ public class PropertyController {
 	// 전체 출력하기
 	@RequestMapping("/list.sp")
 	public ModelAndView all_list(Model model, HttpSession session,HttpServletRequest request) {
-		System.out.println("findaddress.jsp에서 넘어온 주소:"+request.getParameter("searchaddr"));
-		System.out.println("서비스객체 접근 이전");
 		model.addAttribute("all_list", propertyservice.listApt());
 		System.out.println(model.toString());
 		System.out.println("매물목록 출력");
@@ -30,7 +28,8 @@ public class PropertyController {
 			System.out.println("미로그인 로그인요망");
 			mav.setViewName("redirect:/index.sp");
 		} else {
-			mav.setViewName("redirect:/list2.sp");
+			mav.setViewName("forward:/list2.sp");
+			//mav.setViewName("forward:/list2.sp?dong=" + vo.getDong());
 		}
 		return mav;
 	}
