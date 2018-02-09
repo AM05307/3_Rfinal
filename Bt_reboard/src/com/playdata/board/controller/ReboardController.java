@@ -61,6 +61,7 @@ public class ReboardController {
 		return mav;
 	}
 	//** 어떤경우에 이 메소드를 실행하는지 알아오기  
+	//글쓰기 
 	@RequestMapping(value = "/write.playdata", method = RequestMethod.POST)
 	public ModelAndView write(ReboardDto reboardDto, @RequestParam Map<String, String> map, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
