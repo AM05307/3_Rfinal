@@ -26,7 +26,7 @@ public class BoardAdminController {
 		System.out.println("리스트개수 : " + list.size());
 		ServletContext context = request.getServletContext();
 		context.setAttribute("boardmenu", list); //db에서 가지고 온걸 boardmenu로줌 
-		return "redirect:/index.jsp";
+		return "redirect:/Index-B.jsp";
 	}
 
 }

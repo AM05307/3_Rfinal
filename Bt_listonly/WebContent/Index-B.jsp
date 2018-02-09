@@ -131,6 +131,7 @@
 	</nav>
 	<!--class="navbar navbar-default " end  -->
 
+<!-- 페이지 제목 표시되는 부분   -->
 <div class="page-head">
 		<div class="container">
 			<div class="row">
