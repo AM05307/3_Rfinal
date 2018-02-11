@@ -20,9 +20,12 @@ public class PropertyController {
 	// 전체 출력하기
 	@RequestMapping("/list.sp")
 	public ModelAndView all_list(Model model, HttpSession session,HttpServletRequest request) {
-		model.addAttribute("all_list", propertyservice.listApt());
+		System.out.println("넘어온 주소:"+request.getParameter("searchaddr"));
+		String addr = request.getParameter("searchaddr");
+		model.addAttribute("all_list", propertyservice.listApt(addr));
 		System.out.println(model.toString());
 		System.out.println("매물목록 출력");
+		
 		ModelAndView mav = new ModelAndView();
 		if (session.getAttribute("userEmail") == null) {
 			System.out.println("미로그인 로그인요망");

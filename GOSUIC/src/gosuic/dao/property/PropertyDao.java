@@ -21,9 +21,9 @@ public class PropertyDao {
 	}
 	
 	//매물목록 출력
-	public List<AptInfo> listApt(){
+	public List<AptInfo> listApt(String addr){
 		System.out.println("propertydao listapt()메소드");
-		List<AptInfo> list = getJdbcTemplate().query("SELECT * FROM apartment where sigungu like '%서초동%'", new RowMapper<AptInfo>() {
+		List<AptInfo> list = getJdbcTemplate().query("SELECT * FROM apartment where sigungu like '%"+addr+"%'", new RowMapper<AptInfo>() {
 			
 			@Override
 			public AptInfo mapRow(ResultSet rs, int num) throws SQLException {;

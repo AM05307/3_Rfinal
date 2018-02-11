@@ -15,10 +15,10 @@ public class PropertyService {
 	private PropertyDao propertyDao;
 
 	// 매물 목록 출력
-	public List<AptInfo> listApt() {
+	public List<AptInfo> listApt(String addr) {
 		System.out.println("서비스객체 listApt() 메소드");
 		List<AptInfo> res = null;
-		res = propertyDao.listApt();
+		res = propertyDao.listApt(addr);
 		return res;
 	}
 
