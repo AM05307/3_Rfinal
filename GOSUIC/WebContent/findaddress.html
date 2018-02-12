@@ -6,8 +6,9 @@
 </head>
 <body>
 <input type="text" id="sample4_postcode" placeholder="우편번호">
+<!--  <input type="text" id="sample4_roadAddress2" placeholder="시/군/구">-->
 <input type="button" onclick="DaumPostcode()" value="우편번호 찾기"><br>
-<input type="text" name="address" id="sample4_roadAddress" placeholder="시/군/구/동 주소">
+<input type="text" name="address" id="sample4_jibunAddress" placeholder="시/군/구/동 주소">
 	<button class="btn search-btn" type="submit"
 		onclick=" window.open('properties.html')">
 		매물검색하기<i class="fa fa-search"></i>
@@ -47,8 +48,9 @@
                 }
 
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
-                document.getElementById('sample4_roadAddress').value = data.sido + data.sigungu + data.bname;
+                //document.getElementById('sample4_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                //document.getElementById('sample4_roadAddress').value = data.sido+' '+data.sigungu+' '+data.bname;
+               // document.getElementById('sample4_roadAddress2').value = data.sigungu;
                 document.getElementById('sample4_jibunAddress').value = data.jibunAddress;
 
                 // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.

@@ -330,7 +330,7 @@
 
 			<c:forEach items="${all_list}" var="ob">
 				<tr>
-					<td>${ob.sigungu}</td><td>${ob.bunji}  ${ob.bonbeon}  ${ob.bubeon}</td><td>${ob.danji}</td>
+					<td>${ob.sigungu}</td><td>${ob.bunji}</td><td>${ob.danji}</td>
 					<td>${ob.myunjuk}</td><td>${ob.contract_year_month}</td><td>${ob.price}</td>
 					<td>${ob.deposit}</td><td>${ob.rent}</td><td>${ob.gunchook_year}</td><td>${ob.doromyung}</td>
 					<td><a href="/property.sp">상세보기</a></td>
