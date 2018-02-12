@@ -2,16 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%
-	if (session.getAttribute("userEmail") == null) {
-%>
-<script type="text/javascript">
-	alert("로그인을 해주세요!");
-</script>
-<jsp:forward page="index.html"></jsp:forward>
-<%
-	}
-%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -176,7 +167,7 @@
 						<div class="section">
 							<h4 class="s-property-title">매물 정보</h4>
 							<div class="s-property-content">
-								<p>
+								<!--  <p>
 									<b> 위치 </b>서울시 서초구 서초동 1번지 (단지명) (도로명)
 								</p>
 								<p>
@@ -187,7 +178,45 @@
 								</p>
 								<p>
 									<b> 건축년도 </b>2017
-								</p>
+								</p>-->
+								  <table border="1">
+  <tr>
+    <th>&nbsp;주소&nbsp;</th>
+    <th>&nbsp;번지&nbsp;</th>
+    <th>&nbsp;단지명&nbsp;</th>
+    <th>&nbsp;전용면적(㎡)&nbsp;</th>
+    <th>&nbsp;계약년월&nbsp;</th>
+    <th>&nbsp;평균매매가(만원)&nbsp;</th>
+    <!--  <th>&nbsp;보증금&nbsp;</th>-->
+   	<th>&nbsp;평균월세&nbsp;</th>
+    <!-- <th>&nbsp;건축년도&nbsp;</th>-->
+    <!-- <th>&nbsp;도로명&nbsp;</th>>-->
+    <th>&nbsp;평균수익률&nbsp;</th>
+    <th>&nbsp;관심매물&nbsp;</th>
+</tr>
+
+<c:if test="${!empty detail_one}">
+
+			<c:forEach items="${detail_one}" var="ob">
+				<tr>
+				<form action="/GOSUIC/savepropert.sp" method="post">
+					<td><input type="text"  name="sigungu" font-size="0.5em;" readonly value="${ob.sigungu}"></td>
+					<td><input type="text"  name="bunji" font-size="1em;" readonly value="${ob.bunji}"></td>
+					<td><input type="text"  name="danji" font-size="1em;" readonly value="${ob.danji}"></td>
+					<td><input type="text"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}"></td>
+					<td><input type="text"  name="contract_year_month" font-size="1em;" readonly value="${ob.contract_year_month}"></td>
+					<td><input type="text"  name="price" font-size="1em;" readonly value="${ob.price}"></td>
+					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td>-->
+					<td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td>
+					<td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.price}/${ob.rent}"></td>
+					<td><input type="submit" value="등록하기"></td>
+				</form>
+				</tr>
+			</c:forEach>
+		</c:if>
+
+    </table>
+								
 							</div>
 						</div>
 						<!-- End description area  -->

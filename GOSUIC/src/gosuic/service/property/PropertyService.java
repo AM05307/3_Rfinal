@@ -22,4 +22,11 @@ public class PropertyService {
 		return res;
 	}
 
+	public List<AptInfo> detailproperty(String sigungu,String bunji,String danji, String myunjuk) {
+		
+		List<AptInfo> res = null;
+		res = propertyDao.detailproperty(sigungu,bunji,danji,myunjuk);
+		return res;
+	}
+
 }

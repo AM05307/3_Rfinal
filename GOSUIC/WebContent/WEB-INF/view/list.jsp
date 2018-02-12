@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>∞Ìºˆ¿Õ | ∏≈π∞∏Ò∑œ</title>
+        <title>Í≥†ÏàòÏùµ | Îß§Î¨ºÎ™©Î°ù</title>
         <meta name="description" content="GARO is a real-estate template">
         <meta name="author" content="Kimarotec">
         <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
@@ -52,16 +52,16 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-8  col-xs-12">
                         <div class="header-half header-call">
-                          <!--  øﬁ¬  ªÛ¥‹ «Ï¥ı -->
+                          <!--  ÏôºÏ™Ω ÏÉÅÎã® Ìó§Îçî -->
           <p>
-            <span>∞Ìºˆ¿Õ</span>
-            <span>∫ŒµøªÍ ∏≈π∞ ∞Àªˆ ªÁ¿Ã∆Æ</span>
+            <span>Í≥†ÏàòÏùµ</span>
+            <span>Î∂ÄÎèôÏÇ∞ Îß§Î¨º Í≤ÄÏÉâ ÏÇ¨Ïù¥Ìä∏</span>
           </p>
                         </div>
                     </div>
                     <div class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-12">
                         <div class="header-half header-social">
-                          <!--  ø¿∏•¬  ªÛ¥‹ «Ï¥ı-->
+                          <!--  Ïò§Î•∏Ï™Ω ÏÉÅÎã® Ìó§Îçî-->
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                     <!--øﬁ¬  ªÛ¥‹ ∑Œ∞Ì  -->
+                     <!--ÏôºÏ™Ω ÏÉÅÎã® Î°úÍ≥†  -->
         <a class="navbar-brand" href="/GOSUIC/mainform.sp"><img src="assets/img/mainpage/gosuic_logo3_small.png" alt=""></a>
       </div>
 
@@ -87,19 +87,19 @@
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     <div class="button navbar-right">
                     
-                                <!-- ∑Œ±◊¿Œ, »∏ø¯∞°¿‘ πˆ∆∞  -->
+                                <!-- Î°úÍ∑∏Ïù∏, ÌöåÏõêÍ∞ÄÏûÖ Î≤ÑÌäº  -->
                       
           <c:if test="${userEmail eq null}">
-          <button class="navbar-btn nav-button wow bounceInRight login" onclick=" location.href='/GOSUIC/loginform.sp' " data-wow-delay="0.45s">∑Œ±◊¿Œ</button>
-          <button class="navbar-btn nav-button wow fadeInRight" onclick=" location.href='/GOSUIC/joinform.sp' " data-wow-delay="0.48s">»∏ø¯∞°¿‘</button>
+          <button class="navbar-btn nav-button wow bounceInRight login" onclick=" location.href='/GOSUIC/loginform.sp' " data-wow-delay="0.45s">Î°úÍ∑∏Ïù∏</button>
+          <button class="navbar-btn nav-button wow fadeInRight" onclick=" location.href='/GOSUIC/joinform.sp' " data-wow-delay="0.48s">ÌöåÏõêÍ∞ÄÏûÖ</button>
           </c:if>
                       
            <c:if test="${userEmail  ne null}">
-           						<!-- ∑Œ±◊¿Œ«— æ∆¿Ãµ «•Ω√  -->
+           						<!-- Î°úÍ∑∏Ïù∏Ìïú ÏïÑÏù¥Îîî ÌëúÏãú  -->
 						<label for="email"><%=session.getAttribute("userEmail")%>&nbsp;&nbsp;&nbsp;&nbsp;</label>
-         <!--∑Œ±◊æ∆øÙ πˆ∆∞ -->
+         <!--Î°úÍ∑∏ÏïÑÏõÉ Î≤ÑÌäº -->
 						<button class="navbar-btn nav-button"
-							onclick=" location.href='/GOSUIC/UserLogout.sp'">∑Œ±◊æ∆øÙ</button>
+							onclick=" location.href='/GOSUIC/UserLogout.sp'">Î°úÍ∑∏ÏïÑÏõÉ</button>
            </c:if>
            </div>
            
@@ -108,10 +108,10 @@
             <a href="/GOSUIC/mainform.sp">Home <b class="caret"></b></a>
 
           </li>
-           <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">∏≈π∞</a></li>
-          <li class="wow fadeInDown" data-wow-delay="0.3s"><a class="" href="/GOSUIC/property.sp">∏≈π∞ªÛºº</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.4s"><a class="" href="">∫ŒµøªÍ ¡§∫∏</a></li>
-                    <li class="wow fadeInDown" data-wow-delay="0.5s"><a class="" href="">∞‘Ω√∆«</a></li>
+           <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">Îß§Î¨º</a></li>
+          <li class="wow fadeInDown" data-wow-delay="0.3s"><a class="" href="/GOSUIC/property.sp">Îß§Î¨ºÏÉÅÏÑ∏</a></li>
+                    <li class="wow fadeInDown" data-wow-delay="0.4s"><a class="" href="">Î∂ÄÎèôÏÇ∞ Ï†ïÎ≥¥</a></li>
+                    <li class="wow fadeInDown" data-wow-delay="0.5s"><a class="" href="">Í≤åÏãúÌåê</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -122,7 +122,7 @@
             <div class="container">
                 <div class="row">
                     <div class="page-head-content">
-                        <h1 class="page-title">∏≈π∞</h1>
+                        <h1 class="page-title">Îß§Î¨º</h1>
                     </div>
                 </div>
             </div>
@@ -135,53 +135,53 @@
                 <div class="row">
 
                 <div class="col-md-2 p0 padding-top-40">
-                  <!--øﬁ¬  ∞ÀªˆπŸ  -->
+                  <!--ÏôºÏ™Ω Í≤ÄÏÉâÎ∞î  -->
                     <div class="blog-asside-right pr0">
                         <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
                             <div class="panel-heading">
-                                <h3 class="panel-title">∞Àªˆ</h3>
+                                <h3 class="panel-title">Í≤ÄÏÉâ</h3>
                             </div>
                             <div class="panel-body search-widget">
                                 <form action="" class=" form-inline">
                                     <fieldset>
 <div class="row">
-                                          <!-- Ω√/µµ ∞Àªˆ µÂ∑”¥ŸøÓ ∏ﬁ¥∫ -->
+                                          <!-- Ïãú/ÎèÑ Í≤ÄÏÉâ ÎìúÎ°≠Îã§Ïö¥ Î©îÎâ¥ -->
                                           <div class="form-group">
-                                            <select id="ADDR1_SIDO" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Ω√/µµ">
-                            <!-- µÂ∑”¥ŸøÓ ∏ﬁ¥∫¥¬ DBø°º≠ ∫“∑Øø»  -->
-                                                                    <option>Ω√/µµ1</option>
-                                                                    <option>Ω√/µµ2</option>
-                                                                    <option>Ω√/µµ3</option>
-                                                                    <option>Ω√/µµ4</option>
-                                                                    <option>Ω√/µµ5</option>
-                                                                    <option>Ω√/µµ6</option>
+                                            <select id="ADDR1_SIDO" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Ïãú/ÎèÑ">
+                            <!-- ÎìúÎ°≠Îã§Ïö¥ Î©îÎâ¥Îäî DBÏóêÏÑú Î∂àÎü¨Ïò¥  -->
+                                                                    <option>Ïãú/ÎèÑ1</option>
+                                                                    <option>Ïãú/ÎèÑ2</option>
+                                                                    <option>Ïãú/ÎèÑ3</option>
+                                                                    <option>Ïãú/ÎèÑ4</option>
+                                                                    <option>Ïãú/ÎèÑ5</option>
+                                                                    <option>Ïãú/ÎèÑ6</option>
                                                                 </select>
                                           </div>
     </div>
 
   <div class="row">
                                               <div class="form-group">
-                                                <select id="ADDR2_SIGUNGU" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Ω√/±∫/±∏">
+                                                <select id="ADDR2_SIGUNGU" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Ïãú/Íµ∞/Íµ¨">
 
-                                                                        <option>Ω√/±∫/±∏1</option>
-                                                                        <option>Ω√/±∫/±∏2</option>
-                                                                        <option>Ω√/±∫/±∏3</option>
-                                                                        <option>Ω√/±∫/±∏4</option>
-                                                                        <option>Ω√/±∫/±∏5</option>
-                                                                        <option>Ω√/±∫/±∏6</option>
+                                                                        <option>Ïãú/Íµ∞/Íµ¨1</option>
+                                                                        <option>Ïãú/Íµ∞/Íµ¨2</option>
+                                                                        <option>Ïãú/Íµ∞/Íµ¨3</option>
+                                                                        <option>Ïãú/Íµ∞/Íµ¨4</option>
+                                                                        <option>Ïãú/Íµ∞/Íµ¨5</option>
+                                                                        <option>Ïãú/Íµ∞/Íµ¨6</option>
                                                                     </select>
                                               </div>
 </div>
   <div class="row">
                                               <div class="form-group">
-                                                <select id="ADDR3_EUBMYUNDONG" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="¿æ/∏È/µø">
+                                                <select id="ADDR3_EUBMYUNDONG" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Ïùç/Î©¥/Îèô">
 
-                                                                        <option>¿æ/∏È/µø1</option>
-                                                                        <option>¿æ/∏È/µø2</option>
-                                                                        <option>¿æ/∏È/µø3</option>
-                                                                        <option>¿æ/∏È/µø4</option>
-                                                                        <option>¿æ/∏È/µø5</option>
-                                                                        <option>¿æ/∏È/µø6</option>
+                                                                        <option>Ïùç/Î©¥/Îèô1</option>
+                                                                        <option>Ïùç/Î©¥/Îèô2</option>
+                                                                        <option>Ïùç/Î©¥/Îèô3</option>
+                                                                        <option>Ïùç/Î©¥/Îèô4</option>
+                                                                        <option>Ïùç/Î©¥/Îèô5</option>
+                                                                        <option>Ïùç/Î©¥/Îèô6</option>
                                                                     </select>
                                               </div>
 
@@ -190,12 +190,12 @@
 
                                     </fieldset>
 
-                                    <!--¡ˆø™ º≥¡§ µÂ∑”¥ŸøÓ ∏ﬁ¥∫ end  -->
+                                    <!--ÏßÄÏó≠ ÏÑ§Ï†ï ÎìúÎ°≠Îã§Ïö¥ Î©îÎâ¥ end  -->
 
                                     <fieldset class="padding-5">
                                         <div class="row">
                                           <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="√÷º“∞°∞›(¥‹¿ß:∏∏ø¯)">
+                                            <input type="text" class="form-control" placeholder="ÏµúÏÜåÍ∞ÄÍ≤©(Îã®ÏúÑ:ÎßåÏõê)">
                                           </div>
                                         </div>
                                     </fieldset>
@@ -203,7 +203,7 @@
                                     <fieldset class="padding-5">
                                         <div class="row">
                                           <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="√÷¥Î∞°∞›(¥‹¿ß:∏∏ø¯)">
+                                            <input type="text" class="form-control" placeholder="ÏµúÎåÄÍ∞ÄÍ≤©(Îã®ÏúÑ:ÎßåÏõê)">
                                           </div>
                                         </div>
                                     </fieldset>
@@ -212,13 +212,13 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>æ∆∆ƒ∆Æ</label>
+                                                    <label> <input type="checkbox" checked>ÏïÑÌååÌä∏</label>
                                                 </div>
                                             </div>
 
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox">ø¨∏≥</label>
+                                                    <label> <input type="checkbox">Ïó∞Î¶Ω</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -228,12 +228,12 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>¥Ÿºº¥Î</label>
+                                                    <label> <input type="checkbox" checked>Îã§ÏÑ∏ÎåÄ</label>
                                                 </div>
                                             </div>
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label> <input type="checkbox" checked>¥‹µ∂</label>
+                                                    <label> <input type="checkbox" checked>Îã®ÎèÖ</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -243,7 +243,7 @@
                                         <div class="row">
                                             <div class="col-xs-6">
                                                 <div class="checkbox">
-                                                    <label><input type="checkbox">¥Ÿ∞°±∏</label>
+                                                    <label><input type="checkbox">Îã§Í∞ÄÍµ¨</label>
                                                 </div>
                                             </div>
 
@@ -254,7 +254,7 @@
                                     <fieldset >
                                         <div class="row">
                                             <div class="col-xs-12">
-                                                <input class="button btn largesearch-btn" value="∞Àªˆ" type="submit">
+                                                <input class="button btn largesearch-btn" value="Í≤ÄÏÉâ" type="submit">
                                             </div>
                                         </div>
                                     </fieldset>
@@ -265,7 +265,7 @@
 
                     </div>
                 </div>
-                <!-- øﬁ¬  ∞ÀªˆπŸ end  -->
+                <!-- ÏôºÏ™Ω Í≤ÄÏÉâÎ∞î end  -->
 
                 <div class="col-md-10  pr0 padding-top-40 properties-page">
                     <div class="col-md-10 clear">
@@ -273,24 +273,24 @@
                             <ul class="sort-by-list">
                               <li class="active">
                                  <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date" data-order="ASC">
-                                        √÷Ω≈º¯ <i class="fa fa-sort-amount-asc"></i>
+                                        ÏµúÏã†Ïàú <i class="fa fa-sort-amount-asc"></i>
                                     </a>
 
                                 </li>
                                 <li class="">
                                     <a href="javascript:void(0);" class="order_by_price" data-orderby="property_price" data-order="DESC">
-                                        ≥Ù¿∫∞°∞›º¯ <i class="fa fa-sort-numeric-desc"></i>
+                                        ÎÜíÏùÄÍ∞ÄÍ≤©Ïàú <i class="fa fa-sort-numeric-desc"></i>
                                     </a>
                                 </li>
                                 <li class="">
                                     <a href="javascript:void(0);" class="order_by_percent" data-orderby="property_price" data-order="DESC">
-                                        ºˆ¿Õ∑¸ ≥Ù¿∫º¯ <i class="fa fa-sort-numeric-desc"></i>
+                                        ÏàòÏùµÎ•† ÎÜíÏùÄÏàú <i class="fa fa-sort-numeric-desc"></i>
                                     </a>
                                 </li>
                             </ul><!--/ .sort-by-list-->
 
                             <div class="items-per-page">
-                                <label for="items_per_page"><b>∆‰¿Ã¡ˆ¥Á ∏≈π∞ ºˆ :</b></label>
+                                <label for="items_per_page"><b>ÌéòÏù¥ÏßÄÎãπ Îß§Î¨º Ïàò :</b></label>
                                 <div class="sel">
                                     <select id="items_per_page" name="per_page">
                                         <option value="10">10</option>
@@ -309,31 +309,40 @@
                         <!--/ .layout-switcher-->
                     </div>
 
-<!--  ∏≈π∞∏Ò∑œ -->
+<!--  Îß§Î¨ºÎ™©Î°ù -->
                     <div class="col-md-10">
     <table border="1">
   <tr>
-    <th>&nbsp;¡÷º“&nbsp;</th>
-    <th>&nbsp;π¯¡ˆ&nbsp;</th>
-    <th>&nbsp;¥‹¡ˆ∏Ì&nbsp;</th>
-    <th>&nbsp;¿¸øÎ∏È¿˚(ß≥)&nbsp;</th>
-    <th>&nbsp;∞Ëæ‡≥‚ø˘&nbsp;</th>
-    <th>&nbsp;∏≈∏≈∞°∞›(∏∏ø¯)&nbsp;</th>
-    <th>&nbsp;∫∏¡ı±›&nbsp;</th>
-   	<th>&nbsp;ø˘ºº&nbsp;</th>
-    <th>&nbsp;∞«√‡≥‚µµ&nbsp;</th>
-    <th>&nbsp;µµ∑Œ∏Ì&nbsp;</th>
-    <th>&nbsp;ºˆ¿Õ∑¸&nbsp;</th>
+    <th>&nbsp;Ï£ºÏÜå&nbsp;</th>
+    <th>&nbsp;Î≤àÏßÄ&nbsp;</th>
+    <th>&nbsp;Îã®ÏßÄÎ™Ö&nbsp;</th>
+    <th>&nbsp;Ï†ÑÏö©Î©¥Ï†Å(„é°)&nbsp;</th>
+    <th>&nbsp;Í≥ÑÏïΩÎÖÑÏõî&nbsp;</th>
+    <th>&nbsp;ÌèâÍ∑†Îß§Îß§Í∞Ä(ÎßåÏõê)&nbsp;</th>
+    <!--  <th>&nbsp;Î≥¥Ï¶ùÍ∏à&nbsp;</th>-->
+   	<th>&nbsp;ÌèâÍ∑†ÏõîÏÑ∏&nbsp;</th>
+    <!-- <th>&nbsp;Í±¥Ï∂ïÎÖÑÎèÑ&nbsp;</th>-->
+    <!-- <th>&nbsp;ÎèÑÎ°úÎ™Ö&nbsp;</th>>-->
+    <th>&nbsp;ÌèâÍ∑†ÏàòÏùµÎ•†&nbsp;</th>
+    <th>&nbsp;ÏÉÅÏÑ∏Ï†ïÎ≥¥&nbsp;</th>
 </tr>
 
 <c:if test="${!empty all_list}">
 
 			<c:forEach items="${all_list}" var="ob">
 				<tr>
-					<td>${ob.sigungu}</td><td>${ob.bunji}</td><td>${ob.danji}</td>
-					<td>${ob.myunjuk}</td><td>${ob.contract_year_month}</td><td>${ob.price}</td>
-					<td>${ob.deposit}</td><td>${ob.rent}</td><td>${ob.gunchook_year}</td><td>${ob.doromyung}</td>
-					<td><a href="/property.sp">ªÛºº∫∏±‚</a></td>
+				<form action="/GOSUIC/property.sp" method="post">
+					<td><input type="text"  name="sigungu" font-size="0.5em;" readonly value="${ob.sigungu}"></td>
+					<td><input type="text"  name="bunji" font-size="1em;" readonly value="${ob.bunji}"></td>
+					<td><input type="text"  name="danji" font-size="1em;" readonly value="${ob.danji}"></td>
+					<td><input type="text"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}"></td>
+					<td><input type="text"  name="contract_year_month" font-size="1em;" readonly value="${ob.contract_year_month}"></td>
+					<td><input type="text"  name="price" font-size="1em;" readonly value="${ob.price}"></td>
+					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td>-->
+					<td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td>
+					<td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.price}/${ob.rent}"></td>
+					<td><input type="submit" value="Îçî Î≥¥Í∏∞"></td>
+				</form>
 				</tr>
 			</c:forEach>
 		</c:if>
@@ -346,12 +355,12 @@
                         <div class="pull-right">
                             <div class="pagination">
                                 <ul>
-                                    <li><a href="#">¿Ã¿¸</a></li>
+                                    <li><a href="#">Ïù¥Ï†Ñ</a></li>
                                     <li><a href="#">1</a></li>
                                     <li><a href="#">2</a></li>
                                     <li><a href="#">3</a></li>
                                     <li><a href="#">4</a></li>
-                                    <li><a href="#">¥Ÿ¿Ω</a></li>
+                                    <li><a href="#">Îã§Ïùå</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -370,15 +379,15 @@
 
                 <div class="col-md-3 col-sm-6 wow fadeInRight animated">
                   <div class="single-footer">
-                    <h4>»∏ªÁº“∞≥</h4>
+                    <h4>ÌöåÏÇ¨ÏÜåÍ∞ú</h4>
                     <div class="footer-title-line"></div>
 
                     <img src="assets/img/mainpage/gosuic_logo3_small.png" alt="" class="wow pulse" data-wow-delay="1s">
-                    <p>∫ŒµøªÍ ∏≈π∞ ∞Àªˆ ªÁ¿Ã∆Æ<br>
-                    ¿¸±π¿« ∫ŒµøªÍ ∏≈π∞ ¡§∫∏∏¶ ¡¶∞¯«’¥œ¥Ÿ
+                    <p>Î∂ÄÎèôÏÇ∞ Îß§Î¨º Í≤ÄÏÉâ ÏÇ¨Ïù¥Ìä∏<br>
+                    Ï†ÑÍµ≠Ïùò Î∂ÄÎèôÏÇ∞ Îß§Î¨º Ï†ïÎ≥¥Î•º Ï†úÍ≥µÌï©ÎãàÎã§
                     </p>
                     <ul class="footer-adress">
-                      <li><i class="pe-7s-map-marker strong"> </i>º≠øÔΩ√ º≠√ ±∏</li>
+                      <li><i class="pe-7s-map-marker strong"> </i>ÏÑúÏö∏Ïãú ÏÑúÏ¥àÍµ¨</li>
                       <li><i class="pe-7s-mail strong"> </i> email@highprofit.com</li>
                       <li><i class="pe-7s-call strong"> </i> 02-3333-3333</li>
                     </ul>
@@ -386,20 +395,20 @@
                 </div>
                 <div class="col-md-3 col-sm-6 wow fadeInRight animated">
                   <div class="single-footer">
-                    <h4>∏ﬁ¥∫</h4>
+                    <h4>Î©îÎâ¥</h4>
                     <div class="footer-title-line"></div>
                     <ul class="footer-menu">
-                      <li><a href="properties.html">∏≈π∞</a> </li>
-                      <li><a href="#">MY∫ŒµøªÍ</a> </li>
-                      <li><a href="submit-property.html">∫ŒµøªÍ¡§∫∏</a></li>
-                      <li><a href="contact.html">∞‘Ω√∆«</a></li>
+                      <li><a href="properties.html">Îß§Î¨º</a> </li>
+                      <li><a href="#">MYÎ∂ÄÎèôÏÇ∞</a> </li>
+                      <li><a href="submit-property.html">Î∂ÄÎèôÏÇ∞Ï†ïÎ≥¥</a></li>
+                      <li><a href="contact.html">Í≤åÏãúÌåê</a></li>
                     </ul>
                   </div>
                 </div>
                 <!-- class="col-md-3 col-sm-6 wow fadeInRight animated" end -->
                 <div class="col-md-3 col-sm-6 wow fadeInRight animated">
                   <div class="single-footer">
-                    <h4>∞¯¡ˆªÁ«◊</h4>
+                    <h4>Í≥µÏßÄÏÇ¨Ìï≠</h4>
                     <div class="footer-title-line"></div>
                     <ul class="footer-blog">
                       <li>
@@ -411,8 +420,8 @@
 
                         </div>
                         <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
-                          <h6> <a href="single.html">∞¯¡ˆªÁ«◊ ¡¶∏Ò1</a></h6>
-                          <p style="line-height: 17px; padding: 8px 2px;">∞¯¡ˆ ≥ªøÎ1 ...</p>
+                          <h6> <a href="single.html">Í≥µÏßÄÏÇ¨Ìï≠ Ï†úÎ™©1</a></h6>
+                          <p style="line-height: 17px; padding: 8px 2px;">Í≥µÏßÄ ÎÇ¥Ïö©1 ...</p>
                         </div>
                       </li>
 
@@ -425,8 +434,8 @@
 
                         </div>
                         <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
-                          <h6> <a href="single.html">∞¯¡ˆªÁ«◊ º“¡¶∏Ò2</a></h6>
-                          <p style="line-height: 17px; padding: 8px 2px;">∞¯¡ˆ ≥ªøÎ2...</p>
+                          <h6> <a href="single.html">Í≥µÏßÄÏÇ¨Ìï≠ ÏÜåÏ†úÎ™©2</a></h6>
+                          <p style="line-height: 17px; padding: 8px 2px;">Í≥µÏßÄ ÎÇ¥Ïö©2...</p>
                         </div>
                       </li>
 
@@ -439,8 +448,8 @@
 
                         </div>
                         <div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
-                          <h6> <a href="single.html">∞¯¡ˆªÁ«◊ º“¡¶∏Ò 3</a></h6>
-                          <p style="line-height: 17px; padding: 8px 2px;">∞¯¡ˆ ≥ªøÎ3...</p>
+                          <h6> <a href="single.html">Í≥µÏßÄÏÇ¨Ìï≠ ÏÜåÏ†úÎ™© 3</a></h6>
+                          <p style="line-height: 17px; padding: 8px 2px;">Í≥µÏßÄ ÎÇ¥Ïö©3...</p>
                         </div>
                       </li>
 
@@ -450,13 +459,13 @@
                 </div>
                 <div class="col-md-3 col-sm-6 wow fadeInRight animated">
                   <div class="single-footer news-letter">
-                    <h4>æ»≥ª</h4>
+                    <h4>ÏïàÎÇ¥</h4>
                     <div class="footer-title-line"></div>
                     <ul class="footer-menu">
-                                    <li><a href="single.html">¿ÃøÎæ‡∞¸</a></li>
-                                    <li><a href="#">∞≥¿Œ¡§∫∏√≥∏ÆπÊƒß</a> </li>
-                                    <li><a href="#">¿Ã∏ﬁ¿œπ´¥‹ºˆ¡˝∞≈∫Œ</a></li>
-                                    <li><a href="#">√•¿”«—∞ËøÕ π˝¿˚∞Ì¡ˆ</a></li>
+                                    <li><a href="single.html">Ïù¥Ïö©ÏïΩÍ¥Ä</a></li>
+                                    <li><a href="#">Í∞úÏù∏Ï†ïÎ≥¥Ï≤òÎ¶¨Î∞©Ïπ®</a> </li>
+                                    <li><a href="#">Ïù¥Î©îÏùºÎ¨¥Îã®ÏàòÏßëÍ±∞Î∂Ä</a></li>
+                                    <li><a href="#">Ï±ÖÏûÑÌïúÍ≥ÑÏôÄ Î≤ïÏ†ÅÍ≥†ÏßÄ</a></li>
                                   </ul>
                   </div>
                 </div>

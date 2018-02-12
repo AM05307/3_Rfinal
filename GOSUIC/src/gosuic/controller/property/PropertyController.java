@@ -40,12 +40,18 @@ public class PropertyController {
 	@RequestMapping("/property.sp")
 	public ModelAndView Property(HttpSession session, Model model,HttpServletRequest request) {
 		System.out.println("매물상세 출력");
+		System.out.println("넘어온값"+request.getParameter("sigungu")+request.getParameter("bunji")+request.getParameter("danji")+request.getParameter("myunjuk"));
+		String sigungu = request.getParameter("sigungu");
+		String bunji = request.getParameter("bunji");
+		String danji = request.getParameter("danji");
+		String myunjuk =request.getParameter("myunjuk");
+		model.addAttribute("detail_one", propertyservice.detailproperty(sigungu,bunji,danji,myunjuk));
 		ModelAndView mav = new ModelAndView();
 		if (session.getAttribute("userEmail") == null) {
 			mav.setViewName("redirect:/index.sp");
 		} else {
 			
-			mav.setViewName("redirect:/detail.sp");
+			mav.setViewName("forward:/detail.sp");
 		}
 		return mav;
 	}
