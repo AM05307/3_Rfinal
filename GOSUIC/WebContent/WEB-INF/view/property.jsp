@@ -309,6 +309,12 @@
 									}
 									map = new google.maps.Map(document
 											.getElementById('map'), mapOptions);
+									 
+									var marker = new google.maps.Marker({
+								          position: latlng,
+								          map: map,
+								          title: 'Hello!'
+								        });
 								}
 
 								function codeAddress() {
