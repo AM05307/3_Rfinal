@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.playdata.board.dao.AlbumDao">
+    
+    <select id="listArticle" parameterType="java.util.Map" resultType="com.playdata.board.model.AlbumDto">
+        select b.*
+        from (
+            select rownum rn, a.*
+            from (
+                select  b.seq, b.name, b.id, b.subject, 
+                        b.content, b.hit, b.bcode,
+                        case 
+                            when to_char(b.logtime, 'yymmdd') = to_char(sysdate, 'yymmdd')
+                            then to_char(b.logtime, 'hh24:mi:ss')
+                            else to_char(b.logtime, 'yy.mm.dd')
+                        end logtime, 
+                        al.aseq, al.orign_picture originpicture, al.save_picture savepicture,
+                        al.savefolder, al.type
+                from board b, album al
+                where b.seq = al.seq
+                and bcode = #{bcode}
+            <if test="word != null and word != ''">
+                <if test="key == 'subject'">
+                    and b.subject like '%'||#{word}||'%'
+                </if>
+                <if test="key != 'subject'">
+                    and b.${key} = #{word}
+                </if>
+            </if>
+                order by b.seq desc
+                ) a
+            where rownum &lt;= #{end}
+            ) b
+        where b.rn &gt; #{start}
+    </select>
+    
+    <insert id="writeArticle" parameterType="com.playdata.board.model.AlbumDto">
+        insert all
+            into board (seq, name, id, email, subject, content, hit, logtime, bcode)
+            values (#{seq}, #{name}, #{id}, '1111', #{subject}, #{content}, 0, sysdate, #{bcode})
+            into album (aseq, seq, savefolder, orign_picture, save_picture, type)
+            values (album_aseq.nextval, #{seq}, #{saveFolder}, #{originPicture}, #{savePicture}, 0)
+        select * from dual
+    </insert>
+    
+</mapper>
+
+
+
+
+
+
+
+

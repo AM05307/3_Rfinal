@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.playdata.board.dao.ReboardDao">
+    
+    <select id="listArticle" parameterType="java.util.Map" resultType="com.playdata.board.model.ReboardDto">
+        select b.*
+        from (
+                select rownum rn, a.*
+                from (
+                        select  b.seq, b.name,b.email, b.id, b.subject, 
+                                b.content, b.hit, b.bcode,
+                                case 
+                                    when to_char(b.logtime, 'yymmdd') = to_char(sysdate, 'yymmdd')
+                                    then to_char(b.logtime, 'hh24:mi:ss')
+                                    else to_char(b.logtime, 'yy.mm.dd')
+                                end logtime, 
+                                r.rseq, r.ref, r.lev, r.step, r.pseq, r.reply
+                        from board b, reboard r
+                        where b.seq = r.seq
+                        and bcode = #{bcode}
+        <if test="word != null and word != ''">
+            <if test="key == 'subject'">
+                and b.subject like '%'||#{word}||'%'
+            </if>
+            <if test="key != 'subject'">
+                and b.${key} = #{word}
+            </if>
+        </if>
+                        order by ref desc, step
+                        ) a
+                where rownum &lt;= #{end}  <!-- 크다 작다 -->
+                ) b
+        where b.rn &gt; #{start}
+    </select>
+    
+    <insert id="writeArticle" parameterType="com.playdata.board.model.ReboardDto">
+        insert all
+            into board (seq, name, id, email, subject, content, hit, logtime, bcode)
+            values (#{seq}, #{name}, #{id},#{email}, #{subject}, #{content}, 0, sysdate, #{bcode})
+            into reboard (rseq, seq, ref, lev, step, pseq, reply)
+            values (reboard_rseq.nextval, #{seq}, #{ref}, 0, 0, 0, 0)
+        select * from dual
+    </insert>
+    
+    <select id="viewArticle" parameterType="int" resultType="com.playdata.board.model.ReboardDto">
+        select b.seq, b.name, b.id, b.email, b.subject, 
+               b.content, b.hit, b.logtime, b.bcode, 
+               r.rseq, r.ref, r.lev, r.step, r.pseq, r.reply
+        from board b, reboard r
+        where b.seq = r.seq
+        and b.seq = #{seq}
+    </select>
+    
+    <update id="updateStep" parameterType="com.playdata.board.model.ReboardDto">
+        update reboard
+        set step = step + 1
+        where ref = #{ref} 
+        and step > #{step}
+    </update>
+    
+    <insert id="replyArticle" parameterType="com.playdata.board.model.ReboardDto">
+        insert all
+            into board (seq, name, id, email, subject, content, hit, logtime, bcode)
+            values (#{seq}, #{name}, #{id}, #{e-mail}, #{subject}, #{content}, 0, sysdate, #{bcode})
+            into reboard (rseq, seq, ref, lev, step, pseq, reply)
+            values (reboard_rseq.nextval, #{seq}, #{ref}, #{lev} + 1, #{step} + 1, #{pseq}, 0)
+        select * from dual
+    </insert>
+    
+    <update id="updateReply" parameterType="int">  <!--답변하나를 걸면 번호에 +1 됨  -->
+        update reboard
+        set reply = reply + 1
+        where seq = #{pseq}
+    </update>
+    
+</mapper>
+
+
+
+
+
+
+
+
