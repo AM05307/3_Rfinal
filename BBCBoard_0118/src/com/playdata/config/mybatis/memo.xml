@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.playdata.board.dao.MemoDao">
+    
+    <insert id="writeMemo" parameterType="com.playdata.board.model.MemoDto">
+        insert into memo (mseq, seq, id, name, mcontent, mtime)
+        values (memo_mseq.nextval, #{seq}, #{id}, #{name}, #{mcontent}, sysdate)
+    </insert>
+    
+    <select id="listMemo" parameterType="int" resultType="com.playdata.board.model.MemoDto">
+        select mseq, seq, id, name, mcontent, 
+        case when to_char(mtime, 'yymmdd')=to_char(sysdate, 'yymmdd')
+             then to_char(mtime, 'hh24:mi:ss')
+             else to_char(mtime, 'yy.mm.dd')
+        end mtime
+        from memo
+        where seq = #{seq}
+        order by mseq desc
+    </select>
+    
+    <update id="modifyMemo" parameterType="com.playdata.board.model.MemoDto">
+        update memo
+        set mcontent = #{mcontent}
+        where mseq = #{mseq}
+    </update>
+    
+    <delete id="deleteMemo" parameterType="int">
+        delete memo
+        where mseq = #{mseq}
+    </delete>
+    
+</mapper>
+
+
+
+
+
+
+
+

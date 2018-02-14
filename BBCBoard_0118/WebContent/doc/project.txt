@@ -1,0 +1,38 @@
+project name : boardmvc (/boardmvc)
+
+  - src
+    com.playdata.admin.board.controller    
+    com.playdata.admin.board.model    
+    com.playdata.admin.board.service    
+    com.playdata.admin.board.dao
+        
+    com.playdata.board.controller    
+    com.playdata.board.model    
+    com.playdata.board.service    
+    com.playdata.board.dao    
+    
+    com.playdata.common    
+    
+    com.playdata.util    
+    com.playdata.db
+    
+  
+  
+  - webContent
+    - index.jsp
+    - doc
+    - img : image 
+    - css : *.css (stylesheet)
+    - js : *.js (javascript)
+    - board : 공지사항, 방명록, 한줄게시판, 일반게시판
+    - reboard : 답글게시판
+      reply.jsp (답글쓰기)
+    - album : 사진게시판
+    - bbs : 자료실
+      board, reboard, album, bbs 공통
+      list.jsp
+      write.jsp
+      writeok.jsp
+      writefail.jsp
+      view.jsp
+      modify.jsp
