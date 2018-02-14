@@ -179,44 +179,53 @@
 								<p>
 									<b> 건축년도 </b>2017
 								</p>-->
-								  <table border="1">
-  <tr>
-    <th>&nbsp;주소&nbsp;</th>
-    <th>&nbsp;번지&nbsp;</th>
-    <th>&nbsp;단지명&nbsp;</th>
-    <th>&nbsp;전용면적(㎡)&nbsp;</th>
-    <th>&nbsp;계약년월&nbsp;</th>
-    <th>&nbsp;평균매매가(만원)&nbsp;</th>
-    <!--  <th>&nbsp;보증금&nbsp;</th>-->
-   	<th>&nbsp;평균월세&nbsp;</th>
-    <!-- <th>&nbsp;건축년도&nbsp;</th>-->
-    <!-- <th>&nbsp;도로명&nbsp;</th>>-->
-    <th>&nbsp;평균수익률&nbsp;</th>
-    <th>&nbsp;관심매물&nbsp;</th>
-</tr>
+								<table border="1">
+									<tr>
+										<th>&nbsp;주소&nbsp;</th>
+										<th>&nbsp;번지&nbsp;</th>
+										<th>&nbsp;단지명&nbsp;</th>
+										<th>&nbsp;전용면적(㎡)&nbsp;</th>
+										<th>&nbsp;계약년월&nbsp;</th>
+										<th>&nbsp;평균매매가(만원)&nbsp;</th>
+										<!--  <th>&nbsp;보증금&nbsp;</th>-->
+										<th>&nbsp;평균월세&nbsp;</th>
+										<!-- <th>&nbsp;건축년도&nbsp;</th>-->
+										<!-- <th>&nbsp;도로명&nbsp;</th>>-->
+										<th>&nbsp;평균수익률&nbsp;</th>
+										<th>&nbsp;관심매물&nbsp;</th>
+									</tr>
 
-<c:if test="${!empty detail_one}">
+									<c:if test="${!empty detail_one}">
 
-			<c:forEach items="${detail_one}" var="ob">
-				<tr>
-				<form action="/GOSUIC/savepropert.sp" method="post">
-					<td><input type="text"  name="sigungu" font-size="0.5em;" readonly value="${ob.sigungu}"></td>
-					<td><input type="text"  name="bunji" font-size="1em;" readonly value="${ob.bunji}"></td>
-					<td><input type="text"  name="danji" font-size="1em;" readonly value="${ob.danji}"></td>
-					<td><input type="text"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}"></td>
-					<td><input type="text"  name="contract_year_month" font-size="1em;" readonly value="${ob.contract_year_month}"></td>
-					<td><input type="text"  name="price" font-size="1em;" readonly value="${ob.price}"></td>
-					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td>-->
-					<td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td>
-					<td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.price}/${ob.rent}"></td>
-					<td><input type="submit" value="등록하기"></td>
-				</form>
-				</tr>
-			</c:forEach>
-		</c:if>
+										<c:forEach items="${detail_one}" var="ob">
+											<tr>
+												<form action="/GOSUIC/savepropert.sp" method="post">
+													<td><input type="text" name="sigungu"
+														font-size="0.5em;" readonly value="${ob.sigungu}"></td>
+													<td><input type="text" name="bunji" font-size="1em;"
+														readonly value="${ob.bunji}"></td>
+													<td><input type="text" name="danji" font-size="1em;"
+														readonly value="${ob.danji}"></td>
+													<td><input type="text" name="myunjuk" font-size="1em;"
+														readonly value="${ob.myunjuk}"></td>
+													<td><input type="text" name="contract_year_month"
+														font-size="1em;" readonly
+														value="${ob.contract_year_month}"></td>
+													<td><input type="text" name="price" font-size="1em;"
+														readonly value="${ob.price}"></td>
+													<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td>-->
+													<td><input type="text" name="rent" font-size="1em;"
+														readonly value="${ob.rent}"></td>
+													<td><input type="text" name="rent" font-size="1em;"
+														readonly value="${ob.price}/${ob.rent}"></td>
+													<td><input type="submit" value="등록하기"></td>
+												</form>
+											</tr>
+										</c:forEach>
+									</c:if>
 
-    </table>
-								
+								</table>
+
 							</div>
 						</div>
 						<!-- End description area  -->
@@ -251,7 +260,7 @@
 
 						<div class="section property-features">
 
-							<h4 class="s-property-title">기타정보</h4>
+							<h4 class="s-property-title">위치 정보</h4>
 							<!--//////////////////////////////////////////////지도시작///////////////////////////////////////////////////  -->
 
 							<script type="text/javascript">
@@ -271,7 +280,7 @@
   									<a href="template_list.html"
   										class="btn btn-outline-light btn-lg m-2"> 지도 출력하기</a>
   								</div> -->
-								<div id="map" style="width: 650px; height: 500px;"></div>
+								<div class="form-group" id="map" ></div>
 							</div>
 
 							<!-- JavaScript dependencies -->
@@ -294,6 +303,7 @@
 							<!-- Script: Animated entrance -->
 							<script src="js/animate-in.js"></script>
 							<script src="js/board_write.js"></script>
+							
 							<script async defer
 								src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZEvRrjLrP0xN51w1ljXwQovC5Fz8BT-k&callback=initMap"></script>
 							<script type="text/javascript">
