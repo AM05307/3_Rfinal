@@ -25,18 +25,24 @@ public class UserDao {
 	}
 	
 	//로그인
-	public boolean login(String userEmail, String password1) {
+	public boolean login(UserVo vo) {
 		System.out.println("록인dao들어옴");
-		System.out.println("다오의 " + userEmail);
-		
+		System.out.println("다오의 " + vo.getUserEmail());
+		try {
 		String str= getJdbcTemplate().queryForObject("select useremail from userinfo where useremail=? and userpassword=?",
-				new Object[] {userEmail,password1}, String.class);
+				new Object[] {vo.getUserEmail(),vo.getPassword1()}, String.class);
 		System.out.println("str을 찍어보자" +str);
-		if(str !=null && str != "") { 
+		/*if(str !=null && str != "") { 
 				return true;	
-		}else
+		}else {
+			userEmail=null;
 			return false;
-
+		}*/
+		}catch(EmptyResultDataAccessException e) {
+			System.out.println("결과없음");
+			return false;
+		}
+		return true;
 	}
 	// 아이디중복 체크
 	public int checkId(String userEmail) {

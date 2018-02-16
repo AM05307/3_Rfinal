@@ -140,23 +140,23 @@
                             
                             
                               <label for="id">아이디</label>
-                              <input type="text" class="form-control" id="userID" name="userID" placeholder="최대20자(영소문자,숫자만가능)" maxlength="20">
+                              <input type="text" class="form-control" id="userID" name="userID" placeholder="최대16자(영소문자,숫자만가능)" maxlength="20">
                          
                               <label for="password">비밀번호</label>
-                              <input type="password" class="form-control" id="password1" name="password1" placeholder="최소6자이상, 최대10자이하(영소문자,숫자,특수문자가능)" >
-                   
+                              <input type="password" class="form-control" id="password1" name="password1" placeholder="최소6자이상, 최대16자이하(영소문자,숫자,특수문자 1개이상 포함)" >
+                   			  
                       
                               <label for="password">비밀번호확인</label>
                               <input type="password" class="form-control" id="password2" name="password2" onkeyup="passwordCheckFunction();" placeholder="동일한 비밀번호를 입력하시오">
                    			<h5 style="color:red;" id="passwordCheckMessage"></h5>
 
                               <label for="name">이름(실명)</label>
-                              <input type="text" class="form-control" id="userName" name="userName" maxLength="20" placeholder="최대10자">
-                
+                              <input type="text" class="form-control" id="userName" name="userName" maxLength="20" placeholder="최대 6자">
+              
            
                               <label for="birthday">생년월일</label>
                               <input type="text" class="form-control" id="userBithday" name="userBirthday" maxLength="20" placeholder="입력형식:20180101">
-
+								  <h5 style="color:red;" id="BirthdayCheckMessage"></h5>
   
                               <label for="gender">성별</label><br>
                    
@@ -350,6 +350,48 @@
 		  $('#passwordCheckMessage').html('비밀번호가 일치합니다.');
 	  }
   }
+  
+  $(document).ready(function(){
+	  var CehckId = /^[a-z0-9_-]{3,16}$/;
+	  var CheckName = /^[가-힣]{2,6}$/;
+	  var CheckPw =  /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{6,16}$/;
+	  $("form").submit(function(){
+		  
+		  if ( !CehckId.test($.trim($("#userID").val())) )
+			{
+				alert("아이디를 다시 입력하세요 .");
+				$("#userID").focus();
+				return false;
+
+			}
+		
+		  if ( !CheckPw.test($.trim($("#password1").val())) )
+			{
+				alert("영어, 숫자, 특수문자를 포함하여 비밀번호를 다시 입력하세요 .");
+				$("#password1").focus();
+				return false;
+
+			}
+		  
+		  if ($.trim($("#password1").val()) != $.trim($("#password2").val())) 
+			{
+				alert("비밀번와 확인 비밀번호가 일치하지않습니다.");
+				$("#password1").focus();
+				return false;
+
+			}
+		  
+		  if ( !CheckName.test($.trim($("#userName").val())) )
+			{
+				alert("이름을 다시 입력하세요 .");
+				$("#userName").focus();
+				return false;
+
+			}
+		  
+	
+	  });
+  });
   
   </script>
 
