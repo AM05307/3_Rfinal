@@ -1,6 +1,10 @@
 package gosuic.controller.user;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,16 +37,25 @@ public class UserController {
 	
 	// 로그인
 	@RequestMapping(value = "/UserLogin.sp", method = RequestMethod.POST)
-    public ModelAndView login(HttpSession session,String userEmail, String password1){
-		System.out.println(userEmail + " 컨트롤러의 록인 컨트롤러 들옴");
+    public ModelAndView login(HttpServletRequest request, HttpServletResponse response,HttpSession session,UserVo vo) throws IOException{
+		System.out.println(vo.getUserEmail() + " 컨트롤러의 록인 컨트롤러 들옴");
+		//String userEmail = request.getParameter("userEmail");
 		
+		//response.setContentType("text/html; charset=UTF-8");
+		//PrintWriter out = response.getWriter();
+
         ModelAndView mav = new ModelAndView();
-        if(userService.login(userEmail, password1)){
-            session.setAttribute("userEmail", userEmail);
+        if(userService.login(vo)){
+            session.setAttribute("userEmail", vo.getUserEmail());
+            mav.addObject("CheckEmail", "success");
             mav.setViewName("redirect:/mainform.sp");
+            System.out.println("로그인 성공했어요 ");
         }
         else{
-            mav.setViewName("redirect:/loginform.sp");
+        	System.out.println("로그인 실패했어요");
+        	//out.println("<script>alert('확인해');");
+        	mav.addObject("CheckEmail", "fail");
+        	mav.setViewName("redirect:/loginform.sp");
         }
         return mav;
     }    

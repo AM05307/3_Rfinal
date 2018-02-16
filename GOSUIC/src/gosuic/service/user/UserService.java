@@ -18,8 +18,8 @@ public class UserService {
 	}
 	
 	//로그인
-	public boolean login(String userEmail, String password1) {
-		return userDao.login(userEmail, password1);
+	public boolean login(UserVo vo) {
+		return userDao.login(vo);
 	}
 	// 아이디 중복체크
 	public int checkID(String userEmail) {
