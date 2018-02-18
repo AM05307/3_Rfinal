@@ -195,7 +195,9 @@
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="submit"  value="등록하기"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+									<input value="등록하기" type="submit">
+									</span>
 								</li>
 							</ul>
 							<br>

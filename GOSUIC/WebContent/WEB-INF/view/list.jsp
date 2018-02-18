@@ -311,20 +311,20 @@
 
 <!--  매물목록 -->
                     <div class="col-md-10">
-    <table border="1">
-  <tr>
-    <th>&nbsp;주소&nbsp;</th>
-    <th>&nbsp;번지&nbsp;</th>
-    <th>&nbsp;단지명&nbsp;</th>
-    <th>&nbsp;전용면적(㎡)&nbsp;</th>
-    <th>&nbsp;계약년월&nbsp;</th>
-    <th>&nbsp;평균매매가(만원)&nbsp;</th>
+    <table border="0">
+  <tr >
+    <th width=30%><label>&nbsp;주소&nbsp;</label></th>
+    <th><label>번지</label></th>
+    <th width=20%><label>&nbsp;단지명&nbsp;</label></th>
+    <th width=12%><label>&nbsp;전용면적<br>(m2)&nbsp;</label></th>
+    <th><label>&nbsp;층&nbsp;</label></th>
+    <!--<th><label>&nbsp;평균매매가&nbsp;</label></th>-->
     <!--  <th>&nbsp;보증금&nbsp;</th>-->
-   	<th>&nbsp;평균월세&nbsp;</th>
+   	<!-- <th>&nbsp;평균<br>월세&nbsp;</th>-->
     <!-- <th>&nbsp;건축년도&nbsp;</th>-->
     <!-- <th>&nbsp;도로명&nbsp;</th>>-->
-    <th>&nbsp;평균수익률&nbsp;</th>
-    <th>&nbsp;상세정보&nbsp;</th>
+    <th><label>&nbsp;평균<br>수익률&nbsp;</label></th>
+    <th><label>&nbsp;상세<br>정보&nbsp;</label></th>
 </tr>
 
 <c:if test="${!empty all_list}">
@@ -336,12 +336,12 @@
 					<td><input type="text"  name="bunji" font-size="1em;" readonly value="${ob.bunji}"></td>
 					<td><input type="text"  name="danji" font-size="1em;" readonly value="${ob.danji}"></td>
 					<td><input type="text"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}"></td>
-					<td><input type="text"  name="contract_year_month" font-size="1em;" readonly value="${ob.contract_year_month}"></td>
-					<td><input type="text"  name="price" font-size="1em;" readonly value="${ob.price}"></td>
-					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td>-->
-					<td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td>
+					<td><input type="text"  name="floor" font-size="1em;" readonly value="${ob.floor}">
+					<!--<td><input type="text"  name="price" font-size="1em;" readonly value="${ob.price}"></td>
+					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td> --> 
+					<!-- <td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td> -->
 					<td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.price}/${ob.rent}"></td>
-					<td><input type="submit" value="더 보기"></td>
+					<td><button class="navbar-btn nav-button wow fadeInRight" type="submit" data-wow-delay="0.25s">+</button></td>
 				</form>
 				</tr>
 			</c:forEach>
