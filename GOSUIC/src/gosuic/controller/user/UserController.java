@@ -79,7 +79,7 @@ public class UserController {
 			System.out.println("·Î±×¾Æ¿ô");
 			session.invalidate();
 		
-			return "/WEB-INF/view/index.jsp";
+			return "/index.html";
 		}
 	
 

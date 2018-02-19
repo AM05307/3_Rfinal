@@ -1,14 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
-<% if(session.getAttribute("userEmail") == null) {%>
-<script type="text/javascript">
-alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
-</script>
-<%} %>
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -20,7 +9,7 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>°í¼öÀÍ | Home</title>
+<title>ê³ ìˆ˜ìµ | Home</title>
 <meta name="description" content="GARO is a real-estate template">
 <meta name="author" content="Kimarotec">
 <meta name="keyword"
@@ -66,16 +55,16 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 			<div class="row">
 				<div class="col-md-5 col-sm-8  col-xs-12">
 					<div class="header-half header-call">
-						<!--  ¿ÞÂÊ »ó´Ü Çì´õ -->
+						<!--  ì™¼ìª½ ìƒë‹¨ í—¤ë” -->
 						<p>
-							<span>°í¼öÀÍ</span> <span>ºÎµ¿»ê ¸Å¹° °Ë»ö »çÀÌÆ®</span>
+							<span>ê³ ìˆ˜ìµ</span> <span>ë¶€ë™ì‚° ë§¤ë¬¼ ê²€ìƒ‰ ì‚¬ì´íŠ¸</span>
 						</p>
 					</div>
 				</div>
 				<div
 					class="col-md-2 col-md-offset-5  col-sm-3 col-sm-offset-1  col-xs-12">
 					<div class="header-half header-social">
-						<!--  ¿À¸¥ÂÊ »ó´Ü Çì´õ-->
+						<!--  ì˜¤ë¥¸ìª½ ìƒë‹¨ í—¤ë”-->
 					</div>
 				</div>
 			</div>
@@ -85,48 +74,51 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 
 	<nav class="navbar navbar-default ">
 		<div class="container">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
+		
+		<button type="button" class="navbar-toggle collapsed"
 					data-toggle="collapse" data-target="#navigation">
 					<span class="sr-only">Toggle navigation</span> <span
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<!--¿ÞÂÊ »ó´Ü ·Î°í  -->
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<!--ì™¼ìª½ ìƒë‹¨ ë¡œê³   -->
 				<a class="navbar-brand" href="index.html"><img
 					src="assets/img/mainpage/gosuic_logo3_small.png" alt=""></a>
+			<br>
+			
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse yamm" id="navigation">
 				<div class="button navbar-right">
-					<!-- ·Î±×ÀÎ, È¸¿ø°¡ÀÔ ¹öÆ°  -->
+					<!-- ë¡œê·¸ì¸, íšŒì›ê°€ìž… ë²„íŠ¼  -->
 					
 					<button class="navbar-btn nav-button wow bounceInRight login"
 						onclick=" location.href='/GOSUIC/loginform.sp' "
-						data-wow-delay="0.45s">·Î±×ÀÎ</button>
+						data-wow-delay="0.45s">ë¡œê·¸ì¸</button>
 					<button class="navbar-btn nav-button wow fadeInRight"
-						onclick=" location.href='/GOSUIC/joinform.sp'" data-wow-delay="0.48s">È¸¿ø°¡ÀÔ</button>
+						onclick=" location.href='/GOSUIC/joinform.sp'" data-wow-delay="0.48s">íšŒì›ê°€ìž…</button>
 				</div>
 
-				<!-- ¸Þ´º¹Ù -->
+				<!-- ë©”ë‰´ë°” -->
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li><a href="index.html">Home <b class="caret"></b></a></li>
 					<!-- /TestMVC03/list.sp -->
-					<!--   <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">¸Å¹°</a></li>-->
+					<!--   <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">ë§¤ë¬¼</a></li>-->
 
 					<li class="wow fadeInDown" data-wow-delay="0.2s"><a class=""
-						href="/GOSUIC/list.sp">¸Å¹°</a></li>
+						href="/GOSUIC/list.sp">ë§¤ë¬¼</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.3s"><a class=""
-						href="/GOSUIC/property.sp">¸Å¹°»ó¼¼</a></li>
+						href="/GOSUIC/property.sp">ë§¤ë¬¼ìƒì„¸</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.4s"><a class=""
-						href="">ºÎµ¿»ê Á¤º¸</a></li>
+						href="">ë¶€ë™ì‚° ì •ë³´</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
-						href="">°Ô½ÃÆÇ</a></li>
+						href="">ê²Œì‹œíŒ</a></li>
 				
 				</ul>
-				<!--¸Þ´º¹Ù ¸Þ´ºÀÔ·ÂEND-->
+				<!--ë©”ë‰´ë°” ë©”ë‰´ìž…ë ¥END-->
 				<!--"main-nav nav navbar-nav navbar-right" END  -->
 
 			</div>
@@ -134,22 +126,22 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 		</div>
 		<!-- /.container-fluid -->
 	</nav>
-	<!-- End of nav bar »ó´Ü ¸Þ´º¹Ù END-->
+	<!-- End of nav bar ìƒë‹¨ ë©”ë‰´ë°” END-->
 
 
-	<!--½½¶óÀÌµå È­¸é ½ÃÀÛ   -->
+	<!--ìŠ¬ë¼ì´ë“œ í™”ë©´ ì‹œìž‘   -->
 	<div class="slider-area">
 		<div class="slider">
 			<div id="bg-slider" class="owl-carousel owl-theme">
 
 				<div class="item">
-					<img src="assets/img/mainpage/slide1/skyline001.jpg" alt="½½¶óÀÌµåÈ­¸é1">
+					<img src="assets/img/mainpage/slide1/skyline001.jpg" alt="ìŠ¬ë¼ì´ë“œí™”ë©´1">
 				</div>
 				<div class="item">
-					<img src="assets/img/mainpage/slide1/skyline002.jpg" alt="½½¶óÀÌµåÈ­¸é2">
+					<img src="assets/img/mainpage/slide1/skyline002.jpg" alt="ìŠ¬ë¼ì´ë“œí™”ë©´2">
 				</div>
 				<div class="item">
-					<img src="assets/img/mainpage/slide1/skyline003.jpg" alt="½½¶óÀÌµåÈ­¸é3">
+					<img src="assets/img/mainpage/slide1/skyline003.jpg" alt="ìŠ¬ë¼ì´ë“œí™”ë©´3">
 				</div>
 
 			</div>
@@ -159,22 +151,22 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 				<div
 					class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
 					<div class="search">
-						<br> ¸Å¹°À» °Ë»öÇÏ¼¼¿ä. <br>
+						<br> ë§¤ë¬¼ì„ ê²€ìƒ‰í•˜ì„¸ìš”. <br>
 						<hr>
 					</div>
 
 					<div >
 			
-						<!-- °Ë»ö¹öÆ°  -->
+						<!-- ê²€ìƒ‰ë²„íŠ¼  -->
 						<button class="btn search1-btn" type="submit"
 							onclick=" location.href='/GOSUIC/findaddress.sp' ">
-							Áö¿ª ¼±ÅÃÇÏ±â<i class="fa fa-search"></i>
+							ì§€ì—­ ì„ íƒí•˜ê¸°<i class="fa fa-search"></i>
 						</button>
 
 					</div>
-					<!-- °Ë»öÃ¢±¸ºÐ  end -->
+					<!-- ê²€ìƒ‰ì°½êµ¬ë¶„  end -->
 
-					<!-- °Ë»öÃ¢ end -->
+					<!-- ê²€ìƒ‰ì°½ end -->
 				</div>
 				<!-- class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12" end -->
 			</div>
@@ -182,7 +174,7 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 		</div>
 		<!--  class="slider-content" end-->
 	</div>
-	<!--  ½½¶óÀÌµå È­¸é end = class="slider-area" end -->
+	<!--  ìŠ¬ë¼ì´ë“œ í™”ë©´ end = class="slider-area" end -->
 
 
 	<!-- property area -->
@@ -193,8 +185,8 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 				<div
 					class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
 					<!-- /.feature title -->
-					<h2>ÀÎ±â¸Å¹°</h2>
-					<p>Á¶È¸¼ö°¡ ³ôÀº ¸Å¹°</p>
+					<h2>ì¸ê¸°ë§¤ë¬¼</h2>
+					<p>ì¡°íšŒìˆ˜ê°€ ë†’ì€ ë§¤ë¬¼</p>
 				</div>
 			</div>
 
@@ -208,11 +200,11 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 							</div>
 							<div class="item-entry overflow">
 								<h5>
-									<a href="property-1.html">ÀÎ±â¸Å¹° ÀÌ¸§1 </a>
+									<a href="property-1.html">ì¸ê¸°ë§¤ë¬¼ ì´ë¦„1 </a>
 								</h5>
 								<div class="dot-hr"></div>
-								<span class="pull-left">Àü¿ë¸éÀû <b> 118.03§³</b></span> <span
-									class="proerty-price pull-right">¸Å¸Å <b>14¾ï 8,000</b></span>
+								<span class="pull-left">ì „ìš©ë©´ì  <b> 118.03ãŽ¡</b></span> <span
+									class="proerty-price pull-right">ë§¤ë§¤ <b>14ì–µ 8,000</b></span>
 							</div>
 						</div>
 					</div>
@@ -225,11 +217,11 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 							</div>
 							<div class="item-entry overflow">
 								<h5>
-									<a href="property-2.html">ÀÎ±â ¸Å¹° 2</a>
+									<a href="property-2.html">ì¸ê¸° ë§¤ë¬¼ 2</a>
 								</h5>
 								<div class="dot-hr"></div>
-								<span class="pull-left">Àü¿ë¸éÀû <b> 118.03§³</b></span> <span
-									class="proerty-price pull-right">¸Å¸Å <b>57¾ï 8,000</b></span>
+								<span class="pull-left">ì „ìš©ë©´ì  <b> 118.03ãŽ¡</b></span> <span
+									class="proerty-price pull-right">ë§¤ë§¤ <b>57ì–µ 8,000</b></span>
 							</div>
 						</div>
 					</div>
@@ -243,11 +235,11 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 							</div>
 							<div class="item-entry overflow">
 								<h5>
-									<a href="property-3.html">ÀÎ±â¸Å¹°3</a>
+									<a href="property-3.html">ì¸ê¸°ë§¤ë¬¼3</a>
 								</h5>
 								<div class="dot-hr"></div>
-								<span class="pull-left">Àü¿ë¸éÀû <b> 88.03§³</b></span> <span
-									class="proerty-price pull-right">¸Å¸Å <b>77¾ï 8,000</b></span>
+								<span class="pull-left">ì „ìš©ë©´ì  <b> 88.03ãŽ¡</b></span> <span
+									class="proerty-price pull-right">ë§¤ë§¤ <b>77ì–µ 8,000</b></span>
 							</div>
 						</div>
 					</div>
@@ -262,9 +254,9 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 								<h5>
 									<a href="property-1.html">CAN'T DECIDE ? </a>
 								</h5>
-								<h5 class="tree-sub-ttl">´õ ¸¹Àº ÀÎ±â¸Å¹° º¸±â</h5>
+								<h5 class="tree-sub-ttl">ë” ë§Žì€ ì¸ê¸°ë§¤ë¬¼ ë³´ê¸°</h5>
 								<button class="btn border-btn more-black" value="All properties"
-									onclick=" window.open('/GOSUIC/list.sp')">´õ º¸±â</button>
+									onclick=" window.open('/GOSUIC/list.sp')">ë” ë³´ê¸°</button>
 							</div>
 						</div>
 					</div>
@@ -286,7 +278,7 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 								<div
 									class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
 									<!-- /.feature title -->
-									<h2>ºÎµ¿»ê´º½º</h2>
+									<h2>ë¶€ë™ì‚°ë‰´ìŠ¤</h2>
 
 								</div>
 
@@ -294,27 +286,27 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 						</div>
 					</div>
 
-					<!-- ºÎµ¿»ê ´º½º ºÎºÐ -->
+					<!-- ë¶€ë™ì‚° ë‰´ìŠ¤ ë¶€ë¶„ -->
 					<div class="col-md-5 col-sm-6 col-xs-12">
 						<div class="welcome_services wow fadeInRight"
 							data-wow-delay="0.3s" data-wow-offset="100">
-							<!-- ºÎµ¿»ê ´º½º Ã¹¹øÂ°ÁÙ -->
+							<!-- ë¶€ë™ì‚° ë‰´ìŠ¤ ì²«ë²ˆì§¸ì¤„ -->
 							<div class="row">
 								<div class="col-xs-6 m-padding">
 									<div class="welcome-estate">
 
-										<b><h5>´º½ºÁ¦¸ñ1</h5></b>
+										<b><h5>ë‰´ìŠ¤ì œëª©1</h5></b>
 										<hr>
-										ºÎµ¿»ê ´º½º ³»¿ë<br> ºÎµ¿»ê ´º½º ³»¿ë<br> ºÎµ¿»ê ´º½º ³»¿ë<br>
+										ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br> ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br> ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br>
 									</div>
 								</div>
 
 
 								<div class="col-xs-6 m-padding">
 									<div class="welcome-estate">
-										<b><h5>´º½ºÁ¦¸ñ2</h5></b>
+										<b><h5>ë‰´ìŠ¤ì œëª©2</h5></b>
 										<hr>
-										ºÎµ¿»ê ´º½º ³»¿ë<br> ºÎµ¿»ê ´º½º ³»¿ë<br> ºÎµ¿»ê ´º½º ³»¿ë<br>
+										ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br> ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br> ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br>
 
 									</div>
 								</div>
@@ -326,16 +318,16 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 
 								<div class="col-xs-6 m-padding">
 									<div class="welcome-estate">
-										<b><h5>´º½ºÁ¦¸ñ3</h5></b>
+										<b><h5>ë‰´ìŠ¤ì œëª©3</h5></b>
 										<hr>
-										ºÎµ¿»ê ´º½º ³»¿ë<br> ºÎµ¿»ê ´º½º ³»¿ë<br> ºÎµ¿»ê ´º½º ³»¿ë<br>
+										ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br> ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br> ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br>
 									</div>
 								</div>
 								<div class="col-xs-6 m-padding">
 									<div class="welcome-estate">
-										<b><h5>´º½ºÁ¦¸ñ4</h5></b>
+										<b><h5>ë‰´ìŠ¤ì œëª©4</h5></b>
 										<hr>
-										ºÎµ¿»ê ´º½º ³»¿ë<br> ºÎµ¿»ê ´º½º ³»¿ë<br> ºÎµ¿»ê ´º½º ³»¿ë<br>
+										ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br> ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br> ë¶€ë™ì‚° ë‰´ìŠ¤ ë‚´ìš©<br>
 									</div>
 								</div>
 
@@ -354,7 +346,7 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 				<div
 					class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
 					<!-- /.feature title -->
-					<h2>°í¼öÀÍÀÇ ÀåÁ¡</h2>
+					<h2>ê³ ìˆ˜ìµì˜ ìž¥ì </h2>
 				</div>
 			</div>
 			<div class="row">
@@ -368,7 +360,7 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 								</div>
 								<div class="chart" data-percent="5000">
 									<h2 class="percent" id="counter">0</h2>
-									<h5>Àü±¹ÀÇ ¸Å¹°Á¤º¸ Á¦°ø</h5>
+									<h5>ì „êµ­ì˜ ë§¤ë¬¼ì •ë³´ ì œê³µ</h5>
 								</div>
 							</div>
 						</div>
@@ -379,7 +371,7 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 								</div>
 								<div class="chart" data-percent="5000">
 									<h2 class="percent" id="counter1">0</h2>
-									<h5>ÁÖ±âÀûÀÎ ¸Å¹°Á¤º¸ ¾÷µ¥ÀÌÆ®</h5>
+									<h5>ì£¼ê¸°ì ì¸ ë§¤ë¬¼ì •ë³´ ì—…ë°ì´íŠ¸</h5>
 								</div>
 							</div>
 						</div>
@@ -390,7 +382,7 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 								</div>
 								<div class="chart" data-percent="120">
 									<h2 class="percent" id="counter2">0</h2>
-									<h5>¸Å¹° Á¤º¸ ºñ±³ °¡´É</h5>
+									<h5>ë§¤ë¬¼ ì •ë³´ ë¹„êµ ê°€ëŠ¥</h5>
 								</div>
 							</div>
 						</div>
@@ -401,7 +393,7 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 								</div>
 								<div class="chart" data-percent="5000">
 									<h2 class="percent" id="counter3">5000</h2>
-									<h5>ÁÖÅÃ ¸Å¸Å ÇöÈ² Á¦°ø</h5>
+									<h5>ì£¼íƒ ë§¤ë§¤ í˜„í™© ì œê³µ</h5>
 								</div>
 							</div>
 
@@ -422,16 +414,16 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 
 					<div class="col-md-3 col-sm-6 wow fadeInRight animated">
 						<div class="single-footer">
-							<h4>È¸»ç¼Ò°³</h4>
+							<h4>íšŒì‚¬ì†Œê°œ</h4>
 							<div class="footer-title-line"></div>
 
 							<img src="assets/img/mainpage/gosuic_logo3_small.png" alt=""
 								class="wow pulse" data-wow-delay="1s">
 							<p>
-								ºÎµ¿»ê ¸Å¹° °Ë»ö »çÀÌÆ®<br> Àü±¹ÀÇ ºÎµ¿»ê ¸Å¹° Á¤º¸¸¦ Á¦°øÇÕ´Ï´Ù
+								ë¶€ë™ì‚° ë§¤ë¬¼ ê²€ìƒ‰ ì‚¬ì´íŠ¸<br> ì „êµ­ì˜ ë¶€ë™ì‚° ë§¤ë¬¼ ì •ë³´ë¥¼ ì œê³µí•©ë‹ˆë‹¤
 							</p>
 							<ul class="footer-adress">
-								<li><i class="pe-7s-map-marker strong"> </i>¼­¿ï½Ã ¼­ÃÊ±¸</li>
+								<li><i class="pe-7s-map-marker strong"> </i>ì„œìš¸ì‹œ ì„œì´ˆêµ¬</li>
 								<li><i class="pe-7s-mail strong"> </i> email@highprofit.com</li>
 								<li><i class="pe-7s-call strong"> </i> 02-3333-3333</li>
 							</ul>
@@ -439,20 +431,20 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 					</div>
 					<div class="col-md-3 col-sm-6 wow fadeInRight animated">
 						<div class="single-footer">
-							<h4>¸Þ´º</h4>
+							<h4>ë©”ë‰´</h4>
 							<div class="footer-title-line"></div>
 							<ul class="footer-menu">
-								<li><a href="/GOSUIC/list.sp">¸Å¹°</a></li>
-								<li><a href="/GOSUIC/property.sp">MYºÎµ¿»ê</a></li>
-								<li><a href="submit-property.jsp">ºÎµ¿»êÁ¤º¸</a></li>
-								<li><a href="contact.html">°Ô½ÃÆÇ</a></li>
+								<li><a href="/GOSUIC/list.sp">ë§¤ë¬¼</a></li>
+								<li><a href="/GOSUIC/property.sp">MYë¶€ë™ì‚°</a></li>
+								<li><a href="submit-property.jsp">ë¶€ë™ì‚°ì •ë³´</a></li>
+								<li><a href="contact.html">ê²Œì‹œíŒ</a></li>
 							</ul>
 						</div>
 					</div>
 					<!-- class="col-md-3 col-sm-6 wow fadeInRight animated" end -->
 					<div class="col-md-3 col-sm-6 wow fadeInRight animated">
 						<div class="single-footer">
-							<h4>°øÁö»çÇ×</h4>
+							<h4>ê³µì§€ì‚¬í•­</h4>
 							<div class="footer-title-line"></div>
 							<ul class="footer-blog">
 								<li>
@@ -464,9 +456,9 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 									</div>
 									<div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
 										<h6>
-											<a href="single.html">°øÁö»çÇ× Á¦¸ñ1</a>
+											<a href="single.html">ê³µì§€ì‚¬í•­ ì œëª©1</a>
 										</h6>
-										<p style="line-height: 17px; padding: 8px 2px;">°øÁö ³»¿ë1 ...</p>
+										<p style="line-height: 17px; padding: 8px 2px;">ê³µì§€ ë‚´ìš©1 ...</p>
 									</div>
 								</li>
 
@@ -479,9 +471,9 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 									</div>
 									<div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
 										<h6>
-											<a href="single.html">°øÁö»çÇ× ¼ÒÁ¦¸ñ2</a>
+											<a href="single.html">ê³µì§€ì‚¬í•­ ì†Œì œëª©2</a>
 										</h6>
-										<p style="line-height: 17px; padding: 8px 2px;">°øÁö ³»¿ë2...</p>
+										<p style="line-height: 17px; padding: 8px 2px;">ê³µì§€ ë‚´ìš©2...</p>
 									</div>
 								</li>
 
@@ -494,9 +486,9 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 									</div>
 									<div class="col-md-8  col-sm-8 col-xs-8  blg-entry">
 										<h6>
-											<a href="single.html">°øÁö»çÇ× ¼ÒÁ¦¸ñ 3</a>
+											<a href="single.html">ê³µì§€ì‚¬í•­ ì†Œì œëª© 3</a>
 										</h6>
-										<p style="line-height: 17px; padding: 8px 2px;">°øÁö ³»¿ë3...</p>
+										<p style="line-height: 17px; padding: 8px 2px;">ê³µì§€ ë‚´ìš©3...</p>
 									</div>
 								</li>
 
@@ -506,13 +498,13 @@ alert("·Î±×ÀÎÈÄ ÀÌ¿ëÇÏ¼¼¿ä");
 					</div>
 					<div class="col-md-3 col-sm-6 wow fadeInRight animated">
 						<div class="single-footer news-letter">
-							<h4>¾È³»</h4>
+							<h4>ì•ˆë‚´</h4>
 							<div class="footer-title-line"></div>
 							<ul class="footer-menu">
-								<li><a href="single.html">ÀÌ¿ë¾à°ü</a></li>
-								<li><a href="#">°³ÀÎÁ¤º¸Ã³¸®¹æÄ§</a></li>
-								<li><a href="#">ÀÌ¸ÞÀÏ¹«´Ü¼öÁý°ÅºÎ</a></li>
-								<li><a href="#">Ã¥ÀÓÇÑ°è¿Í ¹ýÀû°íÁö</a></li>
+								<li><a href="single.html">ì´ìš©ì•½ê´€</a></li>
+								<li><a href="#">ê°œì¸ì •ë³´ì²˜ë¦¬ë°©ì¹¨</a></li>
+								<li><a href="#">ì´ë©”ì¼ë¬´ë‹¨ìˆ˜ì§‘ê±°ë¶€</a></li>
+								<li><a href="#">ì±…ìž„í•œê³„ì™€ ë²•ì ê³ ì§€</a></li>
 							</ul>
 						</div>
 					</div>
