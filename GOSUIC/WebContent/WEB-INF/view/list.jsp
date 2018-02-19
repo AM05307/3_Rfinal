@@ -316,7 +316,7 @@
     <th width=30%><label>&nbsp;주소&nbsp;</label></th>
     <th><label>번지</label></th>
     <th width=20%><label>&nbsp;단지명&nbsp;</label></th>
-    <th width=12%><label>&nbsp;전용면적<br>(m2)&nbsp;</label></th>
+    <th width=12%><label>&nbsp;전용면적<br>(㎡)&nbsp;</label></th>
     <th><label>&nbsp;층&nbsp;</label></th>
     <!--<th><label>&nbsp;평균매매가&nbsp;</label></th>-->
     <!--  <th>&nbsp;보증금&nbsp;</th>-->
