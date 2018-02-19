@@ -1,7 +1,7 @@
 package gosuic.controller.user;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -78,8 +78,7 @@ public class UserController {
 	    public String logout(HttpSession session){
 			System.out.println("·Î±×¾Æ¿ô");
 			session.invalidate();
-		
-			return "/index.html";
+			return "/WEB-INF/view/main.jsp";
 		}
 	
 

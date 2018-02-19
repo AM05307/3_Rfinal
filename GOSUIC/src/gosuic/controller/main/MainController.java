@@ -65,6 +65,7 @@ public class MainController {
 	@RequestMapping("/findaddress.sp")
 	public ModelAndView Findaddress(HttpSession session, Model model) {
 		System.out.println("주소 검색창 제어");
+		System.out.println(session.getAttribute("userEmail"));
 		ModelAndView mav = new ModelAndView();
 		if (session.getAttribute("userEmail") != null) {
 			mav.setViewName("redirect:/addwindow.sp");

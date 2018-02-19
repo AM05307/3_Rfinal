@@ -152,10 +152,11 @@
 
 			<div class="col-md-6">
 				<div class="box-for overflow">
-					<div class="col-md-12 col-xs-12 login-blocks">
-						<h2>로그인</h2>
-
-						<form action="/GOSUIC/UserLogin.sp" method="post">
+					
+					<form action="/GOSUIC/UserLogin.sp" method="post">
+						<div class="col-md-12 col-xs-12 login-blocks">
+							<h2>로그인</h2>
+						
 							<div class="form-group">
 								<label for="email">이메일 주소</label> <input type="text"
 									class="form-control" name="userEmail">
@@ -187,7 +188,7 @@
 			</div>
 
 		</div>
-	</div>
+
 
 	<!-- Footer area-->
 	<div class="footer-area">
