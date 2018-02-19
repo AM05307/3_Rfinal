@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%--     
-<% session.invalidate();  %>
- --%>
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -157,7 +156,6 @@
 						<h2>로그인</h2>
 
 						<form action="/GOSUIC/UserLogin.sp" method="post">
-
 							<div class="form-group">
 								<label for="email">이메일 주소</label> <input type="text"
 									class="form-control" name="userEmail">
@@ -165,11 +163,22 @@
 							<div class="form-group">
 								<label for="password">비밀번호</label> <input type="password"
 									class="form-control" name="password1">
+								</div>
 							</div>
+						
+						<!-- 로그인 실패시 문구 -->
+							<c:if test="${param.CheckEmail == 'fail'}">
+                                <span style="color: red; font: bold;">
+                                 <c:out value="아이디, 비밀번호를 확인하세요" />
+                                 </span>
+                           </c:if>
+							
 							<div class="text-center">
-								<button type="submit" class="btn btn-default">로그인</button>
+								<button type="submit" id="login" class="btn btn-default">로그인</button>
 							</div>
+							
 						</form>
+																
 						<br> <br> <br> <br>
 						<!-- 로그인 칸 밑 공백 -->
 					</div>
@@ -325,6 +334,31 @@
 	<script src="assets/js/price-range.js"></script>
 
 	<script src="assets/js/main.js"></script>
-
+	
+	<script type="text/javascript">
+	/*  
+	 $(document).ready(function(){
+		  $('#login').on('click',function(){
+			  $.ajax({
+				  type:'POST',
+				  url:'/GOSUIC/UserLogin.sp',
+				  data:{
+					  "userEmail":$('#userEmail').val(),
+					  "password1":$('#password1').val()
+				  },
+					success:function(data){
+						if($.trim(data)!=0){
+							alert("아이디, 비밀번호를 확인해주세요");
+						}else{
+							alert("로그인 성공.");
+						}
+						}
+			  });
+		  });
+	  });
+	   */
+	   
+	</script>
+	
 </body>
 </html>

@@ -1,17 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%-- 
 <%
-	if (session.getAttribute("userEmail") == null) {
-%>
-<script type="text/javascript">
-	alert("로그인을 해주세요!");
-</script>
-<jsp:forward page="index.html"></jsp:forward>
-<%
+	String viewPage = null ;
+	if (session.getAttribute("userEmail") == null){
+		viewPage= "index.html";
 	}
 %>
+<jsp:forward page="<%= viewPage %>" />
+
+ --%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
