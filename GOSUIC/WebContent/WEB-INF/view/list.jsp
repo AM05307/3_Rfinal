@@ -314,12 +314,12 @@
                     <div class="col-md-10">
     <table border="0">
   <tr >
-    <th width=20%><label>&nbsp;주소&nbsp;</label></th>
+    <th width=33%><label>&nbsp;주소&nbsp;</label></th>
     <th><label>번지</label></th>
     <th width=20%><label>&nbsp;단지명&nbsp;</label></th>
-    <th width=18%><label>&nbsp;전용<br>면적(㎡)&nbsp;</label></th>
-    <th width=15%><label>&nbsp;층&nbsp;</label></th>
-    <!--<th><label>&nbsp;평균매매가&nbsp;</label></th>-->
+    <!--<th width=18%><label>&nbsp;전용<br>면적(㎡)&nbsp;</label></th>-->
+    <!--<th width=15%><label>&nbsp;층&nbsp;</label></th>-->
+    <th><label>&nbsp;매매가&nbsp;</label></th>
     <!--  <th>&nbsp;보증금&nbsp;</th>-->
    	<!-- <th>&nbsp;평균<br>월세&nbsp;</th>-->
     <!-- <th>&nbsp;건축년도&nbsp;</th>-->
@@ -333,12 +333,12 @@
 			<c:forEach items="${all_list}" var="ob">
 				<tr>
 				<form action="/GOSUIC/property.sp" method="post">
-					<td><input type="hidden"  name="sigungu" font-size="0.5em;" readonly value="${ob.sigungu}"><%=request.getAttribute("addr") %></td>
+					<td><input type="hidden"  name="sigungu" font-size="0.5em;" readonly value="${ob.sigungu}">${ob.sigungu}</td>
 					<td><input type="hidden"  name="bunji" font-size="1em;" readonly value="${ob.bunji}">${ob.bunji}</td>
 					<td><input type="hidden"  name="danji" font-size="1em;" readonly value="${ob.danji}">${ob.danji}</td>
-					<td><input type="hidden"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}">${ob.myunjuk}</td>
-					<td><input type="hidden"  name="floor" font-size="1em;" readonly value="${ob.floor}">${ob.floor}</td>
-					<!--<td><input type="text"  name="price" font-size="1em;" readonly value="${ob.price}"></td>
+					<input type="hidden"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}">
+					<input type="hidden"  name="floor" font-size="1em;" readonly value="${ob.floor}">
+					<td><input type="hidden"  name="price" font-size="1em;" readonly value="${ob.price}">${ob.price}</td>
 					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td> --> 
 					<!-- <td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td> -->
 					<td><input type="hidden"  name="rent" font-size="1em;" readonly value="${ob.price}/${ob.rent}">4.2%</td>

@@ -33,7 +33,7 @@ public class PropertyController {
 		String addr = request.getParameter("searchaddr");
 		model.addAttribute("all_list", propertyservice.listApt(addr));
 		
-		ArrayList<String> al = new ArrayList<>();
+		/*ArrayList<String> al = new ArrayList<>();
 		String str = propertyservice.listApt(addr).get(0).getSigungu();
 		String[] words = str.split("\\s"); // whitespace
 		for (String w : words) {
@@ -44,7 +44,7 @@ public class PropertyController {
 		}else {
 			request.setAttribute("addr", al.get(1)+" "+al.get(2));
 		}
-		
+		*/
 		System.out.println(model.toString());
 		System.out.println("매물목록 출력");
 		ModelAndView mav = new ModelAndView();
