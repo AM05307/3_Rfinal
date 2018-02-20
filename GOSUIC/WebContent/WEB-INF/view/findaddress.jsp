@@ -266,7 +266,7 @@
 					<br>
 					<form action = "list.sp" method ="post">
 					<div class="search-form wow pulse">
-					<input type="text" name="searchaddr" id="sample4_roadAddress" placeholder="시/군/구/동 주소">
+					<input type="text" name="searchaddr" id="sample4_roadAddress" placeholder="읍/면/동 단위로 검색">
 					</div>
 					<br>
 					<button class="btn search1-btn" type="submit" >
