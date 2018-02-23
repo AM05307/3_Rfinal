@@ -176,22 +176,18 @@
 								</li>-->
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">단지명</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
-														readonly value="${detail_sil.get(0).danji}"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).danji}</span>
 								</li>
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">전용면적</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_sil.get(0).myunjuk}㎡"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).myunjuk}㎡</span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">층</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_sil.get(0).floor}층"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).floor} 층</span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">건축년도</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_sil.get(0).gunchook_year}년도"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).gunchook_year} 년도</span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
@@ -211,35 +207,60 @@
 							<h4 class="s-property-title">수익률 정보</h4>
 							<c:if test="${!empty detail_suic}">
 							<ul class="additional-details-list clearfix">
+							
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고수익률</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.maxRate}(%)</span>
+								</li>
+ 								
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저수익률</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.minRate}(%)</span>
+								</li>
+							
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.avgPrice}</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.avgPrice}</span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.maxPrice}</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.maxPrice}(만원)</span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.minPrice}</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.minPrice}(만원)</span>
 								</li>
 								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저수익률</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.maxRate}</span>
-								</li>
-
-								<!-- <li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균수익률</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">7%</span>
-								</li>
- 								-->
- 								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고수익률</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.minRate}</span>
-								</li>
-
 							</ul>		
 						</c:if>
 						</div>
 						<!-- End additional-details area  -->
+						<div class="section additional-details">
+
+							<h4 class="s-property-title">비용 정보</h4>
+								<!--<c:if test="${!empty detail_suic}">-->
+							<ul class="additional-details-list clearfix">
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">취득세율</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">--  (%)</span>
+								</li>
+
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상 취등록세</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --(만원)</span>
+								</li>
+								
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">중계수수료율</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --  (%)</span>
+								</li>
+								
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상 중계 수수료</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --(만원)</span>
+								</li>
+ 								
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상 대리등기비용</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --(만원)</span>
+								</li>
+
+							</ul>		
+						<!--</c:if>-->
+						</div>
+						<!-- 부대비용 정보 end  -->
 
 							<div class="section additional-details">
 
@@ -249,23 +270,19 @@
 									<c:forEach items="${detail_sil}" var="sil">
 										<ul class="additional-details-list clearfix">
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
-														font-size="1em;" readonly value="${sil.contract_year_month}"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${sil.contract_year_month}</span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
-														font-size="1em;" readonly value="${sil.contract_day}"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${sil.contract_day}</span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
-														readonly value="매매"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> 매매</span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래금액</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
-														readonly value="${sil.price}(만원)"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${sil.price} (만원)</span>
 								</li>
 								
 								
@@ -285,31 +302,26 @@
 									<c:forEach items="${detail_jw}" var="jw">
 										<ul class="additional-details-list clearfix">
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
-														font-size="1em;" readonly value="${jw.contract_year_month}"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.contract_year_month}</span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
-														font-size="1em;" readonly value="${jw.contract_day}"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.contract_day}</span>
 								</li>
 							
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
-														readonly value="${jw.junwol}"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.junwol}</span>
 								</li>
 								
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">보증금</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${jw.deposit}(만원)"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.deposit} (만원)</span>
 								</li>
 								
 								<c:if test="${jw.rent != 0}">
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">월세</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${jw.rent}(만원)"></span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.rent} (만원)</span>
 								</li>
 								</c:if>
 								
