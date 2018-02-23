@@ -181,17 +181,17 @@
 								</li>
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">전용면적</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_one.get(0).myunjuk}"></span>
+														readonly value="${detail_one.get(0).myunjuk}㎡"></span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">층</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_one.get(0).floor}"></span>
+														readonly value="${detail_one.get(0).floor}층"></span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">건축년도</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_one.get(0).gunchook_year}"></span>
+														readonly value="${detail_one.get(0).gunchook_year}년도"></span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
@@ -264,7 +264,7 @@
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래금액</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
-														readonly value="${ob.price}"></span>
+														readonly value="${ob.price}(만원)"></span>
 								</li>
 								</c:if>
 							
@@ -277,12 +277,12 @@
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">보증금</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${ob.deposit}"></span>
+														readonly value="${ob.deposit}(만원)"></span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">월세</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${ob.rent}"></span>
+														readonly value="${ob.rent}(만원)"></span>
 								</li>
 								</c:if>
 								

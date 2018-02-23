@@ -61,13 +61,15 @@ public class PropertyController {
 	@RequestMapping("/property.sp")
 	public ModelAndView Property(HttpSession session, Model model,HttpServletRequest request) throws SAXException, IOException, ParserConfigurationException {
 		System.out.println("매물상세 출력");
-		System.out.println("넘어온값"+request.getParameter("sigungu")+request.getParameter("bunji")+request.getParameter("danji")+request.getParameter("myunjuk"));
+		System.out.println("넘어온값"+request.getParameter("sigungu")+request.getParameter("bunji")+request.getParameter("danji")+request.getParameter("myunjuk")+request.getParameter("floor"));
 		String sigungu = request.getParameter("sigungu");
 		String bunji = request.getParameter("bunji");
 		String danji = request.getParameter("danji");
 		String myunjuk =request.getParameter("myunjuk");
+		String floor =request.getParameter("floor");
 		String addr = sigungu+bunji;
-		model.addAttribute("detail_one", propertyservice.detailproperty(sigungu,bunji,danji,myunjuk));
+		model.addAttribute("detail_one", propertyservice.detailproperty(sigungu,bunji,danji,myunjuk,floor));
+		model.addAttribute("rent_info", propertyservice.rentInfo(sigungu,bunji,danji,myunjuk,floor));
 		model.addAttribute("geocode", changeaddress.geocode(addr));
 		System.out.println("좌표:"+changeaddress.geocode(addr));
 		ModelAndView mav = new ModelAndView();

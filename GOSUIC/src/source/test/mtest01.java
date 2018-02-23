@@ -21,6 +21,10 @@ public class mtest01 {
 		list=ca.geocode("서울특별시 서초구 서초동 1337-3");
 		System.out.println(list.get(0));
 		System.out.println(list.get(1));
+		double a=1;
+		double b=3;
+		double c = a/b;
+		System.out.println(c);
 	}
 
 }

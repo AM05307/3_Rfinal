@@ -315,7 +315,7 @@
     <table border="0">
   <tr >
     <th width=33%><label>&nbsp;주소&nbsp;</label></th>
-    <th><label>번지</label></th>
+    <th width=15%><label>번지</label></th>
     <th width=20%><label>&nbsp;단지명&nbsp;</label></th>
     <!--<th width=18%><label>&nbsp;전용<br>면적(㎡)&nbsp;</label></th>-->
     <!--<th width=15%><label>&nbsp;층&nbsp;</label></th>-->
@@ -324,7 +324,7 @@
    	<!-- <th>&nbsp;평균<br>월세&nbsp;</th>-->
     <!-- <th>&nbsp;건축년도&nbsp;</th>-->
     <!-- <th>&nbsp;도로명&nbsp;</th>>-->
-    <th width=12%><label>&nbsp;수익률&nbsp;</label></th>
+    <th><label>&nbsp;최대수익률&nbsp;</label></th>
     <th width=5%><label>&nbsp;상세<br>정보&nbsp;</label></th>
 </tr>
 
@@ -341,7 +341,7 @@
 					<td><input type="hidden"  name="price" font-size="1em;" readonly value="${ob.price}">${ob.price}</td>
 					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td> --> 
 					<!-- <td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td> -->
-					<td><input type="hidden"  name="rent" font-size="1em;" readonly value="${ob.price}/${ob.rent}">4.2%</td>
+					<td><input type="hidden"  name="rent" font-size="1em;" readonly value="${ob.suic}">${ob.suic}%</td>
 					<td><button class="navbar-btn nav-button wow fadeInRight" type="submit" data-wow-delay="0.25s">+</button></td>
 				</form>
 				</tr>
