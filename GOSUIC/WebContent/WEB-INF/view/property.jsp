@@ -169,7 +169,7 @@
 							<h4 class="s-property-title">매물 정보</h4>
 								<c:if test="${!empty detail_sil}">
 
-										<ul class="additional-details-list clearfix">
+							<ul class="additional-details-list clearfix">
 								<!--  <li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">도로명 주소</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
 														font-size="1em;" readonly value="${detail_sil.get(0).doromyung}"></span>
@@ -209,33 +209,35 @@
 						<div class="section additional-details">
 
 							<h4 class="s-property-title">수익률 정보</h4>
-						<ul class="additional-details-list clearfix">
+							<c:if test="${!empty detail_suic}">
+							<ul class="additional-details-list clearfix">
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">16억</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.avgPrice}</span>
 								</li>
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">16억5천만원</span>
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고매매가</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.maxPrice}</span>
 								</li>
 								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">17억5천만원</span>
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저매매가</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.minPrice}</span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저수익률</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">5%</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.maxRate}</span>
 								</li>
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균수익률</span>
+								<!-- <li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균수익률</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">7%</span>
 								</li>
-
+ 								-->
+ 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고수익률</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">10%</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_suic.minRate}</span>
 								</li>
 
 							</ul>		
-						
+						</c:if>
 						</div>
 						<!-- End additional-details area  -->
 
@@ -321,6 +323,7 @@
 						</c:if>
 						<!-- 전월세 내역 end  -->
 						
+						<c:if test="${!empty geocode}">
 						<div class="section property-features">
 
 							<h4 class="s-property-title">위치 정보</h4>
@@ -424,6 +427,7 @@
 							<!--/////////////////////////////////////////////지도끝////////////////////////////////////////////////////  -->
 
 						</div>
+						</c:if>
 						<!-- End features area  -->
 					</div>
 					<!--  class="single-property-wrapper" end-->

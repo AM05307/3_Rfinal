@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import gosuic.dao.property.PropertyDao;
 import gosuic.dao.property.RentDao;
 import gosuic.entity.AptVo;
+import gosuic.entity.SuicInfoVo;
 
 
 @Service
@@ -45,6 +46,13 @@ public class PropertyService {
 	}
 
 
+	public List<AptVo> detailpropertyjwforRent(String sigungu, String bunji, String danji, String myunjuk, String floor) {
+
+		List<AptVo> res=null;
+		res = rentDao.getJwforRent(sigungu, bunji, danji, myunjuk, floor);
+		System.out.println("detailpropertyjw에서 찍어보는 res"+res);
+		return res;
+	}
 
 
 	public int getMaxRent(String sigungu, String bunji, String danji, String myunjuk, String floor) {
@@ -167,15 +175,7 @@ public class PropertyService {
 		return jw;
 	}*/
 	
-	public int depositofMaxRent(String sigungu, String bunji, String danji, String myunjuk, String floor, int rent) {
-		int res=0;
-		
-		
-		
-		
-		
-		return res;
-	}
+
 
 	public int typeChange(String deposit){
 		System.out.println("넘어온 가격:"+deposit);
@@ -202,5 +202,129 @@ public class PropertyService {
 		
 		System.out.println("형변환후:"+res);	
 		return res;
+	}
+
+	
+	public SuicInfoVo detailpropertysuic(String sigungu, String bunji, String danji, String myunjuk, String floor, String price) {
+		System.out.println("detailpropertysuic넘어온값??"+sigungu+bunji+danji+myunjuk+floor+price);
+		SuicInfoVo suicInfo = new SuicInfoVo();
+		double maxRate;
+		double minRate;
+		
+		double nprice ;
+		nprice = typeChange(price);
+		
+		double maxRent = 0;
+		double minRent = 0;
+		double maxDeposit = 0; 
+		double minDeposit=0;
+		int maxPrice =0;
+		int minPrice =0;
+		int sumPrice=0;
+		double avgPrice=0;
+		
+		
+		List<AptVo> jw=null;
+		List<AptVo> sil=null;
+		List<Double> rentlist = new ArrayList<>();
+		List<Double> depositlist = new ArrayList<>();
+		List<Integer> pricelist = new ArrayList<>();
+		
+		
+		jw = detailpropertyjwforRent(sigungu, bunji, danji, myunjuk, floor);
+		sil= detailpropertysil(sigungu, bunji, danji, myunjuk, floor);
+		
+		System.out.println("getprofit의 jw"+jw);
+		System.out.println("getprofit의 sil"+sil);
+		
+		if (jw.isEmpty()== false) {
+			if(jw.size()>1) {
+				for (int i = 0; i < jw.size(); i++) {
+					rentlist.add((double)jw.get(i).getRent());
+					System.out.println("1"+(double)jw.get(i).getRent());
+					depositlist.add((double)typeChange(jw.get(i).getDeposit()));
+					System.out.println("2"+(double)typeChange(jw.get(i).getDeposit()));
+				}
+				if(rentlist.isEmpty()==false) {
+					Collections.sort(rentlist);
+					maxRent = rentlist.get(0);
+					System.out.println("3"+ rentlist.get(0));
+					minRent = rentlist.get(jw.size()-1);
+					System.out.println("4"+rentlist.get(jw.size()-1));
+				}
+				if(depositlist.isEmpty()==false) {
+					Collections.sort(depositlist);
+					maxDeposit = depositlist.get(0);
+					System.out.println("5"+depositlist.get(0));
+					minDeposit = depositlist.get(jw.size()-1);
+					System.out.println("6"+depositlist.get(jw.size()-1));
+				}
+				
+			}else {
+				maxRent =jw.get(0).getRent();
+				System.out.println("7"+jw.get(0).getRent());
+				maxDeposit = (double)typeChange(jw.get(0).getDeposit());
+				System.out.println("8"+(double)typeChange(jw.get(0).getDeposit()));
+				minRent =jw.get(0).getRent();
+				System.out.println("9"+jw.get(0).getRent());
+				minDeposit = (double)typeChange(jw.get(0).getDeposit());
+				System.out.println("10"+ (double)typeChange(jw.get(0).getDeposit()));
+			}
+			
+		}
+		
+
+		if (sil.isEmpty()== false) {
+			if(sil.size()>1) {
+				for (int i = 0; i < sil.size(); i++) {
+					pricelist.add(typeChange(sil.get(i).getPrice()));
+					System.out.println("11"+typeChange(sil.get(i).getPrice()));
+					sumPrice = sumPrice +typeChange(sil.get(i).getPrice());
+					System.out.println("12"+sumPrice);
+				}
+				
+				if(pricelist.isEmpty()==false) {
+					Collections.sort(pricelist);
+					maxPrice = pricelist.get(0);
+					System.out.println("13"+pricelist.get(0));
+					minPrice = pricelist.get(sil.size()-1);
+					System.out.println("14"+pricelist.get(sil.size()-1));
+				}
+				avgPrice = sumPrice/sil.size();
+				System.out.println("15"+avgPrice);
+			}else {
+				maxPrice = typeChange(sil.get(0).getPrice());
+				System.out.println("16"+maxPrice);
+				minPrice = typeChange(sil.get(0).getPrice());
+				System.out.println("17"+minPrice);
+				sumPrice = sumPrice +typeChange(sil.get(0).getPrice());
+				System.out.println("18"+sumPrice);
+				avgPrice = sumPrice/1;
+				System.out.println("19"+avgPrice);
+				
+			}
+			
+		}
+	
+	
+		maxRate = Math.round((maxRent*12/(nprice-maxDeposit))*10000);
+		maxRate = maxRate/100;
+		System.out.println("20"+maxRate);
+		minRate = Math.round((minRent*12/(nprice-minDeposit))*10000);
+		minRate = minRate/100;
+		System.out.println("21"+minRate);
+		
+		try {
+		suicInfo.setMaxPrice(maxPrice);
+		suicInfo.setMinPrice(minPrice);
+		suicInfo.setMaxRate(maxRate);
+		suicInfo.setMinRate(minRate);
+		suicInfo.setAvgPrice(avgPrice);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("suic인포"+suicInfo);
+		
+		return suicInfo;
 	}
 }

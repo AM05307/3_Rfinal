@@ -19,7 +19,7 @@ import org.xml.sax.SAXException;
 @Service
 public class ChangeAddress {
 
-	public List<Double> geocode(String addr) throws SAXException, IOException, ParserConfigurationException {
+	public List<Double> geocode(String addr, String addr2) throws SAXException, IOException, ParserConfigurationException {
 		System.out.println("ChangeAddress클래스");
 		System.out.println("넘어온 addr"+addr);
 		List<Double> geocode = new ArrayList<Double>();

@@ -68,11 +68,14 @@ public class PropertyController {
 		String danji = request.getParameter("danji");
 		String myunjuk =request.getParameter("myunjuk");
 		String floor =request.getParameter("floor");
-		String addr = sigungu+bunji;
+		String price = request.getParameter("price");
+		String addr1 = sigungu+" "+bunji;
+		String addr2 = sigungu+" "+bunji+" "+danji;
+		model.addAttribute("detail_suic", propertyservice.detailpropertysuic(sigungu,bunji,danji,myunjuk,floor,price));
 		model.addAttribute("detail_sil", propertyservice.detailpropertysil(sigungu,bunji,danji,myunjuk,floor));
 		model.addAttribute("detail_jw", propertyservice.detailpropertyjw(sigungu,bunji,danji,myunjuk,floor));
-		model.addAttribute("geocode", changeaddress.geocode(addr));
-		System.out.println("ÁÂÇ¥:"+changeaddress.geocode(addr));
+		model.addAttribute("geocode", changeaddress.geocode(addr1,addr2));
+		System.out.println("ÁÂÇ¥:"+changeaddress.geocode(addr1,addr2));
 		ModelAndView mav = new ModelAndView();
 		if (session.getAttribute("userEmail") == null) {
 			mav.setViewName("redirect:/index.sp");
