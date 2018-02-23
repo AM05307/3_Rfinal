@@ -33,6 +33,7 @@ public class PropertyController {
 		String addr = request.getParameter("searchaddr");
 		model.addAttribute("all_list", propertyservice.listApt(addr));
 		
+		
 		/*ArrayList<String> al = new ArrayList<>();
 		String str = propertyservice.listApt(addr).get(0).getSigungu();
 		String[] words = str.split("\\s"); // whitespace
@@ -68,8 +69,8 @@ public class PropertyController {
 		String myunjuk =request.getParameter("myunjuk");
 		String floor =request.getParameter("floor");
 		String addr = sigungu+bunji;
-		model.addAttribute("detail_one", propertyservice.detailproperty(sigungu,bunji,danji,myunjuk,floor));
-		model.addAttribute("rent_info", propertyservice.rentInfo(sigungu,bunji,danji,myunjuk,floor));
+		model.addAttribute("detail_sil", propertyservice.detailpropertysil(sigungu,bunji,danji,myunjuk,floor));
+		model.addAttribute("detail_jw", propertyservice.detailpropertyjw(sigungu,bunji,danji,myunjuk,floor));
 		model.addAttribute("geocode", changeaddress.geocode(addr));
 		System.out.println("ÁÂÇ¥:"+changeaddress.geocode(addr));
 		ModelAndView mav = new ModelAndView();

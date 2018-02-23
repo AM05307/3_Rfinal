@@ -149,7 +149,7 @@ public class PropertyDao {
 			return list;
 		}
 
-	public List<AptVo> detailproperty(String sigungu,String bunji,String danji,String myunjuk, String floor) {
+	public List<AptVo> detailpropertysil(String sigungu,String bunji,String danji,String myunjuk, String floor) {
 		List<AptVo> detail =null;
 		
 		detail = getJdbcTemplate().query(
@@ -160,7 +160,7 @@ public class PropertyDao {
 					public AptVo mapRow(ResultSet rs, int num) throws SQLException {
 
 						AptVo ob = new AptVo();
-						System.out.println("¹Ùº¸¾ß1");
+					
 						ob.setSigungu(rs.getString("sigungu"));
 						ob.setBunji(rs.getString("bunji"));
 						ob.setBonbeon(rs.getString("bonbeon"));

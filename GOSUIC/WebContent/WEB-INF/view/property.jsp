@@ -157,7 +157,7 @@
 						<!--매물 이름, 가격  -->
 						<div class="single-property-header">
 							<br>
-							<h1 class="property-title pull-left">${detail_one.get(0).sigungu} ${detail_one.get(0).bunji}</h1>
+							<h1 class="property-title pull-left">${detail_sil.get(0).sigungu} ${detail_sil.get(0).bunji}</h1>
 							<span class="property-price pull-right">조회수 117</span>
 
 						</div>
@@ -167,31 +167,31 @@
 						<div class="section additional-details">
 
 							<h4 class="s-property-title">매물 정보</h4>
-								<c:if test="${!empty detail_one}">
+								<c:if test="${!empty detail_sil}">
 
 										<ul class="additional-details-list clearfix">
 								<!--  <li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">도로명 주소</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
-														font-size="1em;" readonly value="${detail_one.get(0).doromyung}"></span>
+														font-size="1em;" readonly value="${detail_sil.get(0).doromyung}"></span>
 								</li>-->
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">단지명</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
-														readonly value="${detail_one.get(0).danji}"></span>
+														readonly value="${detail_sil.get(0).danji}"></span>
 								</li>
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">전용면적</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_one.get(0).myunjuk}㎡"></span>
+														readonly value="${detail_sil.get(0).myunjuk}㎡"></span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">층</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_one.get(0).floor}층"></span>
+														readonly value="${detail_sil.get(0).floor}층"></span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">건축년도</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${detail_one.get(0).gunchook_year}년도"></span>
+														readonly value="${detail_sil.get(0).gunchook_year}년도"></span>
 								</li>
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
@@ -242,21 +242,20 @@
 							<div class="section additional-details">
 
 							<h4 class="s-property-title">상세 거래 내역</h4>
-								<c:if test="${!empty detail_one}">
+								<c:if test="${!empty detail_sil}">
 
-									<c:forEach items="${detail_one}" var="ob">
+									<c:forEach items="${detail_sil}" var="sil">
 										<ul class="additional-details-list clearfix">
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
-														font-size="1em;" readonly value="${ob.contract_year_month}"></span>
+														font-size="1em;" readonly value="${sil.contract_year_month}"></span>
 								</li>
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
-														font-size="1em;" readonly value="${ob.contract_day}"></span>
+														font-size="1em;" readonly value="${sil.contract_day}"></span>
 								</li>
 
-								<c:if test="${!empty ob.price}">
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
 														readonly value="매매"></span>
@@ -264,27 +263,8 @@
 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래금액</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
-														readonly value="${ob.price}(만원)"></span>
+														readonly value="${sil.price}(만원)"></span>
 								</li>
-								</c:if>
-							
-								<c:if test="${empty ob.price}">
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
-														readonly value="${ob.junwol}"></span>
-								</li>
-								
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">보증금</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${ob.deposit}(만원)"></span>
-								</li>
-
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">월세</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
-														readonly value="${ob.rent}(만원)"></span>
-								</li>
-								</c:if>
 								
 								
 							</ul>
@@ -294,7 +274,53 @@
 							
 						</div>
 						<!-- 상세 거래 내역 end  -->
+						<c:if test="${!empty detail_jw}">
+						<div class="section additional-details">
 
+							<h4 class="s-property-title">전월세 내역</h4>
+								
+
+									<c:forEach items="${detail_jw}" var="jw">
+										<ul class="additional-details-list clearfix">
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
+														font-size="1em;" readonly value="${jw.contract_year_month}"></span>
+								</li>
+
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
+														font-size="1em;" readonly value="${jw.contract_day}"></span>
+								</li>
+							
+								
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="price" font-size="1em;"
+														readonly value="${jw.junwol}"></span>
+								</li>
+								
+								
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">보증금</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
+														readonly value="${jw.deposit}(만원)"></span>
+								</li>
+								
+								<c:if test="${jw.rent != 0}">
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">월세</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="rent" font-size="1em;"
+														readonly value="${jw.rent}(만원)"></span>
+								</li>
+								</c:if>
+								
+								
+							</ul>
+							<br>
+							</c:forEach>
+							
+							
+						</div>
+						</c:if>
+						<!-- 전월세 내역 end  -->
+						
 						<div class="section property-features">
 
 							<h4 class="s-property-title">위치 정보</h4>

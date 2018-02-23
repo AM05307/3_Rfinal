@@ -29,18 +29,18 @@ public class PropertyService {
 		return res;
 	}
 
-	public List<AptVo> detailproperty(String sigungu, String bunji, String danji, String myunjuk, String floor) {
+	public List<AptVo> detailpropertysil(String sigungu, String bunji, String danji, String myunjuk, String floor) {
 
 		List<AptVo> res = null;
-		res = propertyDao.detailproperty(sigungu, bunji, danji, myunjuk, floor);
+		res = propertyDao.detailpropertysil(sigungu, bunji, danji, myunjuk, floor);
 		return res;
 	}
 	
-	public List<AptVo> rentInfo(String sigungu, String bunji, String danji, String myunjuk, String floor) {
+	public List<AptVo> detailpropertyjw(String sigungu, String bunji, String danji, String myunjuk, String floor) {
 
 		List<AptVo> res=null;
 		res = rentDao.getJw(sigungu, bunji, danji, myunjuk, floor);
-		System.out.println("info에서 찍어보는 res"+res);
+		System.out.println("detailpropertyjw에서 찍어보는 res"+res);
 		return res;
 	}
 
@@ -53,7 +53,7 @@ public class PropertyService {
 		
 		List<AptVo> jw=null;
 		List<Integer> rentlist = new ArrayList<>();
-		jw = rentInfo(sigungu, bunji, danji, myunjuk, floor);
+		jw = detailpropertyjw(sigungu, bunji, danji, myunjuk, floor);
 		System.out.println("maxrent의 rent"+jw);
 		
 		if (jw.isEmpty()== false) {
@@ -88,7 +88,7 @@ public class PropertyService {
 			List<Double> depositlist = new ArrayList<>();
 			
 			
-			jw = rentInfo(sigungu, bunji, danji, myunjuk, floor);
+			jw = detailpropertyjw(sigungu, bunji, danji, myunjuk, floor);
 			
 			System.out.println("getprofit의 jw"+jw);
 			
