@@ -328,25 +328,67 @@
     <th width=5%><label>&nbsp;상세<br>정보&nbsp;</label></th>
 </tr>
 
-<c:if test="${!empty all_list}">
+<c:if test="${!empty all_list_apt}">
 
-			<c:forEach items="${all_list}" var="ob">
+			<c:forEach items="${all_list_apt}" var="ob">
 				<tr>
 				<form action="/GOSUIC/property.sp" method="post">
 					<td><input type="hidden"  name="sigungu" font-size="0.5em;" readonly value="${ob.sigungu}">${ob.sigungu}</td>
-					<td><input type="hidden"  name="bunji" font-size="1em;" readonly value="${ob.bunji}">${ob.bunji}</td>
-					<td><input type="hidden"  name="danji" font-size="1em;" readonly value="${ob.danji}">${ob.danji}</td>
+					<td><input type="hidden"  name="bunji" font-size="1em;" readonly value="${ob.bunji}"> ${ob.bunji}</td>
+					<td><input type="hidden"  name="danji" font-size="1em;" readonly value="${ob.danji}"> ${ob.danji}</td>
 					<input type="hidden"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}">
 					<input type="hidden"  name="floor" font-size="1em;" readonly value="${ob.floor}">
 					<td><input type="hidden"  name="price" font-size="1em;" readonly value="${ob.price}">${ob.price}</td>
 					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td> --> 
 					<!-- <td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td> -->
-					<td><input type="hidden"  name="rent" font-size="1em;" readonly value="${ob.suic}">${ob.suic}%</td>
+					<td><input type="hidden"  name="rent" font-size="1em;" readonly value="${ob.suic}"> ${ob.suic}%</td>
+					<input type="hidden"  name="c_type" font-size="1em;" readonly value="${ob.c_type}">
 					<td><button class="navbar-btn nav-button wow fadeInRight" type="submit" data-wow-delay="0.25s">+</button></td>
 				</form>
 				</tr>
 			</c:forEach>
 		</c:if>
+<c:if test="${!empty all_list_offi}">
+
+			<c:forEach items="${all_list_offi}" var="ob">
+				<tr>
+				<form action="/GOSUIC/property.sp" method="post">
+					<td><input type="hidden"  name="sigungu" font-size="0.5em;" readonly value="${ob.sigungu}">${ob.sigungu}</td>
+					<td><input type="hidden"  name="bunji" font-size="1em;" readonly value="${ob.bunji}"> ${ob.bunji}</td>
+					<td><input type="hidden"  name="danji" font-size="1em;" readonly value="${ob.danji}"> ${ob.danji}</td>
+					<input type="hidden"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}">
+					<input type="hidden"  name="floor" font-size="1em;" readonly value="${ob.floor}">
+					<td><input type="hidden"  name="price" font-size="1em;" readonly value="${ob.price}">${ob.price}</td>
+					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td> --> 
+					<!-- <td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td> -->
+					<td><input type="hidden"  name="rent" font-size="1em;" readonly value="${ob.suic}"> ${ob.suic}%</td>
+					<input type="hidden"  name="c_type" font-size="1em;" readonly value="${ob.c_type}">
+					<td><button class="navbar-btn nav-button wow fadeInRight" type="submit" data-wow-delay="0.25s">+</button></td>
+				</form>
+				</tr>
+			</c:forEach>
+		</c:if>
+<c:if test="${!empty all_list_yeunda}">
+
+			<c:forEach items="${all_list_yeunda}" var="ob">
+				<tr>
+				<form action="/GOSUIC/property.sp" method="post">
+					<td><input type="hidden"  name="sigungu" font-size="0.5em;" readonly value="${ob.sigungu}">${ob.sigungu}</td>
+					<td><input type="hidden"  name="bunji" font-size="1em;" readonly value="${ob.bunji}"> ${ob.bunji}</td>
+					<td><input type="hidden"  name="danji" font-size="1em;" readonly value="${ob.danji}"> ${ob.danji}</td>
+					<input type="hidden"  name="myunjuk" font-size="1em;" readonly value="${ob.myunjuk}">
+					<input type="hidden"  name="floor" font-size="1em;" readonly value="${ob.floor}">
+					<td><input type="hidden"  name="price" font-size="1em;" readonly value="${ob.price}">${ob.price}</td>
+					<!--  <td><input type="text"  name="deposit" readonly value="${ob.deposit}"></td> --> 
+					<!-- <td><input type="text"  name="rent" font-size="1em;" readonly value="${ob.rent}"></td> -->
+					<td><input type="hidden"  name="rent" font-size="1em;" readonly value="${ob.suic}"> ${ob.suic}%</td>
+					<input type="hidden"  name="c_type" font-size="1em;" readonly value="${ob.c_type}">
+					<td><button class="navbar-btn nav-button wow fadeInRight" type="submit" data-wow-delay="0.25s">+</button></td>
+				</form>
+				</tr>
+			</c:forEach>
+		</c:if>
+
 
     </table>
 

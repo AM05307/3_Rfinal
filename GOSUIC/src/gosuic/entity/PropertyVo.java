@@ -1,6 +1,6 @@
 package gosuic.entity;
 
-public class AptVo {
+public class PropertyVo {
 	private String sigungu;
 	private String bunji;
 	private String bonbeon;

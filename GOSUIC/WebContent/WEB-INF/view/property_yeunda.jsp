@@ -214,25 +214,14 @@
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고수익률</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.maxRate}(%)</span>
 								</li>
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균수익률</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.avgRate}(%)</span>
-								</li>
-								
+ 								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저수익률</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.minRate}(%)</span>
 								</li>
-								
 							
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고전세가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.maxDeposit}(만원)</span>
-								</li>
-								
-								
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균매매가</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.avgPrice}</span>
 								</li>
-								
 
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고매매가</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.maxPrice}(만원)</span>
