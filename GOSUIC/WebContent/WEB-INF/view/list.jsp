@@ -3,6 +3,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
+<% if(session.getAttribute("userEmail") == null) {%>
+<script type="text/javascript">
+alert("로그인후 이용하세요!!");
+</script>
+<%} %>
+
+<% if(request.getParameter("searchaddr")=="") {%>
+<script type="text/javascript">
+alert("입력후 이용하세요!!");
+</script>
+<%} %>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->

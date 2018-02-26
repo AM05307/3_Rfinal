@@ -32,12 +32,7 @@ public class UserDao {
 		String str= getJdbcTemplate().queryForObject("select useremail from userinfo where useremail=? and userpassword=?",
 				new Object[] {vo.getUserEmail(),vo.getPassword1()}, String.class);
 		System.out.println("str을 찍어보자" +str);
-		/*if(str !=null && str != "") { 
-				return true;	
-		}else {
-			userEmail=null;
-			return false;
-		}*/
+
 		}catch(EmptyResultDataAccessException e) {
 			System.out.println("결과없음");
 			return false;

@@ -1,7 +1,6 @@
 package gosuic.controller.property;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -29,34 +28,20 @@ public class PropertyController {
 	// 전체 출력하기
 	@RequestMapping("/list.sp")
 	public ModelAndView all_list(Model model, HttpSession session,HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
 		System.out.println("넘어온 주소:"+request.getParameter("searchaddr"));
 		String addr = request.getParameter("searchaddr");
-		model.addAttribute("all_list", propertyservice.listApt(addr));
-		
-		
-		/*ArrayList<String> al = new ArrayList<>();
-		String str = propertyservice.listApt(addr).get(0).getSigungu();
-		String[] words = str.split("\\s"); // whitespace
-		for (String w : words) {
-		    al.add(w);
-		}
-		if (al.size() == 4) {
-			request.setAttribute("addr", al.get(2)+" "+al.get(3));
-		}else {
-			request.setAttribute("addr", al.get(1)+" "+al.get(2));
-		}
-		*/
-		System.out.println(model.toString());
-		System.out.println("매물목록 출력");
-		ModelAndView mav = new ModelAndView();
-		if (session.getAttribute("userEmail") == null) {
-			System.out.println("미로그인 로그인요망");
-			mav.setViewName("redirect:/index.sp");
+		if (addr == "") {
+			System.out.println("주소입력하고 눌러야해요!");
+			mav.setViewName("redirect:/addwindow.sp");
 		} else {
+			model.addAttribute("all_list", propertyservice.listApt(addr));
 			mav.setViewName("forward:/list2.sp");
-			//mav.setViewName("forward:/list2.sp?dong=" + vo.getDong());
 		}
 		return mav;
+		//System.out.println(model.toString());
+	//	System.out.println("매물목록 출력");
+		
 	}
 
 	@RequestMapping("/property.sp")

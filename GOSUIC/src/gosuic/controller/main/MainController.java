@@ -35,10 +35,24 @@ public class MainController {
 	// 매물 리스트 페이지로
 	@RequestMapping("/list2.sp")
 	public String listPage(HttpServletRequest request) {
-		
 		System.out.println("매물 리스트 화면으로");
 		return "/WEB-INF/view/list.jsp";
 	}
+	
+	//로그인전 매물 리스트페이지
+	@RequestMapping("/list3.sp")
+	public ModelAndView BeforeloginlistPage(HttpSession session, Model model) {
+		System.out.println("리스트 검색창 제어");
+		System.out.println(session.getAttribute("userEmail"));
+		ModelAndView mav = new ModelAndView();
+		if (session.getAttribute("userEmail") != null) {
+			mav.setViewName("redirect:/list.sp");
+		} else {
+			mav.setViewName("redirect:/index.sp");
+		}
+		return mav;
+	}
+	
 	
 	// 상세매물 페이지로
 		@RequestMapping("/detail.sp")

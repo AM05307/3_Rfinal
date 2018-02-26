@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -358,6 +359,19 @@
             }
         }).embed();
     }
+    
+    $(document).ready(function(){
+  	  var Search = /^[가-힣\s]+$/;
+  	  $("form").submit(function(){
+  		  if ( !Search.test($.trim($("#sample4_roadAddress").val())))
+  			{
+  				alert("주소를 입력후 클릭해주세요.");
+  				$("#sample4_roadAddress").focus();
+  				return false;
+
+  			}
+  	  });
+    });
 </script>
 </body>
 

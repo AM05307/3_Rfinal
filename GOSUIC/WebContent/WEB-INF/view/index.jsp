@@ -5,7 +5,7 @@
 
 <% if(session.getAttribute("userEmail") == null) {%>
 <script type="text/javascript">
-alert("로그인후 이용하세요");
+alert("로그인후 이용하세요!!");
 </script>
 <%} %>
 
@@ -117,7 +117,7 @@ alert("로그인후 이용하세요");
 					<!--   <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">매물</a></li>-->
 
 					<li class="wow fadeInDown" data-wow-delay="0.2s"><a class=""
-						href="/GOSUIC/list.sp">매물</a></li>
+						href="/GOSUIC/list3.sp">매물</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.3s"><a class=""
 						href="/GOSUIC/property.sp">매물상세</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.4s"><a class=""
