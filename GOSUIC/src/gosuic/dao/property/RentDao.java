@@ -24,12 +24,12 @@ public class RentDao {
 	}
 
 	// 해당 매물의 월세값
-	public List<PropertyVo> getJw(String sigungu,String bunji,String danji,String myunjuk, String floor, String tName) {
-		System.out.println("getjw로 넘어온값:"+sigungu+bunji+danji+myunjuk+floor+tName);
+	public List<PropertyVo> getJw(PropertyVo pv, String tName) {
+		System.out.println("getjw로 넘어온값:"+pv+tName);
 		List<PropertyVo> listjw =null;
 		
 		listjw = getJdbcTemplate().query(
-				"SELECT * FROM "+tName+"_jw where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' ",
+				"SELECT * FROM "+tName+"_jw where sigungu ='"+pv.getSigungu()+"' and bunji='"+pv.getBunji()+"' and danji='"+pv.getDanji()+"' and myunjuk='"+pv.getMyunjuk()+"' ",
 				new  RowMapper<PropertyVo>(){
 
 					@Override
@@ -63,9 +63,9 @@ public class RentDao {
 	return listjw;
 	}
 
-	public List<PropertyVo> getJwforRent(String sigungu, String bunji, String danji, String myunjuk, String floor,String tName) {
-		System.out.println("getjw로 넘어온값:"+sigungu+bunji+danji+myunjuk+floor+tName);
-		String query ="SELECT * FROM "+tName+"_jw where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' and junwol = '월세'";
+	public List<PropertyVo> getJwforRent(PropertyVo pv,String tName) {
+		System.out.println("getjw로 넘어온값:"+pv+tName);
+		String query ="SELECT * FROM "+tName+"_jw where sigungu ='"+pv.getSigungu()+"' and bunji='"+pv.getBunji()+"' and danji='"+pv.getDanji()+"' and myunjuk='"+pv.getMyunjuk()+"' and junwol = '월세'";
 		List<PropertyVo> listjw =null;
 		
 		listjw = getJdbcTemplate().query(query,	new  RowMapper<PropertyVo>(){
@@ -101,10 +101,9 @@ public class RentDao {
 	return listjw;
 	}
 
-	public List<PropertyVo> getMaxDeposit(String sigungu, String bunji, String danji, String myunjuk, String floor,
-			String tName) {
-		System.out.println("getjw로 넘어온값:"+sigungu+bunji+danji+myunjuk+floor+tName);
-		String query ="SELECT * FROM "+tName+"_jw where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' and junwol = '전세'";
+	public List<PropertyVo> getMaxDeposit(PropertyVo pv, String tName) {
+		System.out.println("getjw로 넘어온값:"+pv+tName);
+		String query ="SELECT * FROM "+tName+"_jw where sigungu ='"+pv.getSigungu()+"' and bunji='"+pv.getBunji()+"' and danji='"+pv.getDanji()+"' and myunjuk='"+pv.getMyunjuk()+"' and junwol = '전세'";
 		List<PropertyVo> listjw =null;
 		
 		listjw = getJdbcTemplate().query(query,	new  RowMapper<PropertyVo>(){

@@ -45,17 +45,17 @@ public class PropertyService {
 		return res;
 	}
 	
-	public List<PropertyVo> detailpropertysil(String sigungu, String bunji, String danji, String myunjuk, String floor,String tName) {
+	public List<PropertyVo> detailpropertysil(PropertyVo pv) {
 
 		List<PropertyVo> res = null;
-		res = propertyDao.detailpropertysil(sigungu, bunji, danji, myunjuk, floor,tName);
+		res = propertyDao.detailpropertysil(pv, gettName(pv));
 		return res;
 	}
 	
-	public List<PropertyVo> detailpropertyjw(String sigungu, String bunji, String danji, String myunjuk, String floor,String tName) {
+	public List<PropertyVo> detailpropertyjw(PropertyVo pv) {
 
 		List<PropertyVo> res=null;
-		res = rentDao.getJw(sigungu, bunji, danji, myunjuk, floor,tName);
+		res = rentDao.getJw(pv,gettName(pv));
 		System.out.println("detailpropertyjw에서 찍어보는 res"+res);
 		return res;
 	}
@@ -63,22 +63,22 @@ public class PropertyService {
 	
 	
 	
-	public List<PropertyVo> detailpropertyjwforRent(String sigungu, String bunji, String danji, String myunjuk, String floor,String tName) {
+	public List<PropertyVo> detailpropertyjwforRent(PropertyVo pv,String tName) {
 
 		List<PropertyVo> res=null;
-		res = rentDao.getJwforRent(sigungu, bunji, danji, myunjuk, floor,tName);
+		res = rentDao.getJwforRent(pv,tName);
 		System.out.println("detailpropertyjw에서 찍어보는 res"+res);
 		return res;
 	}
 
 
-	public String getMaxDeposit(String sigungu, String bunji, String danji, String myunjuk, String floor,String tName) {
-		System.out.println("넘어온값??"+sigungu+bunji+danji+myunjuk+floor);
+	public String getMaxDeposit(PropertyVo pv) {
+		System.out.println("넘어온값??"+pv);
 		String result = null;
 		
 		List<PropertyVo> jw=null;
 		List<String> depositlist = new ArrayList<>();
-		jw = rentDao.getMaxDeposit(sigungu, bunji, danji, myunjuk, floor,tName);
+		jw = rentDao.getMaxDeposit(pv,gettName(pv));
 		System.out.println("getMaxDeposit의 jw"+jw);
 		
 		if (jw.isEmpty()== false) {
@@ -97,21 +97,11 @@ public class PropertyService {
 		return result;
 	}
 		
-		public ProfitVo getprofit(String sigungu, String bunji, String danji, String myunjuk, String floor, String price,String tName) {
+		public ProfitVo getprofit(PropertyVo pv) {
 			ProfitVo suicvo = new ProfitVo();
 			
-			if(String.valueOf(tName).equals("아파트")){
-				tName = "apt";
-			}else if(String.valueOf(tName).equals("오피스텔")){
-				tName = "offi";
-				
-			}else if(String.valueOf(tName).equals("연립다세대")){
-				tName = "yeun_da";
-			}
-			System.out.println("겟프로핏으로넘어온값??"+sigungu+bunji+danji+myunjuk+floor+price+tName);
-			
 			double nprice ;
-				nprice = typeChange(price);
+				nprice = typeChange(pv.getPrice());
 			double rent = 0;
 			double deposit=0;
 			double result=0;
@@ -124,7 +114,7 @@ public class PropertyService {
 			List<Double> suic = new ArrayList<>();
 			List<PropertyVo> jw=null;
 					
-			jw = detailpropertyjwforRent(sigungu, bunji, danji, myunjuk, floor,tName);
+			jw = detailpropertyjwforRent(pv,gettName(pv));
 			
 			System.out.println("getprofit의 jw"+jw);
 			
@@ -169,46 +159,9 @@ public class PropertyService {
 			suicvo.setMinProfit(minprofit);
 			suicvo.setMaxProfit(maxprofit);
 			suicvo.setAvgProfit(avgprofit);
-		//System.out.println("profit?"+result);
+		
 		return suicvo;
 	}
-	
-	/*public List<AptVo> sortRent(String sigungu, String bunji, String danji, String myunjuk, String floor) {
-		System.out.println("넘어온값??"+sigungu+bunji+danji+myunjuk+floor);
-		int maxRent = 0;
-		AptVo jwtemp1 ;
-		AptVo jwtemp2 ;
-		List<AptVo> jw=null;
-		List<Integer> list = new ArrayList<>();
-		jw = rentInfo(sigungu, bunji, danji, myunjuk, floor);
-		System.out.println("maxrent의 rent"+jw);
-		
-		int i =0;
-		int j =0;
-		if (jw.isEmpty()== false) {
-			if(jw.size()>1) {
-				for (i= 0 ; i < jw.size()-1; i++) {
-					for(j = i+1; j<jw.size(); j++) {
-						
-						jwtemp1=jw.get(i);
-						jwtemp2=jw.get(j);
-												
-						if(jwtemp1.getRent()<jwtemp2.getRent()) {
-							jw.set(i, jwtemp2);
-							jw.set(j, jwtemp1);
-						}
-					}
-				}
-			}
-				maxRent = jw.get(0).getRent();
-			}else {
-				maxRent=jw.get(0).getRent();
-			}
-		
-		
-		return jw;
-	}*/
-	
 
 
 	public int typeChange(String deposit){
@@ -239,15 +192,14 @@ public class PropertyService {
 	}
 
 	
-	public SuicInfoVo detailpropertysuic(String sigungu, String bunji, String danji, String myunjuk, String floor, String price,String tName) {
-		System.out.println("detailpropertysuic넘어온값??"+sigungu+bunji+danji+myunjuk+floor+price+tName);
+	public SuicInfoVo detailpropertysuic(PropertyVo pv) {
 		
 		SuicInfoVo suicInfo = new SuicInfoVo();
 		ProfitVo suic = new ProfitVo();
 		String maxDeposit = null;
 		
 		double nprice ;
-		nprice = typeChange(price);
+		nprice = typeChange(pv.getPrice());
 		
 		int maxPrice =0;
 		int minPrice =0;
@@ -259,7 +211,7 @@ public class PropertyService {
 	
 		List<Integer> pricelist = new ArrayList<>();
 		
-		sil= detailpropertysil(sigungu, bunji, danji, myunjuk, floor,tName);
+		sil= detailpropertysil(pv);
 		
 		System.out.println("getprofit의 jw"+jw);
 		System.out.println("getprofit의 sil"+sil);
@@ -268,35 +220,26 @@ public class PropertyService {
 			if(sil.size()>1) {
 				for (int i = 0; i < sil.size(); i++) {
 					pricelist.add(typeChange(sil.get(i).getPrice()));
-					System.out.println("11"+typeChange(sil.get(i).getPrice()));
 					sumPrice = sumPrice +typeChange(sil.get(i).getPrice());
-					System.out.println("12"+sumPrice);
 				}
 				
 				if(pricelist.isEmpty()==false) {
 					Collections.sort(pricelist);
 					maxPrice = pricelist.get(0);
-					System.out.println("13"+pricelist.get(0));
 					minPrice = pricelist.get(sil.size()-1);
-					System.out.println("14"+pricelist.get(sil.size()-1));
 				}
 				avgPrice = sumPrice/sil.size();
-				System.out.println("15"+avgPrice);
 			}else {
 				maxPrice = typeChange(sil.get(0).getPrice());
-				System.out.println("16"+maxPrice);
 				minPrice = typeChange(sil.get(0).getPrice());
-				System.out.println("17"+minPrice);
 				sumPrice = sumPrice +typeChange(sil.get(0).getPrice());
-				System.out.println("18"+sumPrice);
-				avgPrice = sumPrice/1;
-				System.out.println("19"+avgPrice);				
+				avgPrice = sumPrice/1;			
 			}
 			
 		}
 		
-		suic = getprofit(sigungu, bunji, danji, myunjuk, floor, price, tName);
-		maxDeposit = getMaxDeposit(sigungu, bunji, danji, myunjuk, floor, tName);
+		suic = getprofit(pv);
+		maxDeposit = getMaxDeposit(pv);
 		
 		try {
 		suicInfo.setMaxPrice(maxPrice);
@@ -312,5 +255,20 @@ public class PropertyService {
 		System.out.println("suic인포"+suicInfo);
 		
 		return suicInfo;
+	}
+	
+	public String gettName(PropertyVo vo) {
+		String tName=null;
+		
+		if(String.valueOf(vo.getC_type()).equals("아파트")){
+			tName = "apt";
+		}else if(String.valueOf(vo.getC_type()).equals("오피스텔")){
+			tName = "offi";
+			
+		}else if(String.valueOf(vo.getC_type()).equals("연립다세대")){
+			tName = "yeun_da";
+		}
+		
+		return tName; 
 	}
 }

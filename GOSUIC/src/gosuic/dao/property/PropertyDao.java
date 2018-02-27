@@ -65,7 +65,7 @@ public class PropertyDao {
 							ob.setC_type(rs.getString("c_type"));
 							ob.setHit(rs.getInt("hit"));
 							//int rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-							suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+							suic= (propertyservice.getprofit(ob)).getMaxProfit();
 							ob.setSuic(suic);
 
 							return ob;
@@ -101,7 +101,7 @@ public class PropertyDao {
 								ob.setC_type(rs.getString("c_type"));
 								ob.setHit(rs.getInt("hit"));
 								//int rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-								suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+								suic= (propertyservice.getprofit(ob)).getMaxProfit();
 								ob.setSuic(suic);
 
 								return ob;
@@ -137,7 +137,7 @@ public class PropertyDao {
 									ob.setHit(rs.getInt("hit"));
 									
 									//rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-									suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+									suic= (propertyservice.getprofit(ob)).getMaxProfit();
 									
 									ob.setSuic(suic);
 									
@@ -189,7 +189,7 @@ public class PropertyDao {
 								ob.setC_type(rs.getString("c_type"));
 								ob.setHit(rs.getInt("hit"));
 								//int rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-								suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+								suic= (propertyservice.getprofit(ob)).getMaxProfit();
 								ob.setSuic(suic);
 
 								return ob;
@@ -225,7 +225,7 @@ public class PropertyDao {
 									ob.setC_type(rs.getString("c_type"));
 									ob.setHit(rs.getInt("hit"));
 									//int rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-									suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+									suic= (propertyservice.getprofit(ob)).getMaxProfit();
 									ob.setSuic(suic);
 
 									return ob;
@@ -261,7 +261,7 @@ public class PropertyDao {
 										ob.setHit(rs.getInt("hit"));
 										
 										//rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-										suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+										suic= (propertyservice.getprofit(ob)).getMaxProfit();
 										
 										ob.setSuic(suic);
 										
@@ -313,7 +313,7 @@ public class PropertyDao {
 								ob.setC_type(rs.getString("c_type"));
 								ob.setHit(rs.getInt("hit"));
 								//int rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-								suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+								suic= (propertyservice.getprofit(ob)).getMaxProfit();
 								ob.setSuic(suic);
 
 								return ob;
@@ -349,7 +349,7 @@ public class PropertyDao {
 									ob.setC_type(rs.getString("c_type"));
 									ob.setHit(rs.getInt("hit"));
 									//int rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-									suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+									suic= (propertyservice.getprofit(ob)).getMaxProfit();
 									ob.setSuic(suic);
 
 									return ob;
@@ -385,7 +385,7 @@ public class PropertyDao {
 										ob.setHit(rs.getInt("hit"));
 										
 										//rent= propertyservice.getMaxRent(rs.getString("sigungu"),rs.getString("bunji"),rs.getString("danji"),rs.getString("myunjuk"),rs.getString("floor"));
-										suic= (propertyservice.getprofit(rs.getString("sigungu"), rs.getString("bunji"), rs.getString("danji"), rs.getString("myunjuk"), rs.getString("floor"), rs.getString("price"),rs.getString("c_type"))).getMaxProfit();
+										suic= (propertyservice.getprofit(ob)).getMaxProfit();
 										
 										ob.setSuic(suic);
 										
@@ -398,11 +398,11 @@ public class PropertyDao {
 			}
 	
 	
-	public List<PropertyVo> detailpropertysil(String sigungu,String bunji,String danji,String myunjuk, String floor,String tName) {
+	public List<PropertyVo> detailpropertysil(PropertyVo pv,String tName) {
 		List<PropertyVo> detail =null;
 		
 		detail = getJdbcTemplate().query(
-				"SELECT * FROM "+tName+"_sil where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' and floor='"+floor+"' ",
+				"SELECT * FROM "+tName+"_sil where sigungu ='"+pv.getSigungu()+"' and bunji='"+pv.getBunji()+"' and danji='"+pv.getDanji()+"' and myunjuk='"+pv.getMyunjuk()+"' and floor='"+pv.getFloor()+"' ",
 				new RowMapper<PropertyVo>() {
 
 					@Override
