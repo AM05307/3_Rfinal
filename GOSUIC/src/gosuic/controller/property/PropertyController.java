@@ -24,6 +24,8 @@ public class PropertyController {
 	private PropertyService propertyservice;
 	@Autowired
 	private ChangeAddress changeaddress;
+	
+	private String tName = null;
 
 	// 전체 출력하기
 	@RequestMapping("/list.sp")
@@ -31,9 +33,34 @@ public class PropertyController {
 		ModelAndView mav = new ModelAndView();
 		System.out.println("넘어온 주소:"+request.getParameter("searchaddr"));
 		String addr = request.getParameter("searchaddr");
+<<<<<<< HEAD
 		if (addr == "") {
 			System.out.println("주소입력하고 눌러야해요!");
 			mav.setViewName("redirect:/addwindow.sp");
+=======
+		model.addAttribute("all_list_apt", propertyservice.listApt(addr));
+		model.addAttribute("all_list_offi", propertyservice.listOffi(addr));
+		model.addAttribute("all_list_yeunda", propertyservice.listYeunda(addr));
+		
+		/*ArrayList<String> al = new ArrayList<>();
+		String str = propertyservice.listApt(addr).get(0).getSigungu();
+		String[] words = str.split("\\s"); // whitespace
+		for (String w : words) {
+		    al.add(w);
+		}
+		if (al.size() == 4) {
+			request.setAttribute("addr", al.get(2)+" "+al.get(3));
+		}else {
+			request.setAttribute("addr", al.get(1)+" "+al.get(2));
+		}
+		*/
+		System.out.println(model.toString());
+		System.out.println("매물목록 출력");
+		ModelAndView mav = new ModelAndView();
+		if (session.getAttribute("userEmail") == null) {
+			System.out.println("미로그인 로그인요망");
+			mav.setViewName("redirect:/index.sp");
+>>>>>>> 3d54bbad252091e7961859b64745506e0bbf3378
 		} else {
 			model.addAttribute("all_list", propertyservice.listApt(addr));
 			mav.setViewName("forward:/list2.sp");
@@ -47,7 +74,18 @@ public class PropertyController {
 	@RequestMapping("/property.sp")
 	public ModelAndView Property(HttpSession session, Model model,HttpServletRequest request) throws SAXException, IOException, ParserConfigurationException {
 		System.out.println("매물상세 출력");
-		System.out.println("넘어온값"+request.getParameter("sigungu")+request.getParameter("bunji")+request.getParameter("danji")+request.getParameter("myunjuk")+request.getParameter("floor"));
+		System.out.println("넘어온값"+request.getParameter("sigungu")+request.getParameter("bunji")+request.getParameter("danji")+request.getParameter("myunjuk")+request.getParameter("floor")+request.getParameter("c_type"));
+		String c_type = request.getParameter("c_type");
+		System.out.println(c_type);
+		if(String.valueOf(c_type).equals("아파트")){
+			tName = "apt";
+		}else if(String.valueOf(c_type).equals("오피스텔")){
+			tName = "offi";
+			
+		}else if(String.valueOf(c_type).equals("연립다세대")){
+			tName = "yeun_da";
+		}
+		System.out.println("컨트롤러 tname출력"+tName);
 		String sigungu = request.getParameter("sigungu");
 		String bunji = request.getParameter("bunji");
 		String danji = request.getParameter("danji");
@@ -56,11 +94,12 @@ public class PropertyController {
 		String price = request.getParameter("price");
 		String addr1 = sigungu+" "+bunji;
 		String addr2 = sigungu+" "+bunji+" "+danji;
-		model.addAttribute("detail_suic", propertyservice.detailpropertysuic(sigungu,bunji,danji,myunjuk,floor,price));
-		model.addAttribute("detail_sil", propertyservice.detailpropertysil(sigungu,bunji,danji,myunjuk,floor));
-		model.addAttribute("detail_jw", propertyservice.detailpropertyjw(sigungu,bunji,danji,myunjuk,floor));
+		model.addAttribute("detail_suic", propertyservice.detailpropertysuic(sigungu,bunji,danji,myunjuk,floor,price,tName));
+		model.addAttribute("detail_sil", propertyservice.detailpropertysil(sigungu,bunji,danji,myunjuk,floor,tName));
+		model.addAttribute("detail_jw", propertyservice.detailpropertyjw(sigungu,bunji,danji,myunjuk,floor,tName));
 		model.addAttribute("geocode", changeaddress.geocodeMain(addr1,addr2));
 		System.out.println("좌표:"+changeaddress.geocodeMain(addr1,addr2));
+
 		ModelAndView mav = new ModelAndView();
 		if (session.getAttribute("userEmail") == null) {
 			mav.setViewName("redirect:/index.sp");

@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import gosuic.entity.AptVo;
+import gosuic.entity.PropertyVo;
 
 
 @Repository
@@ -24,18 +24,18 @@ public class RentDao {
 	}
 
 	// 해당 매물의 월세값
-	public List<AptVo> getJw(String sigungu,String bunji,String danji,String myunjuk, String floor) {
-		System.out.println("getjw로 넘어온값:"+sigungu+bunji+danji+myunjuk+floor);
-		List<AptVo> listjw =null;
+	public List<PropertyVo> getJw(String sigungu,String bunji,String danji,String myunjuk, String floor, String tName) {
+		System.out.println("getjw로 넘어온값:"+sigungu+bunji+danji+myunjuk+floor+tName);
+		List<PropertyVo> listjw =null;
 		
 		listjw = getJdbcTemplate().query(
-				"SELECT * FROM apt_jw where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' ",
-				new  RowMapper<AptVo>(){
+				"SELECT * FROM "+tName+"_jw where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' ",
+				new  RowMapper<PropertyVo>(){
 
 					@Override
-					public AptVo mapRow(ResultSet res, int num) throws SQLException {
+					public PropertyVo mapRow(ResultSet res, int num) throws SQLException {
 
-						AptVo jw = new AptVo();
+						PropertyVo jw = new PropertyVo();
 						
 						jw.setSigungu(res.getString("sigungu"));
 						jw.setBunji(res.getString("bunji"));
@@ -63,18 +63,17 @@ public class RentDao {
 	return listjw;
 	}
 
-	public List<AptVo> getJwforRent(String sigungu, String bunji, String danji, String myunjuk, String floor) {
-		System.out.println("getjw로 넘어온값:"+sigungu+bunji+danji+myunjuk+floor);
-		List<AptVo> listjw =null;
+	public List<PropertyVo> getJwforRent(String sigungu, String bunji, String danji, String myunjuk, String floor,String tName) {
+		System.out.println("getjw로 넘어온값:"+sigungu+bunji+danji+myunjuk+floor+tName);
+		String query ="SELECT * FROM "+tName+"_jw where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' and junwol = '월세'";
+		List<PropertyVo> listjw =null;
 		
-		listjw = getJdbcTemplate().query(
-				"SELECT * FROM apt_jw where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' and rent > 0",
-				new  RowMapper<AptVo>(){
+		listjw = getJdbcTemplate().query(query,	new  RowMapper<PropertyVo>(){
 
 					@Override
-					public AptVo mapRow(ResultSet res, int num) throws SQLException {
+					public PropertyVo mapRow(ResultSet res, int num) throws SQLException {
 
-						AptVo jw = new AptVo();
+						PropertyVo jw = new PropertyVo();
 						
 						jw.setSigungu(res.getString("sigungu"));
 						jw.setBunji(res.getString("bunji"));
@@ -98,7 +97,46 @@ public class RentDao {
 						return jw;
 					}
 				});
-		System.out.println("출력전월:"+listjw);
+		System.out.println("출력월세:"+listjw);
+	return listjw;
+	}
+
+	public List<PropertyVo> getMaxDeposit(String sigungu, String bunji, String danji, String myunjuk, String floor,
+			String tName) {
+		System.out.println("getjw로 넘어온값:"+sigungu+bunji+danji+myunjuk+floor+tName);
+		String query ="SELECT * FROM "+tName+"_jw where sigungu ='"+sigungu+"' and bunji='"+bunji+"' and danji='"+danji+"' and myunjuk='"+myunjuk+"' and junwol = '전세'";
+		List<PropertyVo> listjw =null;
+		
+		listjw = getJdbcTemplate().query(query,	new  RowMapper<PropertyVo>(){
+
+					@Override
+					public PropertyVo mapRow(ResultSet res, int num) throws SQLException {
+
+						PropertyVo jw = new PropertyVo();
+						
+						jw.setSigungu(res.getString("sigungu"));
+						jw.setBunji(res.getString("bunji"));
+						jw.setBonbeon(res.getString("bonbeon"));
+						jw.setBubeon(res.getString("bubeon"));
+						jw.setDanji(res.getString("danji"));
+						jw.setJunwol(res.getString("junwol"));
+						jw.setMyunjuk(res.getString("myunjuk"));
+						jw.setContract_year_month(res.getString("contract_year_month"));
+						jw.setContract_day(res.getString("contract_day"));
+						//ob.setPrice(res.getString("price"));
+						jw.setDeposit(res.getString("deposit"));
+						jw.setRent(res.getInt("rent"));
+						jw.setFloor(res.getString("floor"));
+						jw.setGunchook_year(res.getString("gunchook_year"));
+						jw.setDoromyung(res.getString("doromyung"));
+						jw.setC_type(res.getString("c_type"));
+						jw.setHit(res.getInt("hit"));
+						//ob.setSuic(2.4);
+
+						return jw;
+					}
+				});
+		System.out.println("출력전세:"+listjw);
 	return listjw;
 	}
 	

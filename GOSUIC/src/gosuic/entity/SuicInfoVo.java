@@ -8,7 +8,14 @@ public class SuicInfoVo {
 	private double maxRate;
 	private double minRate;
 	private double avgRate;
+	private String maxDeposit;
 	
+	public String getMaxDeposit() {
+		return maxDeposit;
+	}
+	public void setMaxDeposit(String maxDeposit) {
+		this.maxDeposit = maxDeposit;
+	}
 	public int getMaxPrice() {
 		return maxPrice;
 	}
@@ -47,8 +54,8 @@ public class SuicInfoVo {
 	}
 	@Override
 	public String toString() {
-		return "suicInfoVo [maxPrice=" + maxPrice + ", minPrice=" + minPrice + ", avgPrice=" + avgPrice + ", maxRate="
-				+ maxRate + ", minRate=" + minRate + ", avgRate=" + avgRate + "]";
+		return "SuicInfoVo [maxPrice=" + maxPrice + ", minPrice=" + minPrice + ", avgPrice=" + avgPrice + ", maxRate="
+				+ maxRate + ", minRate=" + minRate + ", avgRate=" + avgRate + ", maxDeposit=" + maxDeposit + "]";
 	}
 	
 	
