@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>고수익 | Home page</title>
+<title>고수익 | My page</title>
 <meta name="description" content="GARO is a real-estate template">
 <meta name="author" content="Kimarotec">
 <meta name="keyword"
@@ -136,7 +136,7 @@
 
 <div class="page-head">
 	<div class="page-head-content">
-		<h1 class="page-title">상세 매물 정보</h1>
+		<h1 class="page-title">MY PAGE</h1>
 	</div>
 </div>
 </head>
@@ -161,9 +161,9 @@
 						<!--매물 이름, 가격  -->
 						<div class="single-property-header">
 							<br>
-							<h1 class="property-title pull-left">${detail_sil.get(0).sigungu}
-								${detail_sil.get(0).bunji}</h1>
-							<span class="property-price pull-right">조회수 117</span>
+							<h1 class="property-title pull-left">${userInfo.get(0).getUserName()}
+								_님의 페이지 </h1>
+							<span class="property-price pull-right">방문횟수 15</span>
 
 						</div>
 						<!--매물 이름, 가격end   -->
@@ -171,44 +171,48 @@
 
 						<div class="section additional-details">
 
-							<h4 class="s-property-title">매물 정보</h4>
-							<c:if test="${!empty detail_sil}">
-							
-								<input type="hidden" name="sigungu" id="sigungu" readonly value="${detail_sil.get(0).sigungu}">
-								<input type="hidden" name="bunji" id="bunji" readonly value="${detail_sil.get(0).bunji}">
+							<h4 class="s-property-title">개인 정보</h4>
+							<c:if test="${!empty userInfo}">
+
 								<ul class="additional-details-list clearfix">
 									<!--  <li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">도로명 주소</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
 														font-size="1em;" readonly value="${detail_sil.get(0).doromyung}"></span>
 								</li>-->
-									
-											
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">단지명</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_sil.get(0).danji}</span>
-										<input type="hidden" name="danji" id="danji" readonly value="${detail_sil.get(0).danji}">
-									</li>
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">전용면적</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_sil.get(0).myunjuk}㎡</span>
-										<input type="hidden" name="myunjuk" id="myunjuk" readonly value="${detail_sil.get(0).myunjuk}">
-										</li>
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">매물형태</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_sil.get(0).c_type}</span>
-										<input type="hidden" name="c_type" id="c_type" readonly value="${detail_sil.get(0).c_type}">
-										</li>
 
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">층</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_sil.get(0).floor} 층</span>
-										<input type="hidden" name="floor" id="floor" readonly value="${detail_sil.get(0).floor}">	
-									</li>
-
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">건축년도</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${detail_sil.get(0).gunchook_year} 년도</span>
-										<input type="hidden" name="gunchook_year" id="gunchook_year" readonly value="${detail_sil.get(0).gunchook_year}">	
-										</li>
-
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">이메일</span>
 										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-										<input type="button" id="insert_at" value="등록하기">
+											${userInfo.get(0).getUserEmail()}</span></li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">아이디</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${userInfo.get(0).getUserID()}</span></li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">이름</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${userInfo.get(0).getUserName()}</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">생년월일</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${userInfo.get(0).getUserBirthday()}</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">성별</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${userInfo.get(0).getUserGender()}</span></li>
+											
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">현재 비밀번호</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${userInfo.get(0).getPassword1()}</span></li>
+											
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">새비밀번호</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${userInfo.get(0).getPassword1()}</span></li>
+											
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">새비밀번호 확인</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${userInfo.get(0).getPassword1()}</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">정보 수정
+									</span> <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											<input value="수정하기" type="submit">
 									</span></li>
 								</ul>
 								<br>
@@ -219,7 +223,7 @@
 
 						<div class="section additional-details">
 
-							<h4 class="s-property-title">수익률 정보</h4>
+							<h4 class="s-property-title">관심매물 정보</h4>
 							<c:if test="${!empty detail_suic}">
 								<ul class="additional-details-list clearfix">
 
@@ -361,111 +365,7 @@
 						</c:if>
 						<!-- 전월세 내역 end  -->
 
-						<c:if test="${!empty geocode}">
-							<div class="section property-features">
 
-								<h4 class="s-property-title">위치 정보</h4>
-								<!--//////////////////////////////////////////////지도시작///////////////////////////////////////////////////  -->
-
-								<script type="text/javascript">
-								window.onload = function() {
-									initialize();
-								}
-							</script>
-
-
-								<div class="form-group">
-									<input id="address" type="tel" class="form-control"
-										name="address" id="address" value=""
-										placeholder="주소를 '시/군/동/상점명' 자세히 입력해주세요"> <input
-										type="button" value="지도출력하기" onclick="codeAddress()">
-									<!-- <div class="board_write_content-footer"
-  									style="text-align: center">
-  									<a href="template_list.html"
-  										class="btn btn-outline-light btn-lg m-2"> 지도 출력하기</a>
-  								</div> -->
-									<div class="form-group" id="map"></div>
-								</div>
-
-								<!-- JavaScript dependencies -->
-								<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-									crossorigin="anonymous"
-									integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="></script>
-								<script
-									src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-									crossorigin="anonymous"
-									integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"></script>
-								<script
-									src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-									crossorigin="anonymous"
-									integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"></script>
-								<!-- Script: Smooth scrolling between anchors in a same page -->
-								<script src="js/smooth-scroll.js"></script>
-								<script src="js/notice.js"></script>
-								<!-- Script: Make my navbar transparent when the document is scrolled to top -->
-								<script src="js/navbar-ontop.js"></script>
-								<!-- Script: Animated entrance -->
-								<script src="js/animate-in.js"></script>
-								<script src="js/board_write.js"></script>
-
-								<script async defer
-									src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZEvRrjLrP0xN51w1ljXwQovC5Fz8BT-k&callback=initMap"></script>
-								<script type="text/javascript">
-								var geocoder;
-								var map;
-								function initialize() {
-									geocoder = new google.maps.Geocoder();
-									var latlng = new google.maps.LatLng(
-											${geocode.get(0)}, ${geocode.get(1)});
-									var mapOptions = {
-										zoom : 17,
-										center : latlng
-									}
-									map = new google.maps.Map(document
-											.getElementById('map'), mapOptions);
-									 
-									var marker = new google.maps.Marker({
-								          position: latlng,
-								          map: map,
-								          title: 'Hello!'
-								        });
-								}
-
-								function codeAddress() {
-									var address = document
-											.getElementById('address').value;
-									geocoder
-											.geocode(
-													{
-														'address' : address
-													},
-													function(results, status) {
-														if (status == 'OK') {
-															map
-																	.setCenter(results[0].geometry.location);
-															var marker = new google.maps.Marker(
-																	{
-																		map : map,
-																		draggable : true,
-																		animation : google.maps.Animation.DROP,
-																		position : results[0].geometry.location
-																	});
-														} else {
-															alert('Geocode was not successful for the following reason: '
-																	+ status);
-														}
-													});
-								}
-							</script>
-
-								<!-- Script: Smooth scrolling between anchors in a same page -->
-								<script src="js/smooth-scroll.js"></script>
-								<script async defer
-									src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZEvRrjLrP0xN51w1ljXwQovC5Fz8BT-k&callback=initMap"></script>
-								<!--/////////////////////////////////////////////지도끝////////////////////////////////////////////////////  -->
-
-							</div>
-						</c:if>
 						<!-- End features area  -->
 					</div>
 					<!--  class="single-property-wrapper" end-->
@@ -700,53 +600,7 @@
 	<script type="text/javascript" src="assets/js/lightslider.min.js"></script>
 	<script src="assets/js/main.js"></script>
 
-	<script>
-		$(document).ready(function() {
 
-			$('#image-gallery').lightSlider({
-				gallery : true,
-				item : 1,
-				thumbItem : 9,
-				slideMargin : 0,
-				speed : 500,
-				auto : true,
-				loop : true,
-				onSliderLoad : function() {
-					$('#image-gallery').removeClass('cS-hidden');
-				}
-			});
-		});
-	</script>
-
-<!--  관심매물등록확인 -->
-   <script type="text/javascript">
-  
-  $(document).ready(function(){
-	  $('#insert_at').on('click',function(){
-		  $.ajax({
-			  type:'POST',
-			  url:'/GOSUIC/insertat_property.sp',
-			  data:{
-				 "sigungu": $('#sigungu').val(),
-				 "bunji":$('#bunji').val(),
-				 "danji":$('#danji').val(),
-				 "myunjuk":$('#myunjuk').val(),
-				 "c_type":$('#c_type').val(),
-				 "floor":$('#floor').val(),
-				 "gunchook_year":$('#gunchook_year').val()
-			  },
-				success:function(data){
-					if($.trim(data)==0){
-						alert("이미 등록한 매물입니다.");
-					}else{
-						alert("관심매물에 등록되었습니다.");
-					}
-					}
-		  });
-	  });
-  });
-  
-  </script>
 
 </body>
 </html>

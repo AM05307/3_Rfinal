@@ -20,7 +20,7 @@ String id = request.getParameter("id");
 String pass = request.getParameter("pass");
 String name = null;
 try {
-	conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe", "playdata", "admin1234");
+	conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe", "playdata", "admin0007");
 	String sql = "";
 	sql += "select name \n";
 	sql += "from member \n";

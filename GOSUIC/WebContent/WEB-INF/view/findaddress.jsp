@@ -135,6 +135,10 @@
 						href="">부동산 정보</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
 						href="">게시판</a></li>
+					<c:if test="${userEmail  ne null}">
+						<li class="wow fadeInDown" data-wow-delay="0.6s"><a class=""
+						href="/GOSUIC/mypage.sp">MyPage</a></li>
+					</c:if>
 					<!--   NAVBAR 의  드롭다운 다운 메뉴 코드 -->
 					<!-- <li class="dropdown yamm-fw" data-wow-delay="0.6s">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template <b class="caret"></b></a>

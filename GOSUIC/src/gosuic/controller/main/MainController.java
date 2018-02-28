@@ -3,13 +3,19 @@ package gosuic.controller.main;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import gosuic.service.property.PropertyService;
+import gosuic.service.user.UserService;
+
 @Controller
 public class MainController {
+	@Autowired
+	private UserService userservice;
 
 	// 회원가입 입력페이지로
 	@RequestMapping("/joinform.sp")
@@ -95,4 +101,19 @@ public class MainController {
 		System.out.println("주소 검색창 출력");
 		return "/WEB-INF/view/findaddress.jsp";
 	}
+	
+	// Mypage 출력하기
+		@RequestMapping("/mypage.sp")
+		public ModelAndView all_list(Model model, HttpSession session,HttpServletRequest request) {
+			ModelAndView mav = new ModelAndView();
+			System.out.println("넘어온 이메일:"+session.getAttribute("userEmail"));
+			String email = (String)session.getAttribute("userEmail");
+			model.addAttribute("userInfo", userservice.myPage(email));
+			
+			mav.setViewName("forward:/WEB-INF/view/mypage.jsp");
+			
+			System.out.println("뷰넘어가기전");
+			return mav;
+		}
+	
 }// class end

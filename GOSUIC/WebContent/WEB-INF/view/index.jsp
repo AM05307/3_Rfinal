@@ -124,6 +124,10 @@ alert("로그인후 이용하세요!!");
 						href="">부동산 정보</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
 						href="">게시판</a></li>
+					<c:if test="${userEmail  ne null}">
+						<li class="wow fadeInDown" data-wow-delay="0.6s"><a class=""
+						href="/GOSUIC/mypage.sp">MyPage</a></li>
+					</c:if>
 				
 				</ul>
 				<!--메뉴바 메뉴입력END-->

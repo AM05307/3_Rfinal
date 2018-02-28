@@ -120,6 +120,10 @@
 				href="">부동산 정보</a></li>
 			<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
 				href="">게시판</a></li>
+			<c:if test="${userEmail  ne null}">
+				<li class="wow fadeInDown" data-wow-delay="0.6s"><a class=""
+					href="/GOSUIC/mypage.sp">MyPage</a></li>
+			</c:if>
 
 
 		</ul>
@@ -157,7 +161,8 @@
 						<!--매물 이름, 가격  -->
 						<div class="single-property-header">
 							<br>
-							<h1 class="property-title pull-left">${detail_sil.get(0).sigungu} ${detail_sil.get(0).bunji}</h1>
+							<h1 class="property-title pull-left">${detail_sil.get(0).sigungu}
+								${detail_sil.get(0).bunji}</h1>
 							<span class="property-price pull-right">조회수 117</span>
 
 						</div>
@@ -167,41 +172,40 @@
 						<div class="section additional-details">
 
 							<h4 class="s-property-title">매물 정보</h4>
-								<c:if test="${!empty detail_sil}">
+							<c:if test="${!empty detail_sil}">
 
-							<ul class="additional-details-list clearfix">
-								<!--  <li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">도로명 주소</span>
+								<ul class="additional-details-list clearfix">
+									<!--  <li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">도로명 주소</span>
 									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
 														font-size="1em;" readonly value="${detail_sil.get(0).doromyung}"></span>
 								</li>-->
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">단지명</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).danji}</span>
-								</li>
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">전용면적</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).myunjuk}㎡</span>
-								</li>
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">매물형태</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).c_type}</span>
-								</li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">단지명</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_sil.get(0).danji}</span></li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">전용면적</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_sil.get(0).myunjuk}㎡</span></li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">매물형태</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_sil.get(0).c_type}</span></li>
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">층</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).floor} 층</span>
-								</li>
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">건축년도</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_sil.get(0).gunchook_year} 년도</span>
-								</li>
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-									<input value="등록하기" type="submit">
-									</span>
-								</li>
-							</ul>
-							<br>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">층</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_sil.get(0).floor} 층</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">건축년도</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_sil.get(0).gunchook_year} 년도</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> <input
+											value="등록하기" type="submit">
+									</span></li>
+								</ul>
+								<br>
 							</c:if>
-							
+
 						</div>
 						<!-- End description area  -->
 
@@ -209,185 +213,185 @@
 
 							<h4 class="s-property-title">수익률 정보</h4>
 							<c:if test="${!empty detail_suic}">
-							<ul class="additional-details-list clearfix">
-							
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고수익률</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.maxRate}(%)</span>
-								</li>
- 								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저수익률</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.minRate}(%)</span>
-								</li>
-							
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.avgPrice}</span>
-								</li>
+								<ul class="additional-details-list clearfix">
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.maxPrice}(만원)</span>
-								</li>
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저매매가</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${detail_suic.minPrice}(만원)</span>
-								</li>
-								
-							</ul>		
-						</c:if>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고수익률</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_suic.maxRate}(%)</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저수익률</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_suic.minRate}(%)</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균매매가</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_suic.avgPrice}</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고매매가</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_suic.maxPrice}(만원)</span></li>
+
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저매매가</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+											${detail_suic.minPrice}(만원)</span></li>
+
+								</ul>
+							</c:if>
 						</div>
 						<!-- End additional-details area  -->
 						<div class="section additional-details">
 
 							<h4 class="s-property-title">비용 정보</h4>
-								<!--<c:if test="${!empty detail_suic}">-->
+							<!--<c:if test="${!empty detail_suic}">-->
 							<ul class="additional-details-list clearfix">
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">취득세율</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">--  (%)</span>
-								</li>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">--
+										(%)</span></li>
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상 취등록세</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --(만원)</span>
-								</li>
-								
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상
+										취등록세</span> <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+										--(만원)</span></li>
+
 								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">중계수수료율</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --  (%)</span>
-								</li>
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상 중계 수수료</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --(만원)</span>
-								</li>
- 								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상 대리등기비용</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --(만원)</span>
-								</li>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --
+										(%)</span></li>
 
-							</ul>		
-						<!--</c:if>-->
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상
+										중계 수수료</span> <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+										--(만원)</span></li>
+
+								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상
+										대리등기비용</span> <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+										--(만원)</span></li>
+
+							</ul>
+							<!--</c:if>-->
 						</div>
 						<!-- 부대비용 정보 end  -->
 
-							<div class="section additional-details">
+						<div class="section additional-details">
 
 							<h4 class="s-property-title">상세 거래 내역</h4>
-								<c:if test="${!empty detail_sil}">
+							<c:if test="${!empty detail_sil}">
 
-									<c:forEach items="${detail_sil}" var="sil">
-										<ul class="additional-details-list clearfix">
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${sil.contract_year_month}</span>
-								</li>
+								<c:forEach items="${detail_sil}" var="sil">
+									<ul class="additional-details-list clearfix">
+										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
+											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+												${sil.contract_year_month}</span></li>
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${sil.contract_day}</span>
-								</li>
+										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
+											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+												${sil.contract_day}</span></li>
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> 매매</span>
-								</li>
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래금액</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${sil.price} (만원)</span>
-								</li>
-								
-								
-							</ul>
-							<br>
-							</c:forEach>
+										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
+											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+												매매</span></li>
+
+										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래금액</span>
+											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+												${sil.price} (만원)</span></li>
+
+
+									</ul>
+									<br>
+								</c:forEach>
 							</c:if>
-							
+
 						</div>
 						<!-- 상세 거래 내역 end  -->
 						<c:if test="${!empty detail_jw}">
-						<div class="section additional-details">
+							<div class="section additional-details">
 
-							<h4 class="s-property-title">전월세 내역</h4>
-								
+								<h4 class="s-property-title">전월세 내역</h4>
 
-									<c:forEach items="${detail_jw}" var="jw">
-										<ul class="additional-details-list clearfix">
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.contract_year_month}</span>
-								</li>
 
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.contract_day}</span>
-								</li>
-							
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.junwol}</span>
-								</li>
-								
-								
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">보증금</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.deposit} (만원)</span>
-								</li>
-								
-								<c:if test="${jw.rent != 0}">
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">월세</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> ${jw.rent} (만원)</span>
-								</li>
-								</c:if>
-								
-								
-							</ul>
-							<br>
-							</c:forEach>
-							
-							
-						</div>
+								<c:forEach items="${detail_jw}" var="jw">
+									<ul class="additional-details-list clearfix">
+										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
+											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+												${jw.contract_year_month}</span></li>
+
+										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
+											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+												${jw.contract_day}</span></li>
+
+
+										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
+											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+												${jw.junwol}</span></li>
+
+
+										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">보증금</span>
+											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+												${jw.deposit} (만원)</span></li>
+
+										<c:if test="${jw.rent != 0}">
+											<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">월세</span>
+												<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
+													${jw.rent} (만원)</span></li>
+										</c:if>
+
+
+									</ul>
+									<br>
+								</c:forEach>
+
+
+							</div>
 						</c:if>
 						<!-- 전월세 내역 end  -->
-						
+
 						<c:if test="${!empty geocode}">
-						<div class="section property-features">
+							<div class="section property-features">
 
-							<h4 class="s-property-title">위치 정보</h4>
-							<!--//////////////////////////////////////////////지도시작///////////////////////////////////////////////////  -->
+								<h4 class="s-property-title">위치 정보</h4>
+								<!--//////////////////////////////////////////////지도시작///////////////////////////////////////////////////  -->
 
-							<script type="text/javascript">
+								<script type="text/javascript">
 								window.onload = function() {
 									initialize();
 								}
 							</script>
 
 
-							<div class="form-group">
-								<input id="address" type="tel" class="form-control"
-									name="address" id="address" value=""
-									placeholder="주소를 '시/군/동/상점명' 자세히 입력해주세요"> <input
-									type="button" value="지도출력하기" onclick="codeAddress()">
-								<!-- <div class="board_write_content-footer"
+								<div class="form-group">
+									<input id="address" type="tel" class="form-control"
+										name="address" id="address" value=""
+										placeholder="주소를 '시/군/동/상점명' 자세히 입력해주세요"> <input
+										type="button" value="지도출력하기" onclick="codeAddress()">
+									<!-- <div class="board_write_content-footer"
   									style="text-align: center">
   									<a href="template_list.html"
   										class="btn btn-outline-light btn-lg m-2"> 지도 출력하기</a>
   								</div> -->
-								<div class="form-group" id="map" ></div>
-							</div>
+									<div class="form-group" id="map"></div>
+								</div>
 
-							<!-- JavaScript dependencies -->
-							<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-								crossorigin="anonymous"
-								integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="></script>
-							<script
-								src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-								crossorigin="anonymous"
-								integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"></script>
-							<script
-								src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-								crossorigin="anonymous"
-								integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"></script>
-							<!-- Script: Smooth scrolling between anchors in a same page -->
-							<script src="js/smooth-scroll.js"></script>
-							<script src="js/notice.js"></script>
-							<!-- Script: Make my navbar transparent when the document is scrolled to top -->
-							<script src="js/navbar-ontop.js"></script>
-							<!-- Script: Animated entrance -->
-							<script src="js/animate-in.js"></script>
-							<script src="js/board_write.js"></script>
-							
-							<script async defer
-								src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZEvRrjLrP0xN51w1ljXwQovC5Fz8BT-k&callback=initMap"></script>
-							<script type="text/javascript">
+								<!-- JavaScript dependencies -->
+								<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+									crossorigin="anonymous"
+									integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="></script>
+								<script
+									src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+									crossorigin="anonymous"
+									integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"></script>
+								<script
+									src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+									crossorigin="anonymous"
+									integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"></script>
+								<!-- Script: Smooth scrolling between anchors in a same page -->
+								<script src="js/smooth-scroll.js"></script>
+								<script src="js/notice.js"></script>
+								<!-- Script: Make my navbar transparent when the document is scrolled to top -->
+								<script src="js/navbar-ontop.js"></script>
+								<!-- Script: Animated entrance -->
+								<script src="js/animate-in.js"></script>
+								<script src="js/board_write.js"></script>
+
+								<script async defer
+									src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZEvRrjLrP0xN51w1ljXwQovC5Fz8BT-k&callback=initMap"></script>
+								<script type="text/javascript">
 								var geocoder;
 								var map;
 								function initialize() {
@@ -435,13 +439,13 @@
 								}
 							</script>
 
-							<!-- Script: Smooth scrolling between anchors in a same page -->
-							<script src="js/smooth-scroll.js"></script>
-							<script async defer
-								src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZEvRrjLrP0xN51w1ljXwQovC5Fz8BT-k&callback=initMap"></script>
-							<!--/////////////////////////////////////////////지도끝////////////////////////////////////////////////////  -->
+								<!-- Script: Smooth scrolling between anchors in a same page -->
+								<script src="js/smooth-scroll.js"></script>
+								<script async defer
+									src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZEvRrjLrP0xN51w1ljXwQovC5Fz8BT-k&callback=initMap"></script>
+								<!--/////////////////////////////////////////////지도끝////////////////////////////////////////////////////  -->
 
-						</div>
+							</div>
 						</c:if>
 						<!-- End features area  -->
 					</div>

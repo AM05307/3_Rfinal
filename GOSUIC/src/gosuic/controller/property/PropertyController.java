@@ -25,8 +25,6 @@ public class PropertyController {
 	private PropertyService propertyservice;
 	@Autowired
 	private ChangeAddress changeaddress;
-	
-	private String tName = null;
 
 	// 전체 출력하기
 	@RequestMapping("/list.sp")

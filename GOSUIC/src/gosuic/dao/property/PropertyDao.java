@@ -436,11 +436,6 @@ public class PropertyDao {
 	return detail;
 	}
 	
-	public int pricetypeExchange(String price) {
-		
-		return 0;
-	}
-
 	
 	
 }

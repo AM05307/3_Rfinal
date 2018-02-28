@@ -150,6 +150,7 @@
 <br>
 
 <%=request.getAttribute("root")%>
+<%System.out.println(request.getAttribute("root"));%>
 <%-- <a href="${root}/user?act=mvmemberlist">회원목록</a> --%>
 <%@ include file="/common/footer.jsp"%>
 <!-- Footer area-->

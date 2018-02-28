@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import gosuic.entity.PropertyVo;
 import gosuic.service.user.UserService;
 import gosuic.vo.UserVo;
 
@@ -73,6 +74,18 @@ public class UserController {
 			
 		}
 		
+		// 패쓰워드 중복체크
+		@ResponseBody
+		@RequestMapping(value="/CheckPw.sp",method =RequestMethod.POST)
+		public String checkPw(HttpServletRequest request, Model model) {
+			String userPw= request.getParameter("userPassword");
+			System.out.println("checkpw cont" + userPw);
+			int row = userService.checkPw(userPw);
+			System.out.println("컨트롤러" + row +":" + userPw);
+			
+			return String.valueOf(row);			
+		}
+		
 		// 로그아웃
 		@RequestMapping("/UserLogout.sp")
 	    public String logout(HttpSession session){
@@ -82,5 +95,27 @@ public class UserController {
 		}
 	
 
+		// 관심매물 등록
+		@ResponseBody
+		@RequestMapping(value = "/insertat_property.sp", method = RequestMethod.POST)
+		public String insertat_Property(HttpSession session,HttpServletRequest request, Model model) {
+			PropertyVo pv = new PropertyVo();
+			System.out.println("관심매물등록");
+			String userEmail= (String)session.getAttribute("userEmail");
+
+			pv.setSigungu(request.getParameter("sigungu"));
+			pv.setBunji(request.getParameter("bunji"));
+			pv.setDanji(request.getParameter("danji"));
+			pv.setMyunjuk(request.getParameter("myunjuk"));
+			pv.setC_type(request.getParameter("c_type"));
+			pv.setFloor(request.getParameter("floor"));
+			pv.setGunchook_year(request.getParameter("gunchook_year"));
+			
+			System.out.println(pv);
+			
+			int row = userService.insertat_Property(userEmail,pv);			
+			System.out.println("로값:"+row);
+			return String.valueOf(row);
+		}
 
 }
