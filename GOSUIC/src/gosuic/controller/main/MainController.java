@@ -102,13 +102,14 @@ public class MainController {
 		return "/WEB-INF/view/findaddress.jsp";
 	}
 	
-	// Mypage 출력하기
+	// My page
 		@RequestMapping("/mypage.sp")
 		public ModelAndView all_list(Model model, HttpSession session,HttpServletRequest request) {
 			ModelAndView mav = new ModelAndView();
 			System.out.println("넘어온 이메일:"+session.getAttribute("userEmail"));
 			String email = (String)session.getAttribute("userEmail");
 			model.addAttribute("userInfo", userservice.myPage(email));
+			model.addAttribute("at_property", userservice.getAt_property(email));
 			
 			mav.setViewName("forward:/WEB-INF/view/mypage.jsp");
 			

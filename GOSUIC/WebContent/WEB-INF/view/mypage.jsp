@@ -224,41 +224,54 @@
 						<div class="section additional-details">
 
 							<h4 class="s-property-title">관심매물 정보</h4>
-							<c:if test="${!empty detail_suic}">
+							<c:if test="${!empty at_property}">
+								<c:forEach items="${at_property}" var="at">
+								<form action="/GOSUIC/deleteat_property.sp" method="post">
+								<input type="hidden" name="sigungu" id="sigungu" readonly value="${at.sigungu}">
+								<input type="hidden" name="bunji" id="bunji" readonly value="${at.bunji}">
 								<ul class="additional-details-list clearfix">
+									<!--  <li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">도로명 주소</span>
+									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"><input type="text" name="contract_year_month"
+														font-size="1em;" readonly value="${detail_sil.get(0).doromyung}"></span>
+								</li>-->
+									
+											
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">단지명</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${at.danji}</span>
+										<input type="hidden" name="danji" id="danji" readonly value="${at.danji}">
+									</li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">전용면적</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${at.myunjuk}㎡</span>
+										<input type="hidden" name="myunjuk" id="myunjuk" readonly value="${at.myunjuk}">
+										</li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">매물형태</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${at.c_type}</span>
+										<input type="hidden" name="c_type" id="c_type" readonly value="${at.c_type}">
+										</li>
 
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고수익률</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-											${detail_suic.maxRate}(%)</span></li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">층</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${at.floor} 층</span>
+										<input type="hidden" name="floor" id="floor" readonly value="${at.floor}">	
+									</li>
 
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균수익률</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-											${detail_suic.avgRate}(%)</span></li>
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">건축년도</span>
+										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">${at.gunchook_year} 년도</span>
+										<input type="hidden" name="gunchook_year" id="gunchook_year" readonly value="${at.gunchook_year}">	
+										</li>
 
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저수익률</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-											${detail_suic.minRate}(%)</span></li>
-
-
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고전세가</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-											${detail_suic.maxDeposit}(만원)</span></li>
-
-
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">평균매매가</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-											${detail_suic.avgPrice}</span></li>
-
-
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최고매매가</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-											${detail_suic.maxPrice}(만원)</span></li>
-
-									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">최저매매가</span>
-										<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-											${detail_suic.minPrice}(만원)</span></li>
-
+									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
+										<span class="col-xs-3 col-sm-4 col-md-4 add-d-entry">
+										<input type="button" id="insert_at" value="확인하기">
+										</span>
+										<span class="col-xs-3 col-sm-4 col-md-4 add-d-entry">
+										<input type="submit" id="delete_at" value="삭제하기">
+										</span>
+									</li>
+									
 								</ul>
+								<br>
+								</form>
+								</c:forEach>
 							</c:if>
 						</div>
 						<!-- End additional-details area  -->

@@ -67,7 +67,7 @@ public class UserDao {
 	//구현중!
 	public int checkPw(String userPw) {
 		try {
-			System.out.println("아이디 중복체크 다오 : " + userPw);
+			System.out.println("패스워드체크 다오 : " + userPw);
 			String check = getJdbcTemplate().queryForObject("select userPw from userinfo where userID=? and userPw=?",
 					new Object[] { userPw }, String.class);
 			System.out.println("======== " + check);
@@ -127,6 +127,39 @@ public class UserDao {
 		}
 		return cnt;
 
+	}
+
+	public List<PropertyVo> getAt_property(String email) {
+		List<PropertyVo> myproperty = null;
+
+		myproperty = getJdbcTemplate().query("SELECT * FROM at_property where useremail ='" + email + "' ", new RowMapper<PropertyVo>() {
+
+					@Override
+					public PropertyVo mapRow(ResultSet rs, int num) throws SQLException {
+
+						PropertyVo pv = new PropertyVo();
+
+						pv.setSigungu(rs.getString("sigungu"));
+						pv.setBunji(rs.getString("bunji"));
+						pv.setDanji(rs.getString("danji"));
+						pv.setMyunjuk(rs.getString("myunjuk"));
+						pv.setFloor(rs.getString("floor"));
+						pv.setC_type(rs.getString("c_type"));
+						pv.setGunchook_year(rs.getString("gunchook_year"));
+						
+						return pv;
+					}
+				});
+		
+		System.out.println("관심매물:" +myproperty);
+		return myproperty;
+	}
+
+	public int deleteat_Property(String userEmail, PropertyVo pv) {
+		int res = getJdbcTemplate().update("delete from at_property where userEmail=? and sigungu=? and bunji=? and danji=? and myunjuk=? and floor=? and c_type=? and gunchook_year=?",
+				new Object[] { userEmail, pv.getSigungu(), pv.getBunji(), pv.getDanji(), pv.getMyunjuk(),
+						pv.getFloor(), pv.getC_type(),pv.getGunchook_year() });
+		return res;
 	}
 
 }

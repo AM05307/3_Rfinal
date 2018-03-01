@@ -52,4 +52,22 @@ public class UserService {
 		return res;
 	}
 
+	public List<PropertyVo> getAt_property(String email) {
+		System.out.println("겟엣프로퍼티이멜:"+email);
+		List<PropertyVo> pv = null;
+		pv = userDao.getAt_property(email);
+		return pv;
+	}
+
+	public int deleteat_Property(String userEmail, PropertyVo pv) {
+		int res=0;
+		String str=null;
+		str = userDao.findat_Property(userEmail,pv);
+		System.out.println("서비스에서str출력"+str);
+		if (str.equals("1")) {
+			res=userDao.deleteat_Property(userEmail,pv);
+		}
+		return res;
+	}
+
 }
