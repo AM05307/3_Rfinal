@@ -17,7 +17,6 @@ import gosuic.entity.PropertyVo;
 import gosuic.service.property.ChangeAddress;
 import gosuic.service.property.PropertyService;
 
-
 @Controller
 public class PropertyController {
 
@@ -28,9 +27,9 @@ public class PropertyController {
 
 	// 전체 출력하기
 	@RequestMapping("/list.sp")
-	public ModelAndView all_list(Model model, HttpSession session,HttpServletRequest request) {
+	public ModelAndView all_list(Model model, HttpSession session, HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-		System.out.println("넘어온 주소:"+request.getParameter("searchaddr"));
+		System.out.println("넘어온 주소:" + request.getParameter("searchaddr"));
 		String addr = request.getParameter("searchaddr");
 		model.addAttribute("all_list_apt", propertyservice.listApt(addr));
 		model.addAttribute("all_list_offi", propertyservice.listOffi(addr));
@@ -47,8 +46,9 @@ public class PropertyController {
 	}
 
 	@RequestMapping("/property.sp")
-	public ModelAndView Property(HttpSession session, Model model,HttpServletRequest request) throws SAXException, IOException, ParserConfigurationException {
-		
+	public ModelAndView Property(HttpSession session, Model model, HttpServletRequest request)
+			throws SAXException, IOException, ParserConfigurationException {
+
 		PropertyVo pv = new PropertyVo();
 		pv.setSigungu(request.getParameter("sigungu"));
 		pv.setBunji(request.getParameter("bunji"));
@@ -57,21 +57,22 @@ public class PropertyController {
 		pv.setFloor(request.getParameter("floor"));
 		pv.setPrice(request.getParameter("price"));
 		pv.setC_type(request.getParameter("c_type"));
-		String addr1 = pv.getSigungu()+" "+pv.getBunji();
-		String addr2 = pv.getSigungu()+" "+pv.getBunji()+" "+pv.getDanji();
+		String addr1 = pv.getSigungu() + " " + pv.getBunji();
+		String addr2 = pv.getSigungu() + " " + pv.getBunji() + " " + pv.getDanji();
 		model.addAttribute("detail_suic", propertyservice.detailpropertysuic(pv));
 		model.addAttribute("detail_sil", propertyservice.detailpropertysil(pv));
 		model.addAttribute("detail_jw", propertyservice.detailpropertyjw(pv));
-		model.addAttribute("geocode", changeaddress.geocodeMain(addr1,addr2));
-		System.out.println("좌표:"+changeaddress.geocodeMain(addr1,addr2));
+		model.addAttribute("geocode", changeaddress.geocodeMain(addr1, addr2));
+		System.out.println("좌표:" + changeaddress.geocodeMain(addr1, addr2));
 
 		ModelAndView mav = new ModelAndView();
 		if (session.getAttribute("userEmail") == null) {
 			mav.setViewName("redirect:/index.sp");
 		} else {
-			
+
 			mav.setViewName("forward:/detail.sp");
 		}
 		return mav;
 	}
+
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import gosuic.entity.PropertyVo;
+import gosuic.service.property.PropertyService;
 import gosuic.service.user.UserService;
 import gosuic.vo.UserVo;
 
@@ -24,6 +25,8 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	@Autowired
+	private PropertyService propertyservice;
 
 	// 회원가입
 	@RequestMapping(value = "/insertUser.sp", method = RequestMethod.POST)
@@ -117,6 +120,9 @@ public class UserController {
 		return String.valueOf(row);
 	}
 
+	
+
+	
 	// 관심매물 삭제
 	@RequestMapping(value = "/deleteat_property.sp", method = RequestMethod.POST)
 	public ModelAndView deleteat_Property(HttpSession session, HttpServletRequest request, Model model) {
@@ -143,5 +149,27 @@ public class UserController {
 		System.out.println("뷰넘어가기전");
 		return mav;
 	}
+	
+	// 유저 관심매물 개별 매매이력 확인하기
+	@RequestMapping("/atpropertylist.sp")
+	public ModelAndView userAt_list(Model model, HttpSession session, HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		PropertyVo pv = new PropertyVo();
+		pv.setSigungu(request.getParameter("sigungu"));
+		pv.setBunji(request.getParameter("bunji"));
+		pv.setDanji(request.getParameter("danji"));
+		pv.setMyunjuk(request.getParameter("myunjuk"));
+		pv.setC_type(request.getParameter("c_type"));
+		pv.setFloor(request.getParameter("floor"));
+		pv.setGunchook_year(request.getParameter("gunchook_year"));
+		
+		System.out.println(pv);
+		model.addAttribute("my_at_propery", propertyservice.userAt_list(pv));	
+
+		mav.setViewName("forward:/WEB-INF/view/atpropertylist.jsp");
+		
+		return mav;
+	}
+
 
 }

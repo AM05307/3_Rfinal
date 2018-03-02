@@ -271,4 +271,12 @@ public class PropertyService {
 		
 		return tName; 
 	}
+
+	public List<PropertyVo> userAt_list(PropertyVo pv) {
+		System.out.println("서비스객체 listApt() 메소드");
+		List<PropertyVo> res = null;
+		System.out.println(pv+gettName(pv));
+		res = propertyDao.userAt_list(pv,gettName(pv));
+		return res;
+	}
 }

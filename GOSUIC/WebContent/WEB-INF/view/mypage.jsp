@@ -226,7 +226,7 @@
 							<h4 class="s-property-title">관심매물 정보</h4>
 							<c:if test="${!empty at_property}">
 								<c:forEach items="${at_property}" var="at">
-								<form action="/GOSUIC/deleteat_property.sp" method="post">
+								<form action="/GOSUIC/atpropertylist.sp" method="post">
 								<input type="hidden" name="sigungu" id="sigungu" readonly value="${at.sigungu}">
 								<input type="hidden" name="bunji" id="bunji" readonly value="${at.bunji}">
 								<ul class="additional-details-list clearfix">
@@ -261,125 +261,28 @@
 
 									<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">관심매물</span>
 										<span class="col-xs-3 col-sm-4 col-md-4 add-d-entry">
-										<input type="button" id="insert_at" value="확인하기">
+										<input type="submit" name="list_at" id="list_at" value="확인하기">
 										</span>
 										<span class="col-xs-3 col-sm-4 col-md-4 add-d-entry">
-										<input type="submit" id="delete_at" value="삭제하기">
+										</form>
+										<form action="/GOSUIC/deleteat_property.sp" method="post">
+										<input type="hidden" name="sigungu" id="sigungu" readonly value="${at.sigungu}">
+										<input type="hidden" name="bunji" id="bunji" readonly value="${at.bunji}">
+										<input type="hidden" name="danji" id="danji" readonly value="${at.danji}">
+										<input type="hidden" name="myunjuk" id="myunjuk" readonly value="${at.myunjuk}">
+										<input type="hidden" name="c_type" id="c_type" readonly value="${at.c_type}">
+										<input type="hidden" name="floor" id="floor" readonly value="${at.floor}">
+										<input type="hidden" name="gunchook_year" id="gunchook_year" readonly value="${at.gunchook_year}">
+										<input type="submit" name="delete_at" id="delete_at" value="삭제하기">
+										</form>
 										</span>
 									</li>
 									
 								</ul>
 								<br>
-								</form>
 								</c:forEach>
 							</c:if>
 						</div>
-						<!-- End additional-details area  -->
-						<div class="section additional-details">
-
-							<h4 class="s-property-title">비용 정보</h4>
-							<!--<c:if test="${!empty detail_suic}">-->
-							<ul class="additional-details-list clearfix">
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">취득세율</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">--
-										(%)</span></li>
-
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상
-										취등록세</span> <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-										--(만원)</span></li>
-
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">중계수수료율</span>
-									<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry"> --
-										(%)</span></li>
-
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상
-										중계 수수료</span> <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-										--(만원)</span></li>
-
-								<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">예상
-										대리등기비용</span> <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-										--(만원)</span></li>
-
-							</ul>
-							<!--</c:if>-->
-						</div>
-						<!-- 부대비용 정보 end  -->
-
-						<div class="section additional-details">
-
-							<h4 class="s-property-title">상세 거래 내역</h4>
-							<c:if test="${!empty detail_sil}">
-
-								<c:forEach items="${detail_sil}" var="sil">
-									<ul class="additional-details-list clearfix">
-										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
-											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-												${sil.contract_year_month}</span></li>
-
-										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
-											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-												${sil.contract_day}</span></li>
-
-										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
-											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-												매매</span></li>
-
-										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래금액</span>
-											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-												${sil.price} (만원)</span></li>
-
-
-									</ul>
-									<br>
-								</c:forEach>
-							</c:if>
-
-						</div>
-						<!-- 상세 거래 내역 end  -->
-						<c:if test="${!empty detail_jw}">
-							<div class="section additional-details">
-
-								<h4 class="s-property-title">전월세 내역</h4>
-
-
-								<c:forEach items="${detail_jw}" var="jw">
-									<ul class="additional-details-list clearfix">
-										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약일</span>
-											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-												${jw.contract_year_month}</span></li>
-
-										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">계약시기(10일간격)</span>
-											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-												${jw.contract_day}</span></li>
-
-
-										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">거래형태</span>
-											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-												${jw.junwol}</span></li>
-
-
-										<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">보증금</span>
-											<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-												${jw.deposit} (만원)</span></li>
-
-										<c:if test="${jw.rent != 0}">
-											<li><span class="col-xs-6 col-sm-4 col-md-4 add-d-title">월세</span>
-												<span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">
-													${jw.rent} (만원)</span></li>
-										</c:if>
-
-
-									</ul>
-									<br>
-								</c:forEach>
-
-
-							</div>
-						</c:if>
-						<!-- 전월세 내역 end  -->
-
-
-						<!-- End features area  -->
 					</div>
 					<!--  class="single-property-wrapper" end-->
 				</div>
