@@ -145,7 +145,10 @@ alert("로그인후 이용하세요!!");
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
                         <h2 class="error-title">500</h2>
-                        <p>Sorry, the page you requested may have been moved or deleted</p>
+                        <p>해당 페이지로 연결할 수 없습니다.</p>
+                        문제 해결방법 
+           	1. 로그인 후 이용해주세요 
+           	<hr>
                         <a href="index.html" class="btn btn-default">Home</a>
                     </div>
                 </div>
