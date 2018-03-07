@@ -149,7 +149,7 @@ alert("로그인후 이용하세요!!");
                         문제 해결방법 
            	1. 로그인 후 이용해주세요 
            	<hr>
-                        <a href="index.html" class="btn btn-default">Home</a>
+                        <a href="index.sp" class="btn btn-default">Home</a>
                     </div>
                 </div>
             </div>

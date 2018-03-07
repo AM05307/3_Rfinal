@@ -145,8 +145,10 @@ alert("로그인후 이용하세요!!");
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
                         <h2 class="error-title">404</h2>
+                        <p>해당 페이지로 연결할 수 없습니다.관리자에게 문의해주세요.</p>
                         <p>Sorry, the page you requested may have been moved or deleted</p>
-                        <a href="index.html" class="btn btn-default">Home</a>
+                        <hr>
+                        <a href="index.sp" class="btn btn-default">Home</a>
                     </div>
                 </div>
             </div>
