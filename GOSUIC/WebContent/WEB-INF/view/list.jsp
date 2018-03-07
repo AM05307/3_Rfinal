@@ -482,6 +482,9 @@ alert("입력후 이용하세요!!");
 							</div>
 						</div>
 					</div>
+					
+					
+			
 				</div>
 			</div>
 		</div>
@@ -490,7 +493,7 @@ alert("입력후 이용하세요!!");
 	<!-- Footer area-->
 	<div class="footer-area">
 
-		<div class=" footer">
+		<div class="footer">
 			<div class="container">
 				<div class="row">
 
@@ -626,6 +629,11 @@ alert("입력후 이용하세요!!");
 	<script src="assets/js/icheck.min.js"></script>
 	<script src="assets/js/price-range.js"></script>
 	<script src="assets/js/main.js"></script>
+	
+	<div id ="to topandend" style="position:fixed; bottom:5px; right:5px;">
+							<a href="#"><button class="btn btn-default" title="맨 위로 가기"><i class="fa fa-arrow-up"></i> TOP</button></a>
+							
+					</div>
 </body>
 </html>
 
