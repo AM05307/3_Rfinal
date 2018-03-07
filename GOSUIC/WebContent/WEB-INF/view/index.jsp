@@ -52,6 +52,7 @@ alert("로그인후 이용하세요!!");
 <link rel="stylesheet" href="assets/css/responsive.css">
 
 <link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/button.css">
 </head>
 
 <body>
@@ -563,6 +564,11 @@ alert("로그인후 이용하세요!!");
 
 	<script src="assets/js/main.js"></script>
 
+	<div class="to-topandend">
+		<a href="#"><button class="btn btn-default" title="맨 위로 가기">
+				<i class="fa fa-arrow-up"></i> TOP
+			</button></a>
+	</div>
 </body>
 
 </html>

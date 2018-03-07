@@ -146,8 +146,10 @@ alert("로그인후 이용하세요!!");
                     <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
                         <h2 class="error-title">500</h2>
                         <p>해당 페이지로 연결할 수 없습니다.</p>
-                        문제 해결방법 
-           	1. 로그인 후 이용해주세요 
+                        <h5>문제 해결방법<h5>
+                        
+           	1. 로그인 후 이용해주세요 <p>
+           	2. HOME에서 매물을 검색 한 후 이용해주세요<p> 
            	<hr>
                         <a href="index.sp" class="btn btn-default">Home</a>
                     </div>

@@ -3,17 +3,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<% if(session.getAttribute("userEmail") == null) {%>
+<%
+	if (session.getAttribute("userEmail") == null) {
+%>
 <script type="text/javascript">
-alert("로그인후 이용하세요!!");
+	alert("로그인후 이용하세요!!");
 </script>
-<%} %>
+<%
+	}
+%>
 
-<% if(request.getParameter("searchaddr")=="") {%>
+<%
+	if (request.getParameter("searchaddr") == "") {
+%>
 <script type="text/javascript">
-alert("입력후 이용하세요!!");
+	alert("입력후 이용하세요!!");
 </script>
-<%} %>
+<%
+	}
+%>
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -484,9 +492,9 @@ alert("입력후 이용하세요!!");
 							</div>
 						</div>
 					</div>
-					
-					
-			
+
+
+
 				</div>
 			</div>
 		</div>
@@ -631,11 +639,12 @@ alert("입력후 이용하세요!!");
 	<script src="assets/js/icheck.min.js"></script>
 	<script src="assets/js/price-range.js"></script>
 	<script src="assets/js/main.js"></script>
-	
-	<div class ="to-topandend" >
-							<a href="#"><button class="btn btn-default" title="맨 위로 가기"><i class="fa fa-arrow-up"></i> TOP</button></a>
-							
-					</div>
+
+	<div class="to-topandend">
+		<a href="#"><button class="btn btn-default" title="맨 위로 가기">
+				<i class="fa fa-arrow-up"></i> TOP
+			</button></a>
+	</div>
 </body>
 </html>
 

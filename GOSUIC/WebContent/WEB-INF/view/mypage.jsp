@@ -40,6 +40,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
 
+<link rel="stylesheet" href="assets/css/button.css">
 <!--지도 링크  -->
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -516,7 +517,10 @@
 	<script type="text/javascript" src="assets/js/lightslider.min.js"></script>
 	<script src="assets/js/main.js"></script>
 
-
-
+	<div class="to-topandend">
+		<a href="#"><button class="btn btn-default" title="맨 위로 가기">
+				<i class="fa fa-arrow-up"></i> TOP
+			</button></a>
+	</div>
 </body>
 </html>
