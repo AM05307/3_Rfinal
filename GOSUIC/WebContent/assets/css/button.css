@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+/*top button */
+
+.to-topandend {
+	position:fixed; 
+	bottom:5px; 
+	right:5px;	
+}
