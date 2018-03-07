@@ -107,7 +107,7 @@
 				</div>
 				<!-- 메뉴바 -->
 				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="index.html">Home <b class="caret"></b></a></li>
+					<li><a href="index.sp">Home <b class="caret"></b></a></li>
 					<!-- /TestMVC03/list.sp -->
 					<!--   <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">매물</a></li>-->
 

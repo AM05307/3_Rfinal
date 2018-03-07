@@ -86,7 +86,7 @@
 						class="icon-bar"></span>
 				</button>
 				<!--왼쪽 상단 로고  -->
-				<a class="navbar-brand" href="index.html"><img
+				<a class="navbar-brand" href="index.sp"><img
 					src="assets/img/mainpage/gologosample.png" alt=""></a>
 			</div>
 
