@@ -94,7 +94,7 @@ alert("로그인후 이용하세요!!");
 						class="icon-bar"></span>
 				</button>
 				<!--왼쪽 상단 로고  -->
-				<a class="navbar-brand" href="index.html"><img
+				<a class="navbar-brand" href="index.sp"><img
 					src="assets/img/mainpage/gosuic_logo3_small.png" alt=""></a>
 			</div>
 
@@ -112,7 +112,7 @@ alert("로그인후 이용하세요!!");
 
 				<!-- 메뉴바 -->
 				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="index.html">Home <b class="caret"></b></a></li>
+					<li><a href="index.sp">Home <b class="caret"></b></a></li>
 					<!-- /TestMVC03/list.sp -->
 					<!--   <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="/GOSUIC/list.sp">매물</a></li>-->
 
