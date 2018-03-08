@@ -548,8 +548,8 @@
 							<div class="footer-title-line"></div>
 							<ul class="footer-menu">
 								<li><a href="/GOSUIC/list.sp">매물</a></li>
-								<li><a href="#">MY부동산</a></li>
-								<li><a href="submit-property.jsp">부동산정보</a></li>
+								<li><a href="#">부동산정보</a></li>
+								<li><a href="mypage.sp">MyPage</a></li>
 								<li><a href="contact.html">게시판</a></li>
 							</ul>
 						</div>
