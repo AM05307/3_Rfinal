@@ -69,7 +69,7 @@ alert("로그인후 이용하세요!!");
 					<div class="header-half header-call">
 						<!--  왼쪽 상단 헤더 -->
 						<p>
-							<span>고수익</span> <span>부동산 매물 검색 사이트</span>
+							<span>고수익</span> <span>부동산 수익률 조회 사이트</span>
 						</p>
 					</div>
 				</div>
@@ -124,7 +124,7 @@ alert("로그인후 이용하세요!!");
 					<li class="wow fadeInDown" data-wow-delay="0.4s"><a class=""
 						href="">부동산 정보</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
-						href="">게시판</a></li>
+						href="">회사소개</a></li>
 					<c:if test="${userEmail  ne null}">
 						<li class="wow fadeInDown" data-wow-delay="0.6s"><a class=""
 						href="/GOSUIC/mypage.sp">MyPage</a></li>
@@ -371,8 +371,8 @@ alert("로그인후 이용하세요!!");
 								<div class="count-item-circle">
 									<span class="pe-7s-users"></span>
 								</div>
-								<div class="chart" data-percent="5000">
-									<h2 class="percent" id="counter">0</h2>
+								<div >
+									
 									<h5>전국의 매물정보 제공</h5>
 								</div>
 							</div>
@@ -382,8 +382,8 @@ alert("로그인후 이용하세요!!");
 								<div class="count-item-circle">
 									<span class="pe-7s-home"></span>
 								</div>
-								<div class="chart" data-percent="5000">
-									<h2 class="percent" id="counter1">0</h2>
+								<div >
+									
 									<h5>주기적인 매물정보 업데이트</h5>
 								</div>
 							</div>
@@ -393,8 +393,7 @@ alert("로그인후 이용하세요!!");
 								<div class="count-item-circle">
 									<span class="pe-7s-flag"></span>
 								</div>
-								<div class="chart" data-percent="120">
-									<h2 class="percent" id="counter2">0</h2>
+								<div >
 									<h5>매물 정보 비교 가능</h5>
 								</div>
 							</div>
@@ -404,8 +403,8 @@ alert("로그인후 이용하세요!!");
 								<div class="count-item-circle">
 									<span class="pe-7s-graph2"></span>
 								</div>
-								<div class="chart" data-percent="5000">
-									<h2 class="percent" id="counter3">5000</h2>
+								<div >
+								
 									<h5>주택 매매 현황 제공</h5>
 								</div>
 							</div>
@@ -449,8 +448,9 @@ alert("로그인후 이용하세요!!");
 							<ul class="footer-menu">
 								<li><a href="/GOSUIC/list.sp">매물</a></li>
 								<li><a href="#">부동산정보</a></li>
+								<li><a href="#">회사소개</a></li>
 								<li><a href="mypage.sp">MyPage</a></li>
-								<li><a href="contact.html">게시판</a></li>
+								
 							</ul>
 						</div>
 					</div>
