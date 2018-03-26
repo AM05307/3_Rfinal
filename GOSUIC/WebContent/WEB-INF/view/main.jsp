@@ -533,7 +533,7 @@
 							<img src="assets/img/mainpage/gosuic_logo3_small.png" alt=""
 								class="wow pulse" data-wow-delay="1s">
 							<p>
-								부동산 매물 수익률 조회 사이트<br> 전국의 부동산 수익률 정보를 제공합니다
+								<b>부동산 수익률 조회 사이트</b><br> 전국 부동산 매물의 수익률 정보 제공
 							</p>
 							<ul class="footer-adress">
 								<li><i class="pe-7s-map-marker strong"> </i>서울시 서초구</li>

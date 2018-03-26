@@ -60,7 +60,7 @@
 					<div class="header-half header-call">
 						<!--  왼쪽 상단 헤더 -->
 						<p>
-							<span>고수익</span> <span>부동산 매물 검색 사이트</span>
+							<span>고수익</span> <span>부동산 수익률 조회 사이트</span>
 						</p>
 					</div>
 				</div>
@@ -420,12 +420,12 @@
 							<img src="assets/img/mainpage/gologosample.png" alt=""
 								class="wow pulse" data-wow-delay="1s">
 							<p>
-								부동산 매물 검색 사이트<br> 전국의 부동산 매물 정보를 제공합니다
+								<b>부동산 수익률 조회 사이트</b><br> 전국 부동산 매물의 수익률 정보 제공
 							</p>
 							<ul class="footer-adress">
 								<li><i class="pe-7s-map-marker strong"> </i>서울시 서초구</li>
-								<li><i class="pe-7s-mail strong"> </i> email@highprofit.com</li>
-								<li><i class="pe-7s-call strong"> </i> 02-3333-3333</li>
+								<li><i class="pe-7s-mail strong"> </i> k4eva1123@gmail.com</li>
+						
 							</ul>
 						</div>
 					</div>

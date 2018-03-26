@@ -82,7 +82,7 @@
 					<div class="header-half header-call">
 						<!--  왼쪽 상단 헤더 -->
 						<p>
-							<span>고수익</span> <span>부동산 매물 검색 사이트</span>
+							<span>고수익</span> <span>부동산 수익률 조회 사이트</span>
 						</p>
 					</div>
 				</div>
@@ -147,7 +147,7 @@
 					<li class="wow fadeInDown" data-wow-delay="0.4s"><a class=""
 						href="">부동산 정보</a></li>
 					<li class="wow fadeInDown" data-wow-delay="0.5s"><a class=""
-						href="">게시판</a></li>
+						href="">회사소개</a></li>
 					<c:if test="${userEmail  ne null}">
 						<li class="wow fadeInDown" data-wow-delay="0.6s"><a class=""
 							href="/GOSUIC/mypage.sp">MyPage</a></li>
@@ -183,140 +183,9 @@
 						<div
 							class="panel panel-default sidebar-menu wow fadeInRight animated">
 							<div class="panel-heading">
-								<h3 class="panel-title">검색</h3>
+								<h3 class="panel-title">광고</h3>
 							</div>
-							<div class="panel-body search-widget">
-								<form action="" class=" form-inline">
-									<fieldset>
-										<div class="row">
-											<!-- 시/도 검색 드롭다운 메뉴 -->
-											<div class="form-group">
-												<select id="ADDR1_SIDO" class="selectpicker"
-													data-live-search="true" data-live-search-style="begins"
-													title="시/도">
-													<!-- 드롭다운 메뉴는 DB에서 불러옴  -->
-													<option>시/도1</option>
-													<option>시/도2</option>
-													<option>시/도3</option>
-													<option>시/도4</option>
-													<option>시/도5</option>
-													<option>시/도6</option>
-												</select>
-											</div>
-										</div>
-
-										<div class="row">
-											<div class="form-group">
-												<select id="ADDR2_SIGUNGU" class="selectpicker"
-													data-live-search="true" data-live-search-style="begins"
-													title="시/군/구">
-
-													<option>시/군/구1</option>
-													<option>시/군/구2</option>
-													<option>시/군/구3</option>
-													<option>시/군/구4</option>
-													<option>시/군/구5</option>
-													<option>시/군/구6</option>
-												</select>
-											</div>
-										</div>
-										<div class="row">
-											<div class="form-group">
-												<select id="ADDR3_EUBMYUNDONG" class="selectpicker"
-													data-live-search="true" data-live-search-style="begins"
-													title="읍/면/동">
-
-													<option>읍/면/동1</option>
-													<option>읍/면/동2</option>
-													<option>읍/면/동3</option>
-													<option>읍/면/동4</option>
-													<option>읍/면/동5</option>
-													<option>읍/면/동6</option>
-												</select>
-											</div>
-
-										</div>
-
-
-									</fieldset>
-
-									<!--지역 설정 드롭다운 메뉴 end  -->
-
-									<fieldset class="padding-5">
-										<div class="row">
-											<div class="form-group">
-												<input type="text" class="form-control"
-													placeholder="최소가격(단위:만원)">
-											</div>
-										</div>
-									</fieldset>
-
-									<fieldset class="padding-5">
-										<div class="row">
-											<div class="form-group">
-												<input type="text" class="form-control"
-													placeholder="최대가격(단위:만원)">
-											</div>
-										</div>
-									</fieldset>
-
-									<fieldset class="padding-5">
-										<div class="row">
-											<div class="col-xs-6">
-												<div class="checkbox">
-													<label> <input type="checkbox" checked>아파트
-													</label>
-												</div>
-											</div>
-
-											<div class="col-xs-6">
-												<div class="checkbox">
-													<label> <input type="checkbox">연립
-													</label>
-												</div>
-											</div>
-										</div>
-									</fieldset>
-
-									<fieldset class="padding-5">
-										<div class="row">
-											<div class="col-xs-6">
-												<div class="checkbox">
-													<label> <input type="checkbox" checked>다세대
-													</label>
-												</div>
-											</div>
-											<div class="col-xs-6">
-												<div class="checkbox">
-													<label> <input type="checkbox" checked>단독
-													</label>
-												</div>
-											</div>
-										</div>
-									</fieldset>
-
-									<fieldset class="padding-5">
-										<div class="row">
-											<div class="col-xs-6">
-												<div class="checkbox">
-													<label><input type="checkbox">다가구</label>
-												</div>
-											</div>
-
-										</div>
-									</fieldset>
-
-
-									<fieldset>
-										<div class="row">
-											<div class="col-xs-12">
-												<input class="button btn largesearch-btn" value="검색"
-													type="submit">
-											</div>
-										</div>
-									</fieldset>
-								</form>
-							</div>
+						
 						</div>
 
 
@@ -327,36 +196,8 @@
 				<div class="col-md-10  pr0 padding-top-40 properties-page">
 					<div class="col-md-10 clear">
 						<div class="col-xs-10 page-subheader sorting pl0">
-							<ul class="sort-by-list">
-								<li class="active"><a href="javascript:void(0);"
-									class="order_by_date" data-orderby="property_date"
-									data-order="ASC"> 최신순 <i class="fa fa-sort-amount-asc"></i>
-								</a></li>
-								<li class=""><a href="javascript:void(0);"
-									class="order_by_price" data-orderby="property_price"
-									data-order="DESC"> 높은가격순 <i class="fa fa-sort-numeric-desc"></i>
-								</a></li>
-								<li class=""><a href="javascript:void(0);"
-									class="order_by_percent" data-orderby="property_price"
-									data-order="DESC"> 수익률 높은순 <i
-										class="fa fa-sort-numeric-desc"></i>
-								</a></li>
-							</ul>
-							<!--/ .sort-by-list-->
+							
 
-							<div class="items-per-page">
-								<label for="items_per_page"><b>페이지당 매물 수 :</b></label>
-								<div class="sel">
-									<select id="items_per_page" name="per_page">
-										<option value="10">10</option>
-										<option selected="selected" value="20">20</option>
-										<option value="30">30</option>
-
-									</select>
-								</div>
-								<!--/ .sel-->
-							</div>
-							<!--/ .items-per-page-->
 						</div>
 
 						<!-- <div class="col-xs-2 layout-switcher">
@@ -449,16 +290,7 @@
 
 					<div class="col-md-12">
 						<div class="pull-right">
-							<div class="pagination">
-								<ul>
-									<li><a href="#">이전</a></li>
-									<li><a href="#">1</a></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">다음</a></li>
-								</ul>
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -481,12 +313,12 @@
 							<img src="assets/img/mainpage/gosuic_logo3_small.png" alt=""
 								class="wow pulse" data-wow-delay="1s">
 							<p>
-								부동산 매물 검색 사이트<br> 전국의 부동산 매물 정보를 제공합니다
+								<b>부동산 수익률 조회 사이트</b><br> 전국 부동산 매물의 수익률 정보 제공
 							</p>
 							<ul class="footer-adress">
 								<li><i class="pe-7s-map-marker strong"> </i>서울시 서초구</li>
-								<li><i class="pe-7s-mail strong"> </i> email@highprofit.com</li>
-								<li><i class="pe-7s-call strong"> </i> 02-3333-3333</li>
+								<li><i class="pe-7s-mail strong"> </i>k4eva1123@gmail.com</li>
+								
 							</ul>
 						</div>
 					</div>
@@ -498,7 +330,7 @@
 								<li><a href="properties.html">매물</a></li>
 								<li><a href="/GOSUIC/property.sp">부동산정보</a></li>
 								<li><a href="mypage.sp">MyPage</a></li>
-								<li><a href="contact.html">게시판</a></li>
+								<li><a href="contact.html">회사소개</a></li>
 							</ul>
 						</div>
 					</div>
